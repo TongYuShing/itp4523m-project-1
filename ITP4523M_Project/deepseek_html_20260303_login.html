@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Living Furniture · Login</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Same custom theme as main system -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D3748',      // dark navy
+                        secondary: '#8B5A2B',    // wood tone
+                        accent: '#E2E8F0',
+                        success: '#38A169',
+                        warning: '#ECC94B',
+                        danger: '#E53E3E',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* soft background and card styling */
+        .login-card {
+            backdrop-filter: blur(4px);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        .wood-border {
+            border-color: #8B5A2B;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans min-h-screen flex items-center justify-center p-4"
+      style="background-image: radial-gradient(circle at 10% 30%, rgba(139, 90, 43, 0.03) 0%, transparent 30%), 
+             radial-gradient(circle at 90% 70%, rgba(45, 55, 72, 0.02) 0%, transparent 40%);">
+    
+    <div class="w-full max-w-md">
+        <!-- subtle brand link back to dashboard (just for prototype) -->
+        <div class="text-center mb-6">
+            <div class="inline-flex items-center gap-2 text-2xl font-bold text-primary">
+                <i class="fas fa-couch text-secondary"></i>
+                <span>Premium Living</span>
+            </div>
+            <p class="text-gray-500 text-sm mt-1">Central Management System</p>
+        </div>
+
+        <!-- Login Card -->
+        <div class="login-card rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
+            <!-- decorative wood accent stripe -->
+            <div class="h-2 bg-secondary"></div>
+            
+            <div class="p-8">
+                <h2 class="text-2xl font-bold text-primary mb-1">Welcome back</h2>
+                <p class="text-gray-500 text-sm mb-6">Sign in to access the dashboard</p>
+
+                <!-- Login Form (no backend, demo credentials) -->
+                <form id="loginForm" class="space-y-5">
+                    <!-- Email / Username -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">
+                            <i class="fas fa-envelope mr-1 text-secondary"></i>Email or Employee ID
+                        </label>
+                        <input type="text" 
+                               id="username" 
+                               name="username"
+                               value="john.doe@premiumliving.com"
+                               class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary/40 focus:border-secondary transition"
+                               placeholder="e.g., jdoe@company.com"
+                               required>
+                    </div>
+
+                    <!-- Password -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">
+                            <i class="fas fa-lock mr-1 text-secondary"></i>Password
+                        </label>
+                        <input type="password" 
+                               id="password"
+                               name="password"
+                               value="demo123"
+                               class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary/40 focus:border-secondary transition"
+                               placeholder="••••••••"
+                               required>
+                        <!-- tiny hint: show password toggle (optional) -->
+                        <div class="flex justify-end mt-1">
+                            <button type="button" id="togglePassword" class="text-xs text-gray-400 hover:text-secondary flex items-center gap-1">
+                                <i class="far fa-eye"></i> show
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Remember me + Forgot (prototype) -->
+                    <div class="flex items-center justify-between text-sm">
+                        <label class="flex items-center gap-2 text-gray-600">
+                            <input type="checkbox" class="rounded border-gray-300 text-secondary focus:ring-secondary/30" checked>
+                            <span>Remember this device</span>
+                        </label>
+                        <a href="#" class="text-secondary hover:underline">Forgot password?</a>
+                    </div>
+
+                    <!-- Login button -->
+                    <button type="submit" 
+                            class="w-full bg-secondary hover:bg-secondary/90 text-white font-medium py-3 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center gap-2">
+                        <i class="fas fa-sign-in-alt"></i> Sign in
+                    </button>
+                </form>
+
+                <!-- Demo credentials hint -->
+                <div class="mt-6 text-center text-xs text-gray-400 border-t border-gray-200 pt-4">
+                    <p class="mb-1">Demo credentials (pre-filled)</p>
+                    <p class="flex items-center justify-center gap-4">
+                        <span><i class="far fa-user text-secondary"></i> john.doe@premiumliving.com</span>
+                        <span><i class="fas fa-key text-secondary"></i> demo123</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- additional links -->
+        <p class="text-center text-xs text-gray-400 mt-6">
+            © 2026 Premium Living Furniture. Authorised personnel only.
+        </p>
+    </div>
+
+    <!-- Simple JavaScript for login simulation and password toggle -->
+    <script>
+        (function() {
+            const form = document.getElementById('loginForm');
+            const toggleBtn = document.getElementById('togglePassword');
+            const passwordInput = document.getElementById('password');
+
+            // Toggle password visibility
+            if (toggleBtn && passwordInput) {
+                toggleBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                    passwordInput.setAttribute('type', type);
+                    // toggle icon
+                    const icon = toggleBtn.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-eye');
+                        icon.classList.toggle('fa-eye-slash');
+                    }
+                    toggleBtn.innerHTML = type === 'password' ? '<i class="far fa-eye"></i> show' : '<i class="far fa-eye-slash"></i> hide';
+                });
+            }
+
+            // Handle login redirect (demo only)
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                // very simple "validation" – any non‑empty values accepted in demo
+                const username = document.getElementById('username').value.trim();
+                const password = document.getElementById('password').value;
+
+                if (username === '' || password === '') {
+                    alert('Please enter both username and password.');
+                    return;
+                }
+
+                // In a real app you'd authenticate against a server.
+                // For prototype, just redirect to index.html (main dashboard)
+                // show a quick message then redirect
+                alert('Login successful! (Demo redirect to dashboard)');
+                window.location.href = 'index.html';  // assumes dashboard file is index.html in same folder
+            });
+
+            // optional: prefill stays, but we keep as is
+        })();
+    </script>
+
+    <!-- ensure form-input style (if not globally defined, we define locally) -->
+    <style>
+        .form-input:focus {
+            outline: none;
+            border-color: #8B5A2B;
+            box-shadow: 0 0 0 3px rgba(139, 90, 43, 0.2);
+        }
+    </style>
+</body>
+</html>
