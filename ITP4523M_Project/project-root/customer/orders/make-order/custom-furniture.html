@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Living · Custom Furniture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D3748',
+                        secondary: '#8B5A2B',
+                        accent: '#E2E8F0',
+                        success: '#38A169',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .btn-primary {
+            @apply bg-secondary text-white px-6 py-3 rounded-lg hover:bg-secondary/90 transition-all font-medium;
+        }
+        .btn-secondary {
+            @apply bg-white text-primary border border-gray-300 px-6 py-3 rounded-lg hover:bg-gray-100 transition-all;
+        }
+        .form-step {
+            @apply flex items-center gap-3;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+    <!-- Navigation (same as index.html) -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-couch text-2xl text-secondary"></i>
+                    <span class="font-bold text-xl text-primary">Premium Living</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="../view-records/customer-login.html" class="text-gray-600 hover:text-secondary"><i class="fas fa-user text-xl"></i></a>
+                    <a href="shopping-cart.html" class="text-gray-600 hover:text-secondary relative">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                        <span class="absolute -top-2 -right-2 bg-secondary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Breadcrumb -->
+        <div class="flex items-center gap-2 text-sm mb-6">
+            <a href="../../../index.html" class="text-gray-500 hover:text-secondary">Home</a>
+            <i class="fas fa-chevron-right text-xs text-gray-400"></i>
+            <a href="index.html" class="text-gray-500 hover:text-secondary">Products</a>
+            <i class="fas fa-chevron-right text-xs text-gray-400"></i>
+            <span class="text-primary font-medium">Custom Furniture</span>
+        </div>
+
+        <!-- Page Title -->
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold mb-2">Design Your Custom Furniture</h1>
+            <p class="text-gray-600 max-w-2xl mx-auto">Create a piece that's uniquely yours. Choose from our premium materials and customize every detail.</p>
+        </div>
+
+        <!-- Custom Design Form -->
+        <div class="bg-white rounded-lg shadow-lg p-6 md:p-8 max-w-4xl mx-auto">
+            <!-- Progress Steps -->
+            <div class="flex justify-between items-center mb-8">
+                <div class="form-step">
+                    <div class="w-8 h-8 bg-secondary text-white rounded-full flex items-center justify-center font-bold">1</div>
+                    <span class="font-medium hidden md:inline">Furniture Type</span>
+                </div>
+                <div class="flex-1 h-0.5 bg-secondary mx-2"></div>
+                <div class="form-step">
+                    <div class="w-8 h-8 border-2 border-gray-300 rounded-full flex items-center justify-center font-bold text-gray-400">2</div>
+                    <span class="font-medium hidden md:inline text-gray-400">Dimensions</span>
+                </div>
+                <div class="flex-1 h-0.5 bg-gray-200 mx-2"></div>
+                <div class="form-step">
+                    <div class="w-8 h-8 border-2 border-gray-300 rounded-full flex items-center justify-center font-bold text-gray-400">3</div>
+                    <span class="font-medium hidden md:inline text-gray-400">Materials</span>
+                </div>
+                <div class="flex-1 h-0.5 bg-gray-200 mx-2"></div>
+                <div class="form-step">
+                    <div class="w-8 h-8 border-2 border-gray-300 rounded-full flex items-center justify-center font-bold text-gray-400">4</div>
+                    <span class="font-medium hidden md:inline text-gray-400">Review</span>
+                </div>
+            </div>
+
+            <!-- Step 1: Furniture Type -->
+            <div class="space-y-6">
+                <h2 class="text-xl font-bold">Step 1: Choose Furniture Type</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- Sofa Option -->
+                    <div class="border-2 border-secondary bg-secondary/5 rounded-lg p-4 cursor-pointer">
+                        <div class="flex items-center gap-3 mb-2">
+                            <input type="radio" name="furniture-type" class="text-secondary" checked>
+                            <i class="fas fa-couch text-2xl text-secondary"></i>
+                        </div>
+                        <h3 class="font-bold">Sofa / Sectional</h3>
+                        <p class="text-sm text-gray-500">Custom sofas, sectionals, and loveseats</p>
+                    </div>
+
+                    <!-- Table Option -->
+                    <div class="border border-gray-200 rounded-lg p-4 cursor-pointer hover:border-secondary">
+                        <div class="flex items-center gap-3 mb-2">
+                            <input type="radio" name="furniture-type" class="text-secondary">
+                            <i class="fas fa-table text-2xl text-gray-600"></i>
+                        </div>
+                        <h3 class="font-bold">Table</h3>
+                        <p class="text-sm text-gray-500">Dining tables, coffee tables, desks</p>
+                    </div>
+
+                    <!-- Chair Option -->
+                    <div class="border border-gray-200 rounded-lg p-4 cursor-pointer hover:border-secondary">
+                        <div class="flex items-center gap-3 mb-2">
+                            <input type="radio" name="furniture-type" class="text-secondary">
+                            <i class="fas fa-chair text-2xl text-gray-600"></i>
+                        </div>
+                        <h3 class="font-bold">Chair</h3>
+                        <p class="text-sm text-gray-500">Dining chairs, armchairs, office chairs</p>
+                    </div>
+                </div>
+
+                <!-- Sofa Specific Options -->
+                <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+                    <h3 class="font-medium mb-3">Sofa Configuration</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Style</label>
+                            <select class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                                <option>Modern</option>
+                                <option>Traditional</option>
+                                <option>Mid-Century</option>
+                                <option>Contemporary</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Seating Capacity</label>
+                            <select class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                                <option>2-Seater (Loveseat)</option>
+                                <option selected>3-Seater</option>
+                                <option>4-Seater</option>
+                                <option>Sectional (L-Shaped)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Next Button -->
+                <div class="flex justify-end pt-4">
+                    <button class="btn-primary px-8">
+                        Next: Dimensions <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Material Selection Preview (for demo) -->
+            <div class="border-t border-gray-200 mt-8 pt-8">
+                <h3 class="font-bold text-lg mb-4">Premium Material Options</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- Wood -->
+                    <div class="border rounded-lg p-4">
+                        <img src="https://images.unsplash.com/photo-1611486212557-88be5ff6f941?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                             alt="Wood" class="w-full h-32 object-cover rounded-lg mb-3">
+                        <h4 class="font-medium">Solid Wood</h4>
+                        <p class="text-sm text-gray-500">Oak, Walnut, Maple, Cherry</p>
+                        <p class="text-secondary font-bold mt-2">Starting at $299</p>
+                    </div>
+                    <!-- Fabric -->
+                    <div class="border rounded-lg p-4">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                             alt="Fabric" class="w-full h-32 object-cover rounded-lg mb-3">
+                        <h4 class="font-medium">Premium Fabric</h4>
+                        <p class="text-sm text-gray-500">Velvet, Linen, Chenille, Performance</p>
+                        <p class="text-secondary font-bold mt-2">Starting at $199</p>
+                    </div>
+                    <!-- Leather -->
+                    <div class="border rounded-lg p-4">
+                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                             alt="Leather" class="w-full h-32 object-cover rounded-lg mb-3">
+                        <h4 class="font-medium">Genuine Leather</h4>
+                        <p class="text-sm text-gray-500">Full-grain, Top-grain, Bonded</p>
+                        <p class="text-secondary font-bold mt-2">Starting at $499</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Request Quote Section -->
+            <div class="bg-secondary/5 rounded-lg p-6 mt-8">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div>
+                        <h3 class="font-bold text-lg mb-1">Need help with your design?</h3>
+                        <p class="text-gray-600">Our design consultants are here to assist you.</p>
+                    </div>
+                    <button class="btn-secondary whitespace-nowrap">
+                        <i class="fas fa-phone-alt mr-2"></i>Request Consultation
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom Gallery -->
+        <div class="mt-12">
+            <h2 class="text-2xl font-bold mb-6">Custom Creations</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1617103996702-96ff29b1c467?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                         alt="Custom" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <p class="text-sm text-gray-500">Custom Walnut Bookshelf</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1551298370-9d3d53740c70?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                         alt="Custom" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <p class="text-sm text-gray-500">Custom Oak Dining Table</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                         alt="Custom" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <p class="text-sm text-gray-500">Custom Velvet Armchair</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (same as index.html) -->
+    <footer class="bg-primary text-white mt-12">
+        <div class="container mx-auto px-4 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+                        <i class="fas fa-couch text-secondary"></i> Premium Living
+                    </h3>
+                    <p class="text-gray-300 text-sm">Quality furniture for your perfect home since 2010.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-secondary">About Us</a></li>
+                        <li><a href="#" class="hover:text-secondary">Contact</a></li>
+                        <li><a href="#" class="hover:text-secondary">FAQs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Customer Service</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-secondary">Shipping Policy</a></li>
+                        <li><a href="#" class="hover:text-secondary">Returns & Exchanges</a></li>
+                        <li><a href="#" class="hover:text-secondary">Warranty Information</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Connect With Us</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-gray-300 hover:text-secondary"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-secondary"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-secondary"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-4 text-center text-sm text-gray-400">
+                © 2026 Premium Living Furniture. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

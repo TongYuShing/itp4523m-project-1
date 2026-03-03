@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Living · Furniture Collection</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D3748',
+                        secondary: '#8B5A2B',
+                        accent: '#E2E8F0',
+                        success: '#38A169',
+                        warning: '#ECC94B',
+                        danger: '#E53E3E',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .product-card {
+            @apply bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300;
+        }
+        .filter-sidebar {
+            @apply bg-white rounded-lg shadow-lg p-4 sticky top-24;
+        }
+        .btn-primary {
+            @apply bg-secondary text-white px-4 py-2 rounded-lg hover:bg-secondary/90 transition-all;
+        }
+        .btn-outline {
+            @apply border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100 transition-all;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+    <!-- Top Navigation Bar (same as shopping-cart.html) -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-couch text-2xl text-secondary"></i>
+                    <span class="font-bold text-xl text-primary">Premium Living</span>
+                </div>
+                <div class="hidden md:flex flex-1 max-w-md mx-8">
+                    <div class="relative w-full">
+                        <input type="text" placeholder="Search furniture..." class="w-full px-4 py-2 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary/50">
+                        <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="../view-records/customer-login.html" class="text-gray-600 hover:text-secondary"><i class="fas fa-user text-xl"></i></a>
+                    <a href="shopping-cart.html" class="text-gray-600 hover:text-secondary relative">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                        <span class="absolute -top-2 -right-2 bg-secondary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Breadcrumb -->
+        <div class="flex items-center gap-2 text-sm mb-6">
+            <a href="../../../index.html" class="text-gray-500 hover:text-secondary">Home</a>
+            <i class="fas fa-chevron-right text-xs text-gray-400"></i>
+            <span class="text-primary font-medium">Furniture Collection</span>
+        </div>
+
+        <!-- Page Title -->
+        <h1 class="text-3xl font-bold mb-8">Furniture Collection</h1>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <!-- Filters Sidebar -->
+            <div class="lg:col-span-1">
+                <div class="filter-sidebar">
+                    <h3 class="font-bold text-lg mb-4">Filters</h3>
+                    
+                    <!-- Categories -->
+                    <div class="mb-6">
+                        <h4 class="font-medium mb-2">Categories</h4>
+                        <div class="space-y-2">
+                            <label class="flex items-center gap-2">
+                                <input type="checkbox" class="rounded text-secondary"> <span>Living Room</span>
+                            </label>
+                            <label class="flex items-center gap-2">
+                                <input type="checkbox" class="rounded text-secondary"> <span>Bedroom</span>
+                            </label>
+                            <label class="flex items-center gap-2">
+                                <input type="checkbox" class="rounded text-secondary"> <span>Dining Room</span>
+                            </label>
+                            <label class="flex items-center gap-2">
+                                <input type="checkbox" class="rounded text-secondary"> <span>Office</span>
+                            </label>
+                            <label class="flex items-center gap-2">
+                                <input type="checkbox" class="rounded text-secondary"> <span>Outdoor</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Price Range -->
+                    <div class="mb-6">
+                        <h4 class="font-medium mb-2">Price Range</h4>
+                        <div class="flex gap-2">
+                            <input type="number" placeholder="Min" class="w-1/2 px-3 py-2 border border-gray-300 rounded-lg">
+                            <input type="number" placeholder="Max" class="w-1/2 px-3 py-2 border border-gray-300 rounded-lg">
+                        </div>
+                        <button class="w-full mt-2 btn-outline text-sm">Apply</button>
+                    </div>
+
+                    <!-- Materials -->
+                    <div class="mb-6">
+                        <h4 class="font-medium mb-2">Material</h4>
+                        <div class="space-y-2">
+                            <label class="flex items-center gap-2"><input type="checkbox"> Wood</label>
+                            <label class="flex items-center gap-2"><input type="checkbox"> Metal</label>
+                            <label class="flex items-center gap-2"><input type="checkbox"> Fabric</label>
+                            <label class="flex items-center gap-2"><input type="checkbox"> Leather</label>
+                            <label class="flex items-center gap-2"><input type="checkbox"> Glass</label>
+                        </div>
+                    </div>
+
+                    <!-- Colors -->
+                    <div class="mb-6">
+                        <h4 class="font-medium mb-2">Color</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <div class="w-8 h-8 rounded-full bg-gray-800 border-2 border-transparent hover:border-secondary cursor-pointer"></div>
+                            <div class="w-8 h-8 rounded-full bg-amber-800 border-2 border-transparent hover:border-secondary cursor-pointer"></div>
+                            <div class="w-8 h-8 rounded-full bg-white border-2 border-gray-300 hover:border-secondary cursor-pointer"></div>
+                            <div class="w-8 h-8 rounded-full bg-blue-800 border-2 border-transparent hover:border-secondary cursor-pointer"></div>
+                            <div class="w-8 h-8 rounded-full bg-green-800 border-2 border-transparent hover:border-secondary cursor-pointer"></div>
+                        </div>
+                    </div>
+
+                    <button class="w-full btn-outline text-sm">Clear All Filters</button>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="lg:col-span-3">
+                <!-- Sort Bar -->
+                <div class="flex justify-between items-center mb-6">
+                    <p class="text-gray-600">Showing 1-12 of 48 products</p>
+                    <select class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-secondary/50">
+                        <option>Sort by: Featured</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                        <option>Newest First</option>
+                        <option>Best Selling</option>
+                    </select>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Product 1 - Harmony Sofa -->
+                    <div class="product-card group">
+                        <div class="relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                                 alt="Harmony Sofa" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                            <span class="absolute top-2 right-2 bg-danger text-white text-xs px-2 py-1 rounded">-31%</span>
+                            <button class="absolute top-2 left-2 w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-400 hover:text-danger">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-lg mb-1">Harmony 3-Seater Sofa</h3>
+                            <div class="flex items-center gap-2 mb-2">
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="text-sm text-gray-500">(128)</span>
+                            </div>
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="text-xl font-bold text-secondary">$899</span>
+                                <span class="text-sm text-gray-400 line-through">$1,299</span>
+                            </div>
+                            <a href="product-details.html" class="block w-full text-center btn-primary">View Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 - Coffee Table -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Coffee Table" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-bold text-lg mb-1">Modern Coffee Table</h3>
+                            <div class="flex items-center gap-2 mb-2">
+                                <div class="flex text-yellow-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <span class="text-sm text-gray-500">(86)</span>
+                            </div>
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="text-xl font-bold text-secondary">$249</span>
+                            </div>
+                            <a href="product-details.html" class="block w-full text-center btn-primary">View Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 - Floor Lamp -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f7f92d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Floor Lamp" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-bold text-lg mb-1">Arc Floor Lamp</h3>
+                            <div class="flex items-center gap-2 mb-2">
+                                <div class="flex text-yellow-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                                <span class="text-sm text-gray-500">(42)</span>
+                            </div>
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="text-xl font-bold text-secondary">$129</span>
+                            </div>
+                            <a href="product-details.html" class="block w-full text-center btn-primary">View Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 - Armchair -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Armchair" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-bold text-lg mb-1">Comfort Armchair</h3>
+                            <div class="flex items-center gap-2 mb-2">
+                                <div class="flex text-yellow-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <span class="text-sm text-gray-500">(64)</span>
+                            </div>
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="text-xl font-bold text-secondary">$399</span>
+                            </div>
+                            <a href="product-details.html" class="block w-full text-center btn-primary">View Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 - Bookshelf -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1617103996702-96ff29b1c467?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Bookshelf" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-bold text-lg mb-1">Modern Bookshelf</h3>
+                            <div class="flex items-center gap-2 mb-2">
+                                <div class="flex text-yellow-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <span class="text-sm text-gray-500">(37)</span>
+                            </div>
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="text-xl font-bold text-secondary">$349</span>
+                            </div>
+                            <a href="product-details.html" class="block w-full text-center btn-primary">View Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 - Dining Table -->
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1611486212557-88be5ff6f941?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Dining Table" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-bold text-lg mb-1">Dining Table Set</h3>
+                            <div class="flex items-center gap-2 mb-2">
+                                <div class="flex text-yellow-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                                <span class="text-sm text-gray-500">(53)</span>
+                            </div>
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="text-xl font-bold text-secondary">$599</span>
+                            </div>
+                            <a href="product-details.html" class="block w-full text-center btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="flex justify-center gap-2 mt-8">
+                    <button class="w-10 h-10 border border-gray-300 rounded-lg hover:bg-secondary hover:text-white transition-all">1</button>
+                    <button class="w-10 h-10 border border-gray-300 rounded-lg hover:bg-secondary hover:text-white transition-all">2</button>
+                    <button class="w-10 h-10 border border-gray-300 rounded-lg hover:bg-secondary hover:text-white transition-all">3</button>
+                    <button class="w-10 h-10 border border-gray-300 rounded-lg hover:bg-secondary hover:text-white transition-all">4</button>
+                    <span class="w-10 h-10 flex items-center justify-center">...</span>
+                    <button class="w-10 h-10 border border-gray-300 rounded-lg hover:bg-secondary hover:text-white transition-all">8</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (same as shopping-cart.html) -->
+    <footer class="bg-primary text-white mt-12">
+        <div class="container mx-auto px-4 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+                        <i class="fas fa-couch text-secondary"></i> Premium Living
+                    </h3>
+                    <p class="text-gray-300 text-sm">Quality furniture for your perfect home since 2010.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-secondary">About Us</a></li>
+                        <li><a href="#" class="hover:text-secondary">Contact</a></li>
+                        <li><a href="#" class="hover:text-secondary">FAQs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Customer Service</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-secondary">Shipping Policy</a></li>
+                        <li><a href="#" class="hover:text-secondary">Returns & Exchanges</a></li>
+                        <li><a href="#" class="hover:text-secondary">Warranty Information</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Connect With Us</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-gray-300 hover:text-secondary"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-secondary"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-secondary"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-4 text-center text-sm text-gray-400">
+                © 2026 Premium Living Furniture. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

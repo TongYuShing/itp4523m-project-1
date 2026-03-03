@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Living · Order Summary</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D3748',
+                        secondary: '#8B5A2B',
+                        success: '#38A169',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .btn-primary {
+            @apply bg-secondary text-white px-6 py-3 rounded-lg hover:bg-secondary/90 transition-all;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+    <!-- Simplified Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-couch text-2xl text-secondary"></i>
+                    <span class="font-bold text-xl">Premium Living</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <i class="fas fa-lock text-secondary"></i>
+                    <span class="text-sm">Secure Checkout</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Checkout Progress -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="flex justify-center items-center gap-4 mb-8">
+            <div class="checkout-step">
+                <div class="step-number completed">1</div>
+                <span class="font-medium">Cart</span>
+            </div>
+            <div class="w-16 h-0.5 bg-success"></div>
+            <div class="checkout-step">
+                <div class="step-number completed">2</div>
+                <span class="font-medium">Checkout</span>
+            </div>
+            <div class="w-16 h-0.5 bg-success"></div>
+            <div class="checkout-step">
+                <div class="step-number completed">3</div>
+                <span class="font-medium">Payment</span>
+            </div>
+            <div class="w-16 h-0.5 bg-success"></div>
+            <div class="checkout-step">
+                <div class="step-number active">4</div>
+                <span class="font-medium">Confirmation</span>
+            </div>
+        </div>
+
+        <!-- Order Summary Content -->
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+                <!-- Success Icon -->
+                <div class="w-20 h-20 bg-success/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-check-circle text-4xl text-success"></i>
+                </div>
+
+                <h1 class="text-3xl font-bold mb-2">Thank You for Your Order!</h1>
+                <p class="text-gray-600 mb-6">Order #ORD-2026-001234 has been confirmed</p>
+
+                <!-- Order Details Card -->
+                <div class="bg-gray-50 rounded-lg p-6 mb-6 text-left">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="font-bold text-lg">Order Details</h2>
+                        <span class="text-sm text-gray-500">Placed on March 15, 2026</span>
+                    </div>
+
+                    <!-- Items -->
+                    <div class="space-y-3 mb-4">
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center gap-3">
+                                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&q=80" class="w-12 h-12 object-cover rounded">
+                                <div>
+                                    <span class="font-medium">Harmony 3-Seater Sofa</span>
+                                    <p class="text-sm text-gray-500">Color: Charcoal Grey • Fabric</p>
+                                </div>
+                            </div>
+                            <span class="font-medium">1 × $899</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center gap-3">
+                                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&q=80" class="w-12 h-12 object-cover rounded">
+                                <div>
+                                    <span class="font-medium">Modern Coffee Table</span>
+                                    <p class="text-sm text-gray-500">Finish: Oak</p>
+                                </div>
+                            </div>
+                            <span class="font-medium">1 × $249</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center gap-3">
+                                <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f7f92d?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&q=80" class="w-12 h-12 object-cover rounded">
+                                <div>
+                                    <span class="font-medium">Arc Floor Lamp</span>
+                                    <p class="text-sm text-gray-500">Color: Matte Black</p>
+                                </div>
+                            </div>
+                            <span class="font-medium">2 × $129</span>
+                        </div>
+                    </div>
+
+                    <!-- Totals -->
+                    <div class="border-t border-gray-200 pt-4">
+                        <div class="flex justify-between py-1">
+                            <span>Subtotal</span>
+                            <span>$1,406</span>
+                        </div>
+                        <div class="flex justify-between py-1">
+                            <span>Shipping</span>
+                            <span class="text-success">Free</span>
+                        </div>
+                        <div class="flex justify-between py-1">
+                            <span>Tax</span>
+                            <span>$140.60</span>
+                        </div>
+                        <div class="flex justify-between py-1 text-success">
+                            <span>Discount</span>
+                            <span>-$140.60</span>
+                        </div>
+                        <div class="flex justify-between py-2 text-xl font-bold border-t border-gray-200 mt-2 pt-2">
+                            <span>Total Paid</span>
+                            <span class="text-secondary">$1,406.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shipping Information -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 text-left">
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <h3 class="font-bold mb-2 flex items-center gap-2">
+                            <i class="fas fa-truck text-secondary"></i> Shipping Address
+                        </h3>
+                        <p class="text-sm text-gray-600">
+                            John Doe<br>
+                            123 Main Street<br>
+                            New York, NY 10001<br>
+                            United States
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <h3 class="font-bold mb-2 flex items-center gap-2">
+                            <i class="fas fa-credit-card text-secondary"></i> Payment Method
+                        </h3>
+                        <p class="text-sm text-gray-600">
+                            Visa ending in 4242<br>
+                            Expires: 12/26<br>
+                            John Doe
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Delivery Estimate -->
+                <div class="bg-secondary/5 rounded-lg p-4 mb-6">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-clock text-secondary text-xl"></i>
+                        <div class="text-left">
+                            <p class="font-medium">Estimated Delivery</p>
+                            <p class="text-sm text-gray-600">March 20-22, 2026 • Standard Shipping</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="../view-records/order-tracking.html" class="btn-primary flex items-center justify-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i> Track Order
+                    </a>
+                    <a href="../../../index.html" class="btn-outline px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-100">
+                        Continue Shopping
+                    </a>
+                </div>
+
+                <!-- Download Links -->
+                <div class="mt-6 flex justify-center gap-4 text-sm">
+                    <a href="#" class="text-secondary hover:underline flex items-center gap-1">
+                        <i class="fas fa-file-pdf"></i> Download Invoice
+                    </a>
+                    <a href="#" class="text-secondary hover:underline flex items-center gap-1">
+                        <i class="fas fa-print"></i> Print Summary
+                    </a>
+                </div>
+            </div>
+
+            <!-- Email Confirmation Note -->
+            <p class="text-center text-sm text-gray-500 mt-6">
+                A confirmation email has been sent to john.doe@email.com
+            </p>
+        </div>
+    </div>
+
+    <style>
+        .step-number {
+            @apply w-8 h-8 rounded-full border-2 flex items-center justify-center font-bold;
+        }
+        .step-number.completed {
+            @apply bg-success text-white border-success;
+        }
+        .step-number.active {
+            @apply bg-secondary text-white border-secondary;
+        }
+        .btn-outline {
+            @apply border border-gray-300 px-6 py-3 rounded-lg hover:bg-gray-100 transition-all;
+        }
+    </style>
+</body>
+</html>
