@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Living · My Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D3748',
+                        secondary: '#8B5A2B',
+                        success: '#38A169',
+                        warning: '#ECC94B',
+                        danger: '#E53E3E',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .dashboard-card {
+            @apply bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all;
+        }
+        .stat-card {
+            @apply bg-white rounded-lg shadow p-4 border-l-4;
+        }
+        .menu-item {
+            @apply flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 transition-all;
+        }
+        .menu-item.active {
+            @apply bg-secondary/10 text-secondary font-medium;
+        }
+        .btn-primary {
+            @apply bg-secondary text-white px-4 py-2 rounded-lg hover:bg-secondary/90 transition-all;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+    <!-- Top Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-couch text-2xl text-secondary"></i>
+                    <span class="font-bold text-xl text-primary">Premium Living</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="relative">
+                        <i class="fas fa-bell text-gray-600 text-xl cursor-pointer hover:text-secondary"></i>
+                        <span class="absolute -top-1 -right-1 w-4 h-4 bg-danger text-white text-xs rounded-full flex items-center justify-center">3</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold">
+                            JD
+                        </div>
+                        <span class="hidden md:inline font-medium">John Doe</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Welcome Banner -->
+        <div class="bg-gradient-to-r from-secondary to-primary text-white rounded-lg p-6 mb-8">
+            <h1 class="text-2xl font-bold mb-2">Welcome back, John! 👋</h1>
+            <p class="opacity-90">View your order history, track deliveries, and manage your account.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <!-- Sidebar Menu -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-lg shadow-lg p-4">
+                    <div class="text-center mb-4 pb-4 border-b border-gray-200">
+                        <div class="w-20 h-20 bg-secondary rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-2">
+                            JD
+                        </div>
+                        <h3 class="font-bold">John Doe</h3>
+                        <p class="text-sm text-gray-500">john.doe@email.com</p>
+                        <p class="text-xs text-success mt-1">Verified Account</p>
+                    </div>
+
+                    <nav class="space-y-1">
+                        <a href="customer-dashboard.html" class="menu-item active">
+                            <i class="fas fa-tachometer-alt w-5"></i> Dashboard
+                        </a>
+                        <a href="order-history.html" class="menu-item">
+                            <i class="fas fa-shopping-bag w-5"></i> My Orders
+                        </a>
+                        <a href="order-tracking.html" class="menu-item">
+                            <i class="fas fa-truck w-5"></i> Track Orders
+                        </a>
+                        <a href="../../profile/profile-view.html" class="menu-item">
+                            <i class="fas fa-user w-5"></i> My Profile
+                        </a>
+                        <a href="../../profile/address-book.html" class="menu-item">
+                            <i class="fas fa-address-book w-5"></i> Address Book
+                        </a>
+                        <a href="../../profile/payment-methods.html" class="menu-item">
+                            <i class="fas fa-credit-card w-5"></i> Payment Methods
+                        </a>
+                        <a href="../../profile/notification-settings.html" class="menu-item">
+                            <i class="fas fa-bell w-5"></i> Notifications
+                        </a>
+                        <a href="customer-login.html" class="menu-item text-danger hover:bg-danger/10">
+                            <i class="fas fa-sign-out-alt w-5"></i> Logout
+                        </a>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Main Dashboard Content -->
+            <div class="lg:col-span-3 space-y-6">
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="stat-card border-l-success">
+                        <p class="text-sm text-gray-500">Total Orders</p>
+                        <p class="text-2xl font-bold">24</p>
+                        <p class="text-xs text-success mt-1">↑ 3 from last month</p>
+                    </div>
+                    <div class="stat-card border-l-warning">
+                        <p class="text-sm text-gray-500">Active Orders</p>
+                        <p class="text-2xl font-bold">3</p>
+                        <p class="text-xs text-warning mt-1">2 in transit, 1 processing</p>
+                    </div>
+                    <div class="stat-card border-l-primary">
+                        <p class="text-sm text-gray-500">Total Spent</p>
+                        <p class="text-2xl font-bold">$8,249</p>
+                        <p class="text-xs text-gray-500 mt-1">Lifetime value</p>
+                    </div>
+                </div>
+
+                <!-- Recent Orders -->
+                <div class="dashboard-card">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-xl font-bold">Recent Orders</h2>
+                        <a href="order-history.html" class="text-secondary hover:underline text-sm">View All</a>
+                    </div>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead class="bg-gray-50">
+                                <tr class="text-left text-sm text-gray-500">
+                                    <th class="p-3">Order #</th>
+                                    <th class="p-3">Date</th>
+                                    <th class="p-3">Items</th>
+                                    <th class="p-3">Total</th>
+                                    <th class="p-3">Status</th>
+                                    <th class="p-3">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr>
+                                    <td class="p-3 font-medium">#ORD-001</td>
+                                    <td class="p-3">Mar 10, 2026</td>
+                                    <td class="p-3">Harmony Sofa</td>
+                                    <td class="p-3">$899</td>
+                                    <td class="p-3"><span class="bg-success/20 text-success px-2 py-1 rounded text-xs">Delivered</span></td>
+                                    <td class="p-3"><a href="order-details.html" class="text-secondary hover:underline">View</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium">#ORD-002</td>
+                                    <td class="p-3">Mar 5, 2026</td>
+                                    <td class="p-3">Coffee Table</td>
+                                    <td class="p-3">$249</td>
+                                    <td class="p-3"><span class="bg-success/20 text-success px-2 py-1 rounded text-xs">Delivered</span></td>
+                                    <td class="p-3"><a href="order-details.html" class="text-secondary hover:underline">View</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium">#ORD-003</td>
+                                    <td class="p-3">Mar 1, 2026</td>
+                                    <td class="p-3">Floor Lamp (2)</td>
+                                    <td class="p-3">$258</td>
+                                    <td class="p-3"><span class="bg-accent/50 text-primary px-2 py-1 rounded text-xs">In Transit</span></td>
+                                    <td class="p-3"><a href="order-tracking.html" class="text-secondary hover:underline">Track</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Active Deliveries -->
+                <div class="dashboard-card">
+                    <h2 class="text-xl font-bold mb-4">Active Deliveries</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 p-3 bg-gray-50 rounded-lg">
+                            <div class="w-10 h-10 bg-secondary/20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-truck text-secondary"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h3 class="font-medium">Order #ORD-003</h3>
+                                        <p class="text-sm text-gray-500">Estimated delivery: Mar 8, 2026</p>
+                                    </div>
+                                    <span class="bg-accent/50 text-primary px-2 py-1 rounded text-xs">In Transit</span>
+                                </div>
+                                <div class="mt-2 h-2 bg-gray-200 rounded-full overflow-hidden">
+                                    <div class="h-full bg-secondary" style="width: 60%"></div>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1">Out for delivery • 2 stops away</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommended Products -->
+                <div class="dashboard-card">
+                    <h2 class="text-xl font-bold mb-4">Recommended for You</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="border rounded-lg p-3">
+                            <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                                 alt="Product" class="w-full h-32 object-cover rounded mb-2">
+                            <h3 class="font-medium">Persian Rug</h3>
+                            <p class="text-secondary font-bold">$189</p>
+                            <button class="w-full btn-primary text-sm mt-2">Add to Cart</button>
+                        </div>
+                        <div class="border rounded-lg p-3">
+                            <img src="https://images.unsplash.com/photo-1617103996702-96ff29b1c467?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                                 alt="Product" class="w-full h-32 object-cover rounded mb-2">
+                            <h3 class="font-medium">Bookshelf</h3>
+                            <p class="text-secondary font-bold">$349</p>
+                            <button class="w-full btn-primary text-sm mt-2">Add to Cart</button>
+                        </div>
+                        <div class="border rounded-lg p-3">
+                            <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                                 alt="Product" class="w-full h-32 object-cover rounded mb-2">
+                            <h3 class="font-medium">Armchair</h3>
+                            <p class="text-secondary font-bold">$399</p>
+                            <button class="w-full btn-primary text-sm mt-2">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white mt-12">
+        <div class="container mx-auto px-4 py-6">
+            <p class="text-center text-sm text-gray-400">© 2026 Premium Living Furniture. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

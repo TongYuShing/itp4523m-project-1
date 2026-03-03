@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Living · Cancellation Support</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D3748',
+                        secondary: '#8B5A2B',
+                        success: '#38A169',
+                        warning: '#ECC94B',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .contact-card {
+            @apply bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all;
+        }
+        .btn-primary {
+            @apply bg-secondary text-white px-6 py-3 rounded-lg hover:bg-secondary/90 transition-all;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+    <!-- Top Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-couch text-2xl text-secondary"></i>
+                <span class="font-bold text-xl text-primary">Premium Living</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold mb-2">Cancellation Support</h1>
+            <p class="text-gray-600">Need help with a cancellation? We're here to assist you.</p>
+        </div>
+
+        <!-- Contact Options -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <!-- Phone Support -->
+            <div class="contact-card text-center">
+                <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-phone-alt text-2xl text-secondary"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Phone Support</h3>
+                <p class="text-gray-500 mb-3">Available 24/7 for urgent cancellations</p>
+                <p class="text-xl font-bold text-secondary">+1 (800) 123-4567</p>
+                <p class="text-sm text-gray-400 mt-2">Toll-free</p>
+            </div>
+
+            <!-- Live Chat -->
+            <div class="contact-card text-center">
+                <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-comment-dots text-2xl text-secondary"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Live Chat</h3>
+                <p class="text-gray-500 mb-3">Instant messaging with support team</p>
+                <button class="btn-primary w-full">Start Live Chat</button>
+                <p class="text-sm text-gray-400 mt-2">Average response: 2 minutes</p>
+            </div>
+
+            <!-- Email Support -->
+            <div class="contact-card text-center">
+                <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-envelope text-2xl text-secondary"></i>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Email Support</h3>
+                <p class="text-gray-500 mb-3">For non-urgent cancellation inquiries</p>
+                <p class="text-lg text-secondary">cancellations@premiumliving.com</p>
+                <p class="text-sm text-gray-400 mt-2">Response within 24 hours</p>
+            </div>
+        </div>
+
+        <!-- Cancellation Assistance Form -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-xl font-bold mb-4">Request Cancellation Assistance</h2>
+            
+            <form class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Full Name *</label>
+                        <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary/50" value="John Doe">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Email Address *</label>
+                        <input type="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary/50" value="john.doe@email.com">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Order Number</label>
+                        <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg" placeholder="e.g., ORD-2026-001236">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Cancellation Request # (if applicable)</label>
+                        <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg" placeholder="e.g., CNCL-2026-001234">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-1">Issue Type *</label>
+                    <select class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                        <option>Cancel my order</option>
+                        <option>Refund status inquiry</option>
+                        <option>Cancellation rejected - need help</option>
+                        <option>Partial cancellation request</option>
+                        <option>Other cancellation issue</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-1">Message *</label>
+                    <textarea rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg" 
+                              placeholder="Please describe your cancellation issue in detail..."></textarea>
+                </div>
+
+                <div class="flex gap-3 pt-4">
+                    <button type="submit" class="btn-primary px-8">Submit Request</button>
+                    <button type="reset" class="border border-gray-300 px-8 py-2 rounded-lg hover:bg-gray-100">Clear</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-xl font-bold mb-4">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="border-b border-gray-200 pb-4">
+                    <button class="flex justify-between items-center w-full text-left font-medium">
+                        <span>How long do cancellations take to process?</span>
+                        <i class="fas fa-chevron-down text-gray-400"></i>
+                    </button>
+                    <p class="text-sm text-gray-600 mt-2 hidden">Cancellation requests are typically reviewed within 24 hours. Once approved, refunds take 5-7 business days.</p>
+                </div>
+                <div class="border-b border-gray-200 pb-4">
+                    <button class="flex justify-between items-center w-full text-left font-medium">
+                        <span>Can I cancel an order that has already shipped?</span>
+                        <i class="fas fa-chevron-down text-gray-400"></i>
+                    </button>
+                    <p class="text-sm text-gray-600 mt-2 hidden">Once an order has shipped, it cannot be cancelled. You may initiate a return after delivery.</p>
+                </div>
+                <div class="border-b border-gray-200 pb-4">
+                    <button class="flex justify-between items-center w-full text-left font-medium">
+                        <span>Why was my cancellation request rejected?</span>
+                        <i class="fas fa-chevron-down text-gray-400"></i>
+                    </button>
+                    <p class="text-sm text-gray-600 mt-2 hidden">Common reasons include: order already shipped, custom items, or cancellation window expired.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple accordion for FAQ
+        document.querySelectorAll('.border-b button').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                answer.classList.toggle('hidden');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+    </script>
+</body>
+</html>

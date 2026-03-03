@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Living · Filter Orders</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D3748',
+                        secondary: '#8B5A2B',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+    <div class="container mx-auto px-4 py-8 max-w-2xl">
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-2xl font-bold">Filter Orders</h1>
+            <a href="order-history.html" class="text-gray-600 hover:text-secondary">
+                <i class="fas fa-times text-xl"></i>
+            </a>
+        </div>
+
+        <!-- Filter Form -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <form>
+                <!-- Date Range -->
+                <div class="mb-6">
+                    <label class="block font-medium mb-2">Date Range</label>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <span class="text-sm text-gray-500">From</span>
+                            <input type="date" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                        </div>
+                        <div>
+                            <span class="text-sm text-gray-500">To</span>
+                            <input type="date" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Status -->
+                <div class="mb-6">
+                    <label class="block font-medium mb-2">Order Status</label>
+                    <div class="space-y-2">
+                        <label class="flex items-center gap-2">
+                            <input type="checkbox" class="rounded text-secondary"> All
+                        </label>
+                        <label class="flex items-center gap-2">
+                            <input type="checkbox" class="rounded text-secondary"> Processing
+                        </label>
+                        <label class="flex items-center gap-2">
+                            <input type="checkbox" class="rounded text-secondary"> In Transit
+                        </label>
+                        <label class="flex items-center gap-2">
+                            <input type="checkbox" class="rounded text-secondary"> Delivered
+                        </label>
+                        <label class="flex items-center gap-2">
+                            <input type="checkbox" class="rounded text-secondary"> Cancelled
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Price Range -->
+                <div class="mb-6">
+                    <label class="block font-medium mb-2">Price Range</label>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <span class="text-sm text-gray-500">Min ($)</span>
+                            <input type="number" placeholder="0" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                        </div>
+                        <div>
+                            <span class="text-sm text-gray-500">Max ($)</span>
+                            <input type="number" placeholder="10000" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sort By -->
+                <div class="mb-6">
+                    <label class="block font-medium mb-2">Sort By</label>
+                    <select class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                        <option>Most Recent</option>
+                        <option>Oldest First</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                    </select>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex gap-3">
+                    <button type="submit" class="flex-1 btn-primary bg-secondary text-white py-2 rounded-lg hover:bg-secondary/90">
+                        Apply Filters
+                    </button>
+                    <button type="reset" class="flex-1 border border-gray-300 py-2 rounded-lg hover:bg-gray-100">
+                        Clear All
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Saved Filters -->
+        <div class="mt-6">
+            <h2 class="font-bold mb-3">Saved Filters</h2>
+            <div class="space-y-2">
+                <div class="bg-white p-3 rounded-lg shadow flex justify-between items-center">
+                    <span>Last 30 days</span>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
+                </div>
+                <div class="bg-white p-3 rounded-lg shadow flex justify-between items-center">
+                    <span>Orders over $500</span>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
+                </div>
+                <div class="bg-white p-3 rounded-lg shadow flex justify-between items-center">
+                    <span>Delivered this month</span>
+                    <i class="fas fa-chevron-right text-gray-400"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

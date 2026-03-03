@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Living · Cancellation History</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D3748',
+                        secondary: '#8B5A2B',
+                        success: '#38A169',
+                        warning: '#ECC94B',
+                        danger: '#E53E3E',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .cancel-card {
+            @apply bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all;
+        }
+        .status-badge {
+            @apply px-3 py-1 rounded-full text-xs font-medium;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+    <!-- Top Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-couch text-2xl text-secondary"></i>
+                    <span class="font-bold text-xl text-primary">Premium Living</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold">
+                        JD
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-2xl font-bold">Cancellation History</h1>
+            <a href="../view-records/order-history.html" class="text-secondary hover:underline">
+                <i class="fas fa-arrow-left mr-1"></i> Back to Orders
+            </a>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex gap-2 mb-6 overflow-x-auto pb-2">
+            <button class="px-4 py-2 bg-secondary text-white rounded-lg">All Cancellations</button>
+            <button class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-100">Pending</button>
+            <button class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-100">Approved</button>
+            <button class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-100">Refunded</button>
+            <button class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-100">Rejected</button>
+        </div>
+
+        <!-- Cancellation List -->
+        <div class="space-y-4">
+            <!-- Cancellation 1 -->
+            <div class="cancel-card">
+                <div class="flex flex-wrap justify-between items-start mb-4">
+                    <div>
+                        <span class="text-sm text-gray-500">Cancellation Request</span>
+                        <h3 class="font-bold text-lg">#CNCL-2026-001234</h3>
+                        <p class="text-sm text-gray-500">Submitted on March 15, 2026</p>
+                    </div>
+                    <div class="text-right">
+                        <span class="status-badge bg-warning/20 text-warning">Pending Review</span>
+                        <p class="text-sm text-gray-500 mt-1">Original Order: #ORD-2026-001236</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <p class="text-sm text-gray-500">Reason</p>
+                        <p class="font-medium">Changed my mind</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">Refund Amount</p>
+                        <p class="font-medium text-secondary">$507.00</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-3">
+                    <a href="refund-status.html" class="text-secondary hover:underline text-sm">Track Status</a>
+                    <span class="text-gray-300">|</span>
+                    <a href="../view-records/order-details.html" class="text-secondary hover:underline text-sm">View Original Order</a>
+                </div>
+            </div>
+
+            <!-- Cancellation 2 -->
+            <div class="cancel-card">
+                <div class="flex flex-wrap justify-between items-start mb-4">
+                    <div>
+                        <span class="text-sm text-gray-500">Cancellation Request</span>
+                        <h3 class="font-bold text-lg">#CNCL-2026-001230</h3>
+                        <p class="text-sm text-gray-500">Submitted on March 1, 2026</p>
+                    </div>
+                    <div class="text-right">
+                        <span class="status-badge bg-success/20 text-success">Refunded</span>
+                        <p class="text-sm text-gray-500 mt-1">Original Order: #ORD-2026-001230</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <p class="text-sm text-gray-500">Reason</p>
+                        <p class="font-medium">Ordered by mistake</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">Refund Amount</p>
+                        <p class="font-medium text-secondary">$899.00</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-3">
+                    <span class="text-success text-sm flex items-center gap-1">
+                        <i class="fas fa-check-circle"></i> Refunded on March 8, 2026
+                    </span>
+                </div>
+            </div>
+
+            <!-- Cancellation 3 -->
+            <div class="cancel-card">
+                <div class="flex flex-wrap justify-between items-start mb-4">
+                    <div>
+                        <span class="text-sm text-gray-500">Cancellation Request</span>
+                        <h3 class="font-bold text-lg">#CNCL-2026-001225</h3>
+                        <p class="text-sm text-gray-500">Submitted on February 20, 2026</p>
+                    </div>
+                    <div class="text-right">
+                        <span class="status-badge bg-danger/20 text-danger">Rejected</span>
+                        <p class="text-sm text-gray-500 mt-1">Original Order: #ORD-2026-001225</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <p class="text-sm text-gray-500">Reason</p>
+                        <p class="font-medium">Delivery too slow</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500">Rejection Reason</p>
+                        <p class="font-medium text-danger">Order already shipped</p>
+                    </div>
+                </div>
+
+                <div class="text-sm text-gray-600">
+                    <i class="fas fa-info-circle mr-1"></i> Contact support if you have questions
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex justify-center gap-2 mt-8">
+            <button class="w-10 h-10 border border-gray-300 rounded-lg hover:bg-secondary hover:text-white">1</button>
+            <button class="w-10 h-10 border border-gray-300 rounded-lg hover:bg-secondary hover:text-white">2</button>
+            <button class="w-10 h-10 border border-gray-300 rounded-lg hover:bg-secondary hover:text-white">3</button>
+        </div>
+    </div>
+</body>
+</html>

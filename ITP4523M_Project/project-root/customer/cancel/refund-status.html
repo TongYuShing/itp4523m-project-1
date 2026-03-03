@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Living · Refund Status</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D3748',
+                        secondary: '#8B5A2B',
+                        success: '#38A169',
+                        warning: '#ECC94B',
+                        danger: '#E53E3E',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .status-step {
+            @apply flex items-start gap-3;
+        }
+        .step-dot {
+            @apply w-4 h-4 rounded-full border-2 mt-1;
+        }
+        .step-dot.completed {
+            @apply bg-success border-success;
+        }
+        .step-dot.current {
+            @apply bg-warning border-warning;
+        }
+        .step-dot.pending {
+            @apply bg-gray-300 border-gray-300;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+    <!-- Top Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-couch text-2xl text-secondary"></i>
+                <span class="font-bold text-xl text-primary">Premium Living</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8 max-w-3xl">
+        <!-- Back Button -->
+        <a href="cancel-history.html" class="inline-flex items-center gap-2 text-gray-600 hover:text-secondary mb-6">
+            <i class="fas fa-arrow-left"></i> Back to Cancellation History
+        </a>
+
+        <!-- Refund Status Card -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <!-- Header -->
+            <div class="bg-secondary/10 p-6 border-b border-secondary/20">
+                <h1 class="text-2xl font-bold mb-1">Refund Status</h1>
+                <p class="text-gray-600">Cancellation Request #CNCL-2026-001234</p>
+            </div>
+
+            <div class="p-6">
+                <!-- Refund Summary -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                    <div class="bg-gray-50 p-4 rounded-lg text-center">
+                        <p class="text-sm text-gray-500">Refund Amount</p>
+                        <p class="text-2xl font-bold text-secondary">$507.00</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg text-center">
+                        <p class="text-sm text-gray-500">Payment Method</p>
+                        <p class="font-medium">Visa •••• 4242</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg text-center">
+                        <p class="text-sm text-gray-500">Est. Completion</p>
+                        <p class="font-medium">March 22, 2026</p>
+                    </div>
+                </div>
+
+                <!-- Progress Timeline -->
+                <div class="mb-8">
+                    <h2 class="font-bold text-lg mb-4">Refund Progress</h2>
+                    <div class="relative">
+                        <!-- Progress Bar -->
+                        <div class="absolute left-2 top-2 bottom-2 w-0.5 bg-gray-200"></div>
+                        
+                        <div class="space-y-6">
+                            <div class="status-step">
+                                <div class="step-dot completed"></div>
+                                <div>
+                                    <p class="font-medium">Cancellation Request Submitted</p>
+                                    <p class="text-sm text-gray-500">March 15, 2026 • 10:23 AM</p>
+                                    <p class="text-sm">Your cancellation request has been received</p>
+                                </div>
+                            </div>
+
+                            <div class="status-step">
+                                <div class="step-dot completed"></div>
+                                <div>
+                                    <p class="font-medium">Cancellation Approved</p>
+                                    <p class="text-sm text-gray-500">March 16, 2026 • 2:30 PM</p>
+                                    <p class="text-sm">Your cancellation has been approved by our team</p>
+                                </div>
+                            </div>
+
+                            <div class="status-step">
+                                <div class="step-dot current"></div>
+                                <div>
+                                    <p class="font-medium">Refund Initiated</p>
+                                    <p class="text-sm text-gray-500">March 16, 2026 • 3:45 PM</p>
+                                    <p class="text-sm">Refund has been sent to your bank for processing</p>
+                                </div>
+                            </div>
+
+                            <div class="status-step">
+                                <div class="step-dot pending"></div>
+                                <div>
+                                    <p class="font-medium text-gray-400">Refund Completed</p>
+                                    <p class="text-sm text-gray-400">Estimated: March 22, 2026</p>
+                                    <p class="text-sm text-gray-400">Amount will appear in your account</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Details -->
+                <div class="border-t border-gray-200 pt-6">
+                    <h2 class="font-bold text-lg mb-3">Order Details</h2>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="font-medium">Order #ORD-2026-001236</span>
+                            <span class="text-sm text-gray-500">Placed: March 10, 2026</span>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-600">Arc Floor Lamp (2)</span>
+                                <span>$258.00</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-600">Modern Coffee Table (1)</span>
+                                <span>$249.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Help Section -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-info-circle text-blue-500 mt-1"></i>
+                        <div>
+                            <p class="font-medium text-blue-700">Refund Timeline Information</p>
+                            <p class="text-sm text-blue-600">Refunds typically take 5-7 business days to appear in your account. This timeline varies by bank and payment method.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

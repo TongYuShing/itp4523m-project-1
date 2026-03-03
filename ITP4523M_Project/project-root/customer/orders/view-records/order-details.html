@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Living · Order Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D3748',
+                        secondary: '#8B5A2B',
+                        success: '#38A169',
+                        warning: '#ECC94B',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .detail-card {
+            @apply bg-white rounded-lg shadow-lg p-6;
+        }
+        .status-badge {
+            @apply px-3 py-1 rounded-full text-sm font-medium;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+    <!-- Simple Header -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-couch text-2xl text-secondary"></i>
+                <span class="font-bold text-xl text-primary">Premium Living</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Back Button -->
+        <a href="order-history.html" class="inline-flex items-center gap-2 text-gray-600 hover:text-secondary mb-6">
+            <i class="fas fa-arrow-left"></i> Back to Orders
+        </a>
+
+        <!-- Order Header -->
+        <div class="detail-card mb-6">
+            <div class="flex flex-wrap justify-between items-start">
+                <div>
+                    <h1 class="text-2xl font-bold mb-1">Order #ORD-2026-001234</h1>
+                    <p class="text-gray-500">Placed on March 10, 2026 at 2:34 PM</p>
+                </div>
+                <div class="text-right">
+                    <span class="status-badge bg-success/20 text-success">Delivered</span>
+                    <p class="text-sm text-gray-500 mt-1">Delivered on Mar 15, 2026</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Left Column - Order Items -->
+            <div class="md:col-span-2 space-y-6">
+                <!-- Items -->
+                <div class="detail-card">
+                    <h2 class="text-xl font-bold mb-4">Order Items</h2>
+                    <div class="space-y-4">
+                        <div class="flex gap-4 pb-4 border-b border-gray-200">
+                            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                 class="w-20 h-20 object-cover rounded">
+                            <div class="flex-1">
+                                <div class="flex justify-between">
+                                    <h3 class="font-bold">Harmony 3-Seater Sofa</h3>
+                                    <span class="font-bold">$899</span>
+                                </div>
+                                <p class="text-sm text-gray-500">Color: Charcoal Grey • Material: Fabric</p>
+                                <p class="text-sm text-gray-500">Quantity: 1</p>
+                                <p class="text-sm text-success mt-1">Delivered on Mar 15, 2026</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                                 class="w-20 h-20 object-cover rounded">
+                            <div class="flex-1">
+                                <div class="flex justify-between">
+                                    <h3 class="font-bold">Modern Coffee Table</h3>
+                                    <span class="font-bold">$249</span>
+                                </div>
+                                <p class="text-sm text-gray-500">Finish: Oak</p>
+                                <p class="text-sm text-gray-500">Quantity: 1</p>
+                                <p class="text-sm text-success mt-1">Delivered on Mar 15, 2026</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Timeline -->
+                <div class="detail-card">
+                    <h2 class="text-xl font-bold mb-4">Order Timeline</h2>
+                    <div class="space-y-4">
+                        <div class="flex gap-3">
+                            <div class="w-6 h-6 bg-success rounded-full flex items-center justify-center text-white text-xs mt-1">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium">Delivered</p>
+                                <p class="text-sm text-gray-500">March 15, 2026 • 10:23 AM</p>
+                                <p class="text-sm">Package delivered to recipient</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="w-6 h-6 bg-success rounded-full flex items-center justify-center text-white text-xs mt-1">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium">Out for Delivery</p>
+                                <p class="text-sm text-gray-500">March 15, 2026 • 8:15 AM</p>
+                                <p class="text-sm">Package out for delivery</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="w-6 h-6 bg-success rounded-full flex items-center justify-center text-white text-xs mt-1">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium">In Transit</p>
+                                <p class="text-sm text-gray-500">March 12, 2026 • 3:45 PM</p>
+                                <p class="text-sm">Package arrived at distribution center</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="w-6 h-6 bg-success rounded-full flex items-center justify-center text-white text-xs mt-1">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium">Order Shipped</p>
+                                <p class="text-sm text-gray-500">March 11, 2026 • 9:30 AM</p>
+                                <p class="text-sm">Package has been shipped</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="w-6 h-6 bg-success rounded-full flex items-center justify-center text-white text-xs mt-1">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium">Order Confirmed</p>
+                                <p class="text-sm text-gray-500">March 10, 2026 • 2:34 PM</p>
+                                <p class="text-sm">Your order has been confirmed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Order Summary -->
+            <div class="space-y-6">
+                <!-- Payment Summary -->
+                <div class="detail-card">
+                    <h2 class="text-xl font-bold mb-4">Payment Summary</h2>
+                    <div class="space-y-2">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Subtotal</span>
+                            <span>$1,148</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Shipping</span>
+                            <span class="text-success">Free</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Tax (10%)</span>
+                            <span>$114.80</span>
+                        </div>
+                        <div class="flex justify-between font-bold text-lg border-t border-gray-200 pt-2 mt-2">
+                            <span>Total</span>
+                            <span class="text-secondary">$1,262.80</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shipping Address -->
+                <div class="detail-card">
+                    <h2 class="text-xl font-bold mb-4">Shipping Address</h2>
+                    <p class="font-medium">John Doe</p>
+                    <p class="text-gray-600">123 Main Street<br>Apt 4B<br>New York, NY 10001<br>United States</p>
+                    <p class="text-gray-600 mt-2">Phone: +1 (234) 567-8900</p>
+                </div>
+
+                <!-- Payment Method -->
+                <div class="detail-card">
+                    <h2 class="text-xl font-bold mb-4">Payment Method</h2>
+                    <div class="flex items-center gap-3">
+                        <i class="fab fa-cc-visa text-2xl text-blue-800"></i>
+                        <div>
+                            <p class="font-medium">Visa ending in 4242</p>
+                            <p class="text-sm text-gray-500">Expires 12/26</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="detail-card">
+                    <h2 class="text-xl font-bold mb-4">Actions</h2>
+                    <div class="space-y-2">
+                        <button class="w-full btn-secondary border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100 flex items-center justify-center gap-2">
+                            <i class="fas fa-print"></i> Print Invoice
+                        </button>
+                        <button class="w-full btn-secondary border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100 flex items-center justify-center gap-2">
+                            <i class="fas fa-download"></i> Download Receipt
+                        </button>
+                        <button class="w-full btn-secondary border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100 flex items-center justify-center gap-2">
+                            <i class="fas fa-headset"></i> Get Support
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

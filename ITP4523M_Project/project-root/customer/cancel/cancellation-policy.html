@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Living · Cancellation Policy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D3748',
+                        secondary: '#8B5A2B',
+                        success: '#38A169',
+                        warning: '#ECC94B',
+                        danger: '#E53E3E',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .policy-section {
+            @apply mb-8 last:mb-0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+    <!-- Top Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-couch text-2xl text-secondary"></i>
+                <span class="font-bold text-xl text-primary">Premium Living</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Back Button -->
+        <a href="order-cancel.html" class="inline-flex items-center gap-2 text-gray-600 hover:text-secondary mb-6">
+            <i class="fas fa-arrow-left"></i> Back to Cancellation
+        </a>
+
+        <!-- Policy Card -->
+        <div class="bg-white rounded-lg shadow-lg p-8">
+            <h1 class="text-3xl font-bold mb-2">Cancellation Policy</h1>
+            <p class="text-gray-500 mb-8">Last updated: March 1, 2026</p>
+
+            <!-- Policy Sections -->
+            <div class="space-y-8">
+                <!-- 1. Cancellation Window -->
+                <div class="policy-section">
+                    <h2 class="text-xl font-bold mb-3 flex items-center gap-2">
+                        <span class="w-8 h-8 bg-secondary/20 rounded-full flex items-center justify-center text-secondary">1</span>
+                        Cancellation Window
+                    </h2>
+                    <div class="pl-10">
+                        <p class="text-gray-700 mb-2">Orders can be cancelled within <span class="font-bold text-warning">24 hours</span> of placement without any charges.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li>Cancellation requests must be submitted through your account or by contacting customer service.</li>
+                            <li>After 24 hours, orders enter processing and may not be eligible for cancellation.</li>
+                            <li>Once an order has been shipped, it cannot be cancelled.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2. Eligible Items -->
+                <div class="policy-section">
+                    <h2 class="text-xl font-bold mb-3 flex items-center gap-2">
+                        <span class="w-8 h-8 bg-secondary/20 rounded-full flex items-center justify-center text-secondary">2</span>
+                        Eligible Items
+                    </h2>
+                    <div class="pl-10">
+                        <p class="font-medium text-success mb-2">✓ Eligible for cancellation:</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-1 mb-3">
+                            <li>Standard in-stock items</li>
+                            <li>Pre-order items (before shipping date)</li>
+                            <li>Multiple quantity orders (partial cancellation allowed)</li>
+                        </ul>
+                        <p class="font-medium text-danger mb-2">✗ Not eligible for cancellation:</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li>Custom or made-to-order furniture</li>
+                            <li>Clearance or final sale items</li>
+                            <li>Orders that have already shipped</li>
+                            <li>Gift cards</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 3. Refund Process -->
+                <div class="policy-section">
+                    <h2 class="text-xl font-bold mb-3 flex items-center gap-2">
+                        <span class="w-8 h-8 bg-secondary/20 rounded-full flex items-center justify-center text-secondary">3</span>
+                        Refund Process
+                    </h2>
+                    <div class="pl-10">
+                        <p class="text-gray-700 mb-3">Once your cancellation is confirmed:</p>
+                        <div class="space-y-3">
+                            <div class="flex gap-2">
+                                <i class="fas fa-check-circle text-success mt-1"></i>
+                                <div>
+                                    <p class="font-medium">Full refund to original payment method</p>
+                                    <p class="text-sm text-gray-500">Including taxes and shipping charges (if applicable)</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-2">
+                                <i class="fas fa-clock text-warning mt-1"></i>
+                                <div>
+                                    <p class="font-medium">Processing time: 5-7 business days</p>
+                                    <p class="text-sm text-gray-500">Refund timeline varies by payment method and bank</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Partial Cancellation -->
+                <div class="policy-section">
+                    <h2 class="text-xl font-bold mb-3 flex items-center gap-2">
+                        <span class="w-8 h-8 bg-secondary/20 rounded-full flex items-center justify-center text-secondary">4</span>
+                        Partial Cancellation
+                    </h2>
+                    <div class="pl-10">
+                        <p class="text-gray-700">For orders with multiple items, you may request to cancel individual items. The remaining items will continue processing normally. Shipping charges may be adjusted based on the order total after cancellation.</p>
+                    </div>
+                </div>
+
+                <!-- 5. Discount Codes -->
+                <div class="policy-section">
+                    <h2 class="text-xl font-bold mb-3 flex items-center gap-2">
+                        <span class="w-8 h-8 bg-secondary/20 rounded-full flex items-center justify-center text-secondary">5</span>
+                        Discount Codes
+                    </h2>
+                    <div class="pl-10">
+                        <p class="text-gray-700">If you used a discount code on your order:</p>
+                        <ul class="list-disc list-inside text-gray-600 mt-2">
+                            <li>One-time use codes may not be reusable after cancellation</li>
+                            <li>Promotional discounts will be removed from the refund calculation</li>
+                            <li>Contact customer service for assistance with discount codes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 6. How to Cancel -->
+                <div class="policy-section">
+                    <h2 class="text-xl font-bold mb-3 flex items-center gap-2">
+                        <span class="w-8 h-8 bg-secondary/20 rounded-full flex items-center justify-center text-secondary">6</span>
+                        How to Cancel
+                    </h2>
+                    <div class="pl-10">
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-globe text-secondary w-6"></i>
+                                <span>Online: Go to "My Orders" and select "Cancel Order"</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-headset text-secondary w-6"></i>
+                                <span>Phone: Call +1 (800) 123-4567 (24/7 support)</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-envelope text-secondary w-6"></i>
+                                <span>Email: cancellations@premiumliving.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="mt-8 pt-6 border-t border-gray-200">
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <h3 class="font-bold text-lg mb-2">Need Help?</h3>
+                    <p class="text-gray-600 mb-4">Our customer service team is available 24/7 to assist with cancellations.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="btn-secondary border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100">
+                            <i class="fas fa-phone mr-2"></i>Call Us
+                        </a>
+                        <a href="#" class="btn-secondary border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100">
+                            <i class="fas fa-comment mr-2"></i>Live Chat
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Living · My Profile</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D3748',
+                        secondary: '#8B5A2B',
+                        success: '#38A169',
+                        danger: '#E53E3E',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .profile-sidebar {
+            @apply bg-white rounded-lg shadow-lg p-6;
+        }
+        .menu-item {
+            @apply flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 transition-all;
+        }
+        .menu-item.active {
+            @apply bg-secondary/10 text-secondary font-medium;
+        }
+        .info-card {
+            @apply bg-white rounded-lg shadow-lg p-6;
+        }
+        .info-row {
+            @apply flex py-3 border-b border-gray-100 last:border-0;
+        }
+        .btn-primary {
+            @apply bg-secondary text-white px-4 py-2 rounded-lg hover:bg-secondary/90 transition-all;
+        }
+        .btn-secondary {
+            @apply border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100 transition-all;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+    <!-- Top Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-couch text-2xl text-secondary"></i>
+                    <span class="font-bold text-xl text-primary">Premium Living</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="relative">
+                        <i class="fas fa-bell text-gray-600 text-xl cursor-pointer hover:text-secondary"></i>
+                        <span class="absolute -top-1 -right-1 w-4 h-4 bg-danger text-white text-xs rounded-full flex items-center justify-center">3</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold">
+                            JD
+                        </div>
+                        <span class="hidden md:inline font-medium">John Doe</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Breadcrumb -->
+        <div class="flex items-center gap-2 text-sm mb-6">
+            <a href="../../../index.html" class="text-gray-500 hover:text-secondary">Home</a>
+            <i class="fas fa-chevron-right text-xs text-gray-400"></i>
+            <a href="../view-records/customer-dashboard.html" class="text-gray-500 hover:text-secondary">Dashboard</a>
+            <i class="fas fa-chevron-right text-xs text-gray-400"></i>
+            <span class="text-primary font-medium">My Profile</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <!-- Sidebar Menu -->
+            <div class="lg:col-span-1">
+                <div class="profile-sidebar">
+                    <div class="text-center mb-6 pb-4 border-b border-gray-200">
+                        <div class="w-24 h-24 bg-secondary rounded-full flex items-center justify-center text-white text-3xl font-bold mx-auto mb-3">
+                            JD
+                        </div>
+                        <h3 class="font-bold text-lg">John Doe</h3>
+                        <p class="text-sm text-gray-500">Member since Jan 2025</p>
+                        <span class="inline-block bg-success/20 text-success text-xs px-2 py-1 rounded-full mt-2">Verified Account</span>
+                    </div>
+
+                    <nav class="space-y-1">
+                        <a href="profile-view.html" class="menu-item active">
+                            <i class="fas fa-user w-5"></i> Profile Information
+                        </a>
+                        <a href="profile-edit.html" class="menu-item">
+                            <i class="fas fa-edit w-5"></i> Edit Profile
+                        </a>
+                        <a href="change-password.html" class="menu-item">
+                            <i class="fas fa-lock w-5"></i> Change Password
+                        </a>
+                        <a href="address-book.html" class="menu-item">
+                            <i class="fas fa-address-book w-5"></i> Address Book
+                        </a>
+                        <a href="payment-methods.html" class="menu-item">
+                            <i class="fas fa-credit-card w-5"></i> Payment Methods
+                        </a>
+                        <a href="notification-settings.html" class="menu-item">
+                            <i class="fas fa-bell w-5"></i> Notification Settings
+                        </a>
+                        <a href="account-delete.html" class="menu-item text-danger hover:bg-danger/10">
+                            <i class="fas fa-trash-alt w-5"></i> Delete Account
+                        </a>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="lg:col-span-3">
+                <div class="info-card">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold">Profile Information</h2>
+                        <a href="profile-edit.html" class="btn-primary">
+                            <i class="fas fa-edit mr-2"></i>Edit Profile
+                        </a>
+                    </div>
+
+                    <!-- Personal Information -->
+                    <div class="mb-6">
+                        <h3 class="text-lg font-bold mb-4 pb-2 border-b border-gray-200">Personal Information</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="info-row">
+                                <span class="text-gray-500 w-32">Full Name:</span>
+                                <span class="font-medium">Johnathan David Doe</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="text-gray-500 w-32">Gender:</span>
+                                <span>Male</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="text-gray-500 w-32">Date of Birth:</span>
+                                <span>January 15, 1990</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="text-gray-500 w-32">Age:</span>
+                                <span>36 years</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="text-gray-500 w-32">Nationality:</span>
+                                <span>United States</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="mb-6">
+                        <h3 class="text-lg font-bold mb-4 pb-2 border-b border-gray-200">Contact Information</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="info-row">
+                                <span class="text-gray-500 w-32">Email Address:</span>
+                                <span class="font-medium">john.doe@email.com</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="text-gray-500 w-32">Phone Number:</span>
+                                <span>+1 (234) 567-8900</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="text-gray-500 w-32">Alternative Phone:</span>
+                                <span>+1 (234) 567-8901</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Default Address -->
+                    <div class="mb-6">
+                        <h3 class="text-lg font-bold mb-4 pb-2 border-b border-gray-200">Default Shipping Address</h3>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <p class="font-medium">John Doe</p>
+                            <p class="text-gray-600">123 Main Street, Apt 4B</p>
+                            <p class="text-gray-600">New York, NY 10001</p>
+                            <p class="text-gray-600">United States</p>
+                            <p class="text-gray-600 mt-2">Phone: +1 (234) 567-8900</p>
+                            <div class="mt-3">
+                                <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full">Default</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Account Statistics -->
+                    <div>
+                        <h3 class="text-lg font-bold mb-4 pb-2 border-b border-gray-200">Account Statistics</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="bg-gray-50 p-4 rounded-lg text-center">
+                                <p class="text-2xl font-bold text-secondary">24</p>
+                                <p class="text-sm text-gray-500">Total Orders</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-center">
+                                <p class="text-2xl font-bold text-secondary">$8,249</p>
+                                <p class="text-sm text-gray-500">Total Spent</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-center">
+                                <p class="text-2xl font-bold text-secondary">3</p>
+                                <p class="text-sm text-gray-500">Pending Orders</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white mt-12">
+        <div class="container mx-auto px-4 py-6">
+            <p class="text-center text-sm text-gray-400">© 2026 Premium Living Furniture. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

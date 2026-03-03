@@ -1,0 +1,101 @@
+project-root/
+│
+├── index.html (Starting Page)
+│
+├── customer/
+│   ├── orders/
+│   │   ├── make-order/
+│   │   │   ├── index.html (or product-catalog.html)
+│   │   │   ├── product-details.html  ← YOUR FILE GOES HERE
+│   │   │   ├── shopping-cart.html
+│   │   │   ├── checkout.html
+│   │   │   ├── order-summary.html
+│   │   │   ├── order-confirmation.html
+│   │   │   └── custom-furniture.html
+│   │   │
+│   │   └── view-records/
+│   │       ├── customer-login.html
+│   │       ├── customer-dashboard.html
+│   │       ├── order-history.html
+│   │       ├── order-details.html
+│   │       ├── order-tracking.html
+│   │       ├── invoice-view.html
+│   │       └── order-filter.html
+│   │
+│   ├── profile/
+│   │   ├── profile-view.html
+│   │   ├── profile-edit.html
+│   │   ├── change-password.html
+│   │   ├── address-book.html
+│   │   ├── payment-methods.html
+│   │   ├── notification-settings.html
+│   │   └── account-delete.html
+│   │
+│   └── cancel/
+│       ├── order-cancel.html
+│       ├── cancel-confirmation.html
+│       ├── cancellation-policy.html
+│       ├── refund-status.html
+│       ├── cancel-history.html
+│       ├── cancel-support.html
+│       └── cancel-feedback.html
+│
+├── staff/
+│   ├── products/
+│   │   ├── product-catalog.html
+│   │   ├── product-add.html
+│   │   ├── product-category.html
+│   │   ├── product-pricing.html
+│   │   └── product-images.html
+│   │
+│   ├── materials/
+│   │   ├── materials-inventory.html
+│   │   ├── material-add.html
+│   │   ├── material-categories.html
+│   │   ├── material-suppliers.html
+│   │   ├── material-stock.html
+│   │   ├── material-reorder.html
+│   │   └── material-cost.html
+│   │
+│   ├── orders/
+│   │   ├── order-management.html
+│   │   ├── order-edit.html
+│   │   ├── order-status.html
+│   │   ├── order-assign.html
+│   │   ├── material-allocate.html
+│   │   ├── material-usage.html
+│   │   └── production-schedule.html
+│   │
+│   ├── reports/
+│   │   ├── reports-dashboard.html
+│   │   ├── sales-report.html
+│   │   ├── inventory-report.html
+│   │   ├── material-usage-report.html
+│   │   ├── customer-report.html
+│   │   ├── production-report.html
+│   │   └── financial-report.html
+│   │
+│   └── delete/
+│       ├── product-deactivate.html
+│       ├── product-archive.html
+│       ├── delete-confirmation.html
+│       ├── bulk-delete.html
+│       ├── product-replace.html
+│       ├── inventory-cleanup.html
+│       └── deletion-history.html
+│
+├── css/
+│   ├── styles.css
+│   └── dark-mode.css
+│
+├── js/
+│   ├── main.js
+│   └── validation.js
+│
+├── assets/
+│   └── images/
+│
+└── components/
+    ├── header.html
+    ├── footer.html
+    └── sidebar.html

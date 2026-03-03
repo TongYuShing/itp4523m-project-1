@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Living · Invoice</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @media print {
+            .no-print {
+                display: none;
+            }
+            .print-only {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+    <!-- Invoice Actions (No Print) -->
+    <div class="container mx-auto px-4 py-4 no-print">
+        <div class="flex justify-between items-center">
+            <a href="order-details.html" class="text-gray-600 hover:text-secondary">
+                <i class="fas fa-arrow-left mr-2"></i>Back to Order
+            </a>
+            <div class="flex gap-2">
+                <button onclick="window.print()" class="bg-secondary text-white px-4 py-2 rounded-lg hover:bg-secondary/90">
+                    <i class="fas fa-print mr-2"></i>Print Invoice
+                </button>
+                <button class="border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100">
+                    <i class="fas fa-download mr-2"></i>Download PDF
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Invoice -->
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <div class="bg-white rounded-lg shadow-lg p-8">
+            <!-- Header -->
+            <div class="flex justify-between items-start mb-8">
+                <div>
+                    <div class="flex items-center gap-2 text-2xl font-bold text-primary mb-2">
+                        <i class="fas fa-couch text-secondary"></i>
+                        <span>Premium Living</span>
+                    </div>
+                    <p class="text-gray-600">123 Furniture Avenue</p>
+                    <p class="text-gray-600">New York, NY 10001</p>
+                    <p class="text-gray-600">contact@premiumliving.com</p>
+                </div>
+                <div class="text-right">
+                    <h1 class="text-3xl font-bold text-secondary mb-2">INVOICE</h1>
+                    <p class="text-gray-600">Invoice #: INV-2026-001234</p>
+                    <p class="text-gray-600">Order #: ORD-2026-001234</p>
+                    <p class="text-gray-600">Date: March 15, 2026</p>
+                </div>
+            </div>
+
+            <!-- Bill To / Ship To -->
+            <div class="grid grid-cols-2 gap-8 mb-8">
+                <div>
+                    <h3 class="font-bold text-lg mb-2">Bill To:</h3>
+                    <p class="font-medium">John Doe</p>
+                    <p class="text-gray-600">123 Main Street</p>
+                    <p class="text-gray-600">Apt 4B</p>
+                    <p class="text-gray-600">New York, NY 10001</p>
+                    <p class="text-gray-600">United States</p>
+                    <p class="text-gray-600">john.doe@email.com</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-2">Ship To:</h3>
+                    <p class="font-medium">John Doe</p>
+                    <p class="text-gray-600">123 Main Street</p>
+                    <p class="text-gray-600">Apt 4B</p>
+                    <p class="text-gray-600">New York, NY 10001</p>
+                    <p class="text-gray-600">United States</p>
+                </div>
+            </div>
+
+            <!-- Items Table -->
+            <table class="w-full mb-8">
+                <thead>
+                    <tr class="border-y border-gray-300 bg-gray-50">
+                        <th class="py-3 text-left">Item</th>
+                        <th class="py-3 text-left">Description</th>
+                        <th class="py-3 text-center">Qty</th>
+                        <th class="py-3 text-right">Unit Price</th>
+                        <th class="py-3 text-right">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-gray-200">
+                        <td class="py-4">
+                            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&q=80" 
+                                 class="w-12 h-12 object-cover rounded">
+                        </td>
+                        <td class="py-4">
+                            <p class="font-medium">Harmony 3-Seater Sofa</p>
+                            <p class="text-sm text-gray-500">Color: Charcoal Grey, Fabric</p>
+                        </td>
+                        <td class="py-4 text-center">1</td>
+                        <td class="py-4 text-right">$899.00</td>
+                        <td class="py-4 text-right font-medium">$899.00</td>
+                    </tr>
+                    <tr class="border-b border-gray-200">
+                        <td class="py-4">
+                            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&q=80" 
+                                 class="w-12 h-12 object-cover rounded">
+                        </td>
+                        <td class="py-4">
+                            <p class="font-medium">Modern Coffee Table</p>
+                            <p class="text-sm text-gray-500">Finish: Oak</p>
+                        </td>
+                        <td class="py-4 text-center">1</td>
+                        <td class="py-4 text-right">$249.00</td>
+                        <td class="py-4 text-right font-medium">$249.00</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Summary -->
+            <div class="flex justify-end">
+                <div class="w-72">
+                    <div class="flex justify-between py-2">
+                        <span class="text-gray-600">Subtotal:</span>
+                        <span class="font-medium">$1,148.00</span>
+                    </div>
+                    <div class="flex justify-between py-2">
+                        <span class="text-gray-600">Shipping:</span>
+                        <span class="text-success">$0.00</span>
+                    </div>
+                    <div class="flex justify-between py-2">
+                        <span class="text-gray-600">Tax (10%):</span>
+                        <span>$114.80</span>
+                    </div>
+                    <div class="flex justify-between py-2 border-t border-gray-300 font-bold text-lg">
+                        <span>Total:</span>
+                        <span class="text-secondary">$1,262.80</span>
+                    </div>
+                    <div class="flex justify-between py-2 text-sm text-gray-500">
+                        <span>Payment Method:</span>
+                        <span>Visa ending in 4242</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center text-sm text-gray-500">
+                <p class="mb-2">Thank you for your business!</p>
+                <p>For questions about this invoice, contact accounts@premiumliving.com</p>
+                <p class="mt-4 text-xs">This is a computer-generated document. No signature required.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

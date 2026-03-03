@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Living · Edit Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D3748',
+                        secondary: '#8B5A2B',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .menu-item {
+            @apply flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 transition-all;
+        }
+        .menu-item.active {
+            @apply bg-secondary/10 text-secondary font-medium;
+        }
+        .form-input {
+            @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary/50 focus:border-secondary;
+        }
+        .btn-primary {
+            @apply bg-secondary text-white px-6 py-2 rounded-lg hover:bg-secondary/90 transition-all;
+        }
+        .btn-secondary {
+            @apply border border-gray-300 px-6 py-2 rounded-lg hover:bg-gray-100 transition-all;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+    <!-- Top Navigation (same as profile-view.html) -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-couch text-2xl text-secondary"></i>
+                    <span class="font-bold text-xl text-primary">Premium Living</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold">JD</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <!-- Sidebar Menu -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <div class="text-center mb-6 pb-4 border-b border-gray-200">
+                        <div class="w-24 h-24 bg-secondary rounded-full flex items-center justify-center text-white text-3xl font-bold mx-auto mb-3">
+                            JD
+                        </div>
+                        <h3 class="font-bold text-lg">John Doe</h3>
+                    </div>
+                    <nav class="space-y-1">
+                        <a href="profile-view.html" class="menu-item">
+                            <i class="fas fa-user w-5"></i> Profile Information
+                        </a>
+                        <a href="profile-edit.html" class="menu-item active">
+                            <i class="fas fa-edit w-5"></i> Edit Profile
+                        </a>
+                        <a href="change-password.html" class="menu-item">
+                            <i class="fas fa-lock w-5"></i> Change Password
+                        </a>
+                        <a href="address-book.html" class="menu-item">
+                            <i class="fas fa-address-book w-5"></i> Address Book
+                        </a>
+                        <a href="payment-methods.html" class="menu-item">
+                            <i class="fas fa-credit-card w-5"></i> Payment Methods
+                        </a>
+                        <a href="notification-settings.html" class="menu-item">
+                            <i class="fas fa-bell w-5"></i> Notification Settings
+                        </a>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Edit Profile Form -->
+            <div class="lg:col-span-3">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h2 class="text-2xl font-bold mb-6">Edit Profile</h2>
+
+                    <!-- Profile Photo -->
+                    <div class="mb-6 pb-6 border-b border-gray-200">
+                        <h3 class="text-lg font-bold mb-4">Profile Photo</h3>
+                        <div class="flex items-center gap-6">
+                            <div class="w-20 h-20 bg-secondary rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                                JD
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="btn-secondary text-sm">Upload New Photo</button>
+                                <button class="btn-secondary text-sm">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Personal Information Form -->
+                    <form class="space-y-4">
+                        <h3 class="text-lg font-bold mb-4">Personal Information</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium mb-1">First Name *</label>
+                                <input type="text" class="form-input" value="Johnathan">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Last Name *</label>
+                                <input type="text" class="form-input" value="Doe">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Gender</label>
+                                <select class="form-input">
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Prefer not to say</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Date of Birth</label>
+                                <input type="date" class="form-input" value="1990-01-15">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Nationality</label>
+                                <input type="text" class="form-input" value="United States">
+                            </div>
+                        </div>
+
+                        <h3 class="text-lg font-bold mb-4 mt-6">Contact Information</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Email Address *</label>
+                                <input type="email" class="form-input" value="john.doe@email.com">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Phone Number *</label>
+                                <input type="tel" class="form-input" value="+1 (234) 567-8900">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Alternative Phone</label>
+                                <input type="tel" class="form-input" value="+1 (234) 567-8901">
+                            </div>
+                        </div>
+
+                        <h3 class="text-lg font-bold mb-4 mt-6">Preferences</h3>
+                        
+                        <div class="space-y-2">
+                            <label class="flex items-center gap-2">
+                                <input type="checkbox" class="rounded text-secondary" checked>
+                                <span>Receive promotional emails</span>
+                            </label>
+                            <label class="flex items-center gap-2">
+                                <input type="checkbox" class="rounded text-secondary" checked>
+                                <span>Receive order updates via SMS</span>
+                            </label>
+                            <label class="flex items-center gap-2">
+                                <input type="checkbox" class="rounded text-secondary">
+                                <span>Subscribe to newsletter</span>
+                            </label>
+                        </div>
+
+                        <!-- Form Actions -->
+                        <div class="flex gap-3 pt-6 border-t border-gray-200 mt-6">
+                            <button type="submit" class="btn-primary">Save Changes</button>
+                            <a href="profile-view.html" class="btn-secondary">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

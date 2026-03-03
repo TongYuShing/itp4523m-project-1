@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Living · Order History</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D3748',
+                        secondary: '#8B5A2B',
+                        success: '#38A169',
+                        warning: '#ECC94B',
+                        danger: '#E53E3E',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .menu-item {
+            @apply flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 transition-all;
+        }
+        .menu-item.active {
+            @apply bg-secondary/10 text-secondary font-medium;
+        }
+        .filter-btn {
+            @apply px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-100 transition-all text-sm;
+        }
+        .filter-btn.active {
+            @apply bg-secondary text-white border-secondary hover:bg-secondary/90;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+    <!-- Top Navigation (same as dashboard) -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-couch text-2xl text-secondary"></i>
+                    <span class="font-bold text-xl text-primary">Premium Living</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="relative">
+                        <i class="fas fa-bell text-gray-600 text-xl cursor-pointer hover:text-secondary"></i>
+                        <span class="absolute -top-1 -right-1 w-4 h-4 bg-danger text-white text-xs rounded-full flex items-center justify-center">3</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold">
+                            JD
+                        </div>
+                        <span class="hidden md:inline font-medium">John Doe</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <!-- Sidebar Menu -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-lg shadow-lg p-4">
+                    <div class="text-center mb-4 pb-4 border-b border-gray-200">
+                        <div class="w-20 h-20 bg-secondary rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-2">
+                            JD
+                        </div>
+                        <h3 class="font-bold">John Doe</h3>
+                        <p class="text-sm text-gray-500">john.doe@email.com</p>
+                    </div>
+
+                    <nav class="space-y-1">
+                        <a href="customer-dashboard.html" class="menu-item">
+                            <i class="fas fa-tachometer-alt w-5"></i> Dashboard
+                        </a>
+                        <a href="order-history.html" class="menu-item active">
+                            <i class="fas fa-shopping-bag w-5"></i> My Orders
+                        </a>
+                        <a href="order-tracking.html" class="menu-item">
+                            <i class="fas fa-truck w-5"></i> Track Orders
+                        </a>
+                        <a href="../../profile/profile-view.html" class="menu-item">
+                            <i class="fas fa-user w-5"></i> My Profile
+                        </a>
+                        <a href="../../profile/address-book.html" class="menu-item">
+                            <i class="fas fa-address-book w-5"></i> Address Book
+                        </a>
+                        <a href="../../profile/payment-methods.html" class="menu-item">
+                            <i class="fas fa-credit-card w-5"></i> Payment Methods
+                        </a>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Order History Content -->
+            <div class="lg:col-span-3 space-y-6">
+                <!-- Header -->
+                <div class="flex justify-between items-center">
+                    <h1 class="text-2xl font-bold">My Orders</h1>
+                    <div class="flex gap-2">
+                        <input type="text" placeholder="Search orders..." 
+                               class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary/50">
+                        <button class="bg-secondary text-white px-4 py-2 rounded-lg hover:bg-secondary/90">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Filter Tabs -->
+                <div class="flex flex-wrap gap-2">
+                    <button class="filter-btn active">All Orders</button>
+                    <button class="filter-btn">Processing</button>
+                    <button class="filter-btn">In Transit</button>
+                    <button class="filter-btn">Delivered</button>
+                    <button class="filter-btn">Cancelled</button>
+                    <button class="filter-btn">Last 30 Days</button>
+                </div>
+
+                <!-- Orders List -->
+                <div class="space-y-4">
+                    <!-- Order Card 1 -->
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <div class="flex flex-wrap justify-between items-start mb-4">
+                            <div>
+                                <span class="text-sm text-gray-500">Order #</span>
+                                <h3 class="font-bold text-lg">ORD-2026-001234</h3>
+                                <p class="text-sm text-gray-500">Placed on March 10, 2026</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="bg-success/20 text-success px-3 py-1 rounded-full text-sm font-medium">Delivered</span>
+                                <p class="text-sm text-gray-500 mt-1">Delivered on Mar 15, 2026</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3 mb-4">
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-3">
+                                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&q=80" 
+                                         class="w-12 h-12 object-cover rounded">
+                                    <div>
+                                        <p class="font-medium">Harmony 3-Seater Sofa</p>
+                                        <p class="text-sm text-gray-500">Color: Charcoal Grey</p>
+                                    </div>
+                                </div>
+                                <span class="font-medium">$899</span>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center pt-4 border-t border-gray-200">
+                            <div>
+                                <span class="text-sm text-gray-500">Total: </span>
+                                <span class="font-bold text-lg">$899</span>
+                            </div>
+                            <div class="flex gap-3">
+                                <a href="order-details.html" class="text-secondary hover:underline">View Details</a>
+                                <a href="#" class="text-secondary hover:underline">Buy Again</a>
+                                <a href="#" class="text-secondary hover:underline">Leave Review</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Order Card 2 -->
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <div class="flex flex-wrap justify-between items-start mb-4">
+                            <div>
+                                <span class="text-sm text-gray-500">Order #</span>
+                                <h3 class="font-bold text-lg">ORD-2026-001235</h3>
+                                <p class="text-sm text-gray-500">Placed on March 5, 2026</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="bg-success/20 text-success px-3 py-1 rounded-full text-sm font-medium">Delivered</span>
+                                <p class="text-sm text-gray-500 mt-1">Delivered on Mar 8, 2026</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3 mb-4">
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-3">
+                                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&q=80" 
+                                         class="w-12 h-12 object-cover rounded">
+                                    <div>
+                                        <p class="font-medium">Modern Coffee Table</p>
+                                        <p class="text-sm text-gray-500">Finish: Oak</p>
+                                    </div>
+                                </div>
+                                <span class="font-medium">$249</span>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center pt-4 border-t border-gray-200">
+                            <div>
+                                <span class="text-sm text-gray-500">Total: </span>
+                                <span class="font-bold text-lg">$249</span>
+                            </div>
+                            <div class="flex gap-3">
+                                <a href="order-details.html" class="text-secondary hover:underline">View Details</a>
+                                <a href="#" class="text-secondary hover:underline">Buy Again</a>
+                                <a href="#" class="text-secondary hover:underline">Leave Review</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Order Card 3 - In Transit -->
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <div class="flex flex-wrap justify-between items-start mb-4">
+                            <div>
+                                <span class="text-sm text-gray-500">Order #</span>
+                                <h3 class="font-bold text-lg">ORD-2026-001236</h3>
+                                <p class="text-sm text-gray-500">Placed on March 1, 2026</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="bg-accent/50 text-primary px-3 py-1 rounded-full text-sm font-medium">In Transit</span>
+                                <p class="text-sm text-gray-500 mt-1">Est. delivery: Mar 8, 2026</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3 mb-4">
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-3">
+                                    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f7f92d?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&q=80" 
+                                         class="w-12 h-12 object-cover rounded">
+                                    <div>
+                                        <p class="font-medium">Arc Floor Lamp (2)</p>
+                                        <p class="text-sm text-gray-500">Color: Matte Black</p>
+                                    </div>
+                                </div>
+                                <span class="font-medium">$258</span>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center pt-4 border-t border-gray-200">
+                            <div>
+                                <span class="text-sm text-gray-500">Total: </span>
+                                <span class="font-bold text-lg">$258</span>
+                            </div>
+                            <div class="flex gap-3">
+                                <a href="order-tracking.html" class="text-secondary hover:underline">Track Package</a>
+                                <a href="order-details.html" class="text-secondary hover:underline">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="flex justify-center gap-2 mt-6">
+                    <button class="w-10 h-10 border border-gray-300 rounded-lg hover:bg-secondary hover:text-white">1</button>
+                    <button class="w-10 h-10 border border-gray-300 rounded-lg hover:bg-secondary hover:text-white">2</button>
+                    <button class="w-10 h-10 border border-gray-300 rounded-lg hover:bg-secondary hover:text-white">3</button>
+                    <span class="w-10 h-10 flex items-center justify-center">...</span>
+                    <button class="w-10 h-10 border border-gray-300 rounded-lg hover:bg-secondary hover:text-white">8</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

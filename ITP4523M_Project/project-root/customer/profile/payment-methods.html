@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Living · Payment Methods</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D3748',
+                        secondary: '#8B5A2B',
+                        success: '#38A169',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .menu-item {
+            @apply flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 transition-all;
+        }
+        .menu-item.active {
+            @apply bg-secondary/10 text-secondary font-medium;
+        }
+        .payment-card {
+            @apply border border-gray-200 rounded-lg p-4 hover:shadow-lg transition-all cursor-pointer;
+        }
+        .payment-card.default {
+            @apply border-secondary bg-secondary/5;
+        }
+        .btn-primary {
+            @apply bg-secondary text-white px-4 py-2 rounded-lg hover:bg-secondary/90 transition-all;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+    <!-- Top Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-couch text-2xl text-secondary"></i>
+                <span class="font-bold text-xl text-primary">Premium Living</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <!-- Sidebar Menu -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-secondary rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-2">
+                            JD
+                        </div>
+                        <h3 class="font-bold">John Doe</h3>
+                    </div>
+                    <nav class="space-y-1">
+                        <a href="profile-view.html" class="menu-item">
+                            <i class="fas fa-user w-5"></i> Profile Information
+                        </a>
+                        <a href="profile-edit.html" class="menu-item">
+                            <i class="fas fa-edit w-5"></i> Edit Profile
+                        </a>
+                        <a href="change-password.html" class="menu-item">
+                            <i class="fas fa-lock w-5"></i> Change Password
+                        </a>
+                        <a href="address-book.html" class="menu-item">
+                            <i class="fas fa-address-book w-5"></i> Address Book
+                        </a>
+                        <a href="payment-methods.html" class="menu-item active">
+                            <i class="fas fa-credit-card w-5"></i> Payment Methods
+                        </a>
+                        <a href="notification-settings.html" class="menu-item">
+                            <i class="fas fa-bell w-5"></i> Notification Settings
+                        </a>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Payment Methods Content -->
+            <div class="lg:col-span-3">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold">Payment Methods</h2>
+                        <button class="btn-primary" onclick="document.getElementById('addPaymentModal').classList.remove('hidden')">
+                            <i class="fas fa-plus mr-2"></i>Add Payment Method
+                        </button>
+                    </div>
+
+                    <!-- Saved Cards -->
+                    <div class="space-y-4 mb-8">
+                        <h3 class="font-bold text-lg">Saved Cards</h3>
+                        
+                        <!-- Default Card -->
+                        <div class="payment-card default">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-4">
+                                    <i class="fab fa-cc-visa text-3xl text-blue-800"></i>
+                                    <div>
+                                        <div class="flex items-center gap-2">
+                                            <span class="font-bold">Visa ending in 4242</span>
+                                            <span class="bg-secondary/10 text-secondary text-xs px-2 py-1 rounded-full">Default</span>
+                                        </div>
+                                        <p class="text-sm text-gray-500">Expires 12/26</p>
+                                        <p class="text-sm text-gray-500">John Doe</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-2">
+                                    <button class="text-secondary hover:text-secondary/80 p-2">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="text-danger hover:text-danger/80 p-2">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mastercard -->
+                        <div class="payment-card">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-4">
+                                    <i class="fab fa-cc-mastercard text-3xl text-orange-600"></i>
+                                    <div>
+                                        <span class="font-bold">Mastercard ending in 8888</span>
+                                        <p class="text-sm text-gray-500">Expires 08/25</p>
+                                        <p class="text-sm text-gray-500">John Doe</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-2">
+                                    <button class="text-secondary hover:text-secondary/80 p-2">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="text-danger hover:text-danger/80 p-2">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <button class="text-sm text-secondary hover:underline">Set as Default</button>
+                            </div>
+                        </div>
+
+                        <!-- Amex -->
+                        <div class="payment-card">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-4">
+                                    <i class="fab fa-cc-amex text-3xl text-blue-400"></i>
+                                    <div>
+                                        <span class="font-bold">American Express ending in 0002</span>
+                                        <p class="text-sm text-gray-500">Expires 03/27</p>
+                                        <p class="text-sm text-gray-500">John Doe</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-2">
+                                    <button class="text-secondary hover:text-secondary/80 p-2">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="text-danger hover:text-danger/80 p-2">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <button class="text-sm text-secondary hover:underline">Set as Default</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Digital Wallets -->
+                    <div class="mb-8">
+                        <h3 class="font-bold text-lg mb-4">Digital Wallets</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="border rounded-lg p-4 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <i class="fab fa-paypal text-2xl text-blue-600"></i>
+                                    <span class="font-medium">PayPal</span>
+                                </div>
+                                <span class="text-success text-sm">Connected</span>
+                            </div>
+                            <div class="border rounded-lg p-4 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <i class="fab fa-apple-pay text-2xl text-gray-800"></i>
+                                    <span class="font-medium">Apple Pay</span>
+                                </div>
+                                <span class="text-success text-sm">Connected</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Billing Address -->
+                    <div>
+                        <h3 class="font-bold text-lg mb-4">Default Billing Address</h3>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <p class="font-medium">John Doe</p>
+                            <p class="text-gray-600">123 Main Street, Apt 4B</p>
+                            <p class="text-gray-600">New York, NY 10001</p>
+                            <p class="text-gray-600">United States</p>
+                            <button class="text-secondary text-sm mt-2 hover:underline">Change Billing Address</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Payment Method Modal -->
+    <div id="addPaymentModal" class="fixed inset-0 bg-black/50 flex items-center justify-center hidden z-50">
+        <div class="bg-white rounded-lg shadow-xl max-w-md w-full mx-4">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold">Add Payment Method</h3>
+                    <button onclick="document.getElementById('addPaymentModal').classList.add('hidden')" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Card Number</label>
+                        <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg" placeholder="1234 5678 9012 3456">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Cardholder Name</label>
+                        <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg" placeholder="John Doe">
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Expiry Date</label>
+                            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg" placeholder="MM/YY">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">CVV</label>
+                            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg" placeholder="123">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Billing ZIP Code</label>
+                        <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg" placeholder="10001">
+                    </div>
+
+                    <label class="flex items-center gap-2">
+                        <input type="checkbox" class="rounded text-secondary" checked>
+                        <span>Set as default payment method</span>
+                    </label>
+
+                    <div class="flex gap-3 pt-4">
+                        <button type="submit" class="flex-1 bg-secondary text-white py-2 rounded-lg hover:bg-secondary/90">
+                            Add Card
+                        </button>
+                        <button type="button" onclick="document.getElementById('addPaymentModal').classList.add('hidden')" 
+                                class="flex-1 border border-gray-300 py-2 rounded-lg hover:bg-gray-100">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+
+                <div class="mt-4 text-center text-xs text-gray-400">
+                    <i class="fas fa-lock mr-1"></i> Your payment information is secure and encrypted
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('addPaymentModal');
+            if (event.target == modal) {
+                modal.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>

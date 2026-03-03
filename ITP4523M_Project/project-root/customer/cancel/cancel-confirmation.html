@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Living · Cancellation Confirmed</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D3748',
+                        secondary: '#8B5A2B',
+                        success: '#38A169',
+                        warning: '#ECC94B',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 font-sans text-primary min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-2xl w-full">
+        <!-- Confirmation Card -->
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <!-- Success Header -->
+            <div class="bg-warning/10 p-8 text-center border-b border-warning/20">
+                <div class="w-20 h-20 bg-warning rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-check text-3xl text-white"></i>
+                </div>
+                <h1 class="text-3xl font-bold text-primary mb-2">Cancellation Request Submitted!</h1>
+                <p class="text-gray-600">Your order cancellation has been received</p>
+            </div>
+
+            <!-- Content -->
+            <div class="p-8">
+                <!-- Cancellation Details -->
+                <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <p class="text-sm text-gray-500">Cancellation Request #</p>
+                            <p class="text-xl font-bold">CNCL-2026-001234</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500">Date Submitted</p>
+                            <p class="font-medium">March 15, 2026 • 10:23 AM</p>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-gray-200 pt-4">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-sm text-gray-500">Original Order</p>
+                                <p class="font-medium">#ORD-2026-001236</p>
+                            </div>
+                            <span class="bg-warning/20 text-warning px-3 py-1 rounded-full text-sm">Pending Review</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- What Happens Next -->
+                <div class="mb-8">
+                    <h2 class="font-bold text-lg mb-4">What Happens Next?</h2>
+                    <div class="space-y-4">
+                        <div class="flex gap-3">
+                            <div class="w-8 h-8 bg-secondary/20 rounded-full flex items-center justify-center text-secondary font-bold">1</div>
+                            <div>
+                                <p class="font-medium">Review Period</p>
+                                <p class="text-sm text-gray-500">Our team will review your cancellation request within 24 hours.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="w-8 h-8 bg-secondary/20 rounded-full flex items-center justify-center text-secondary font-bold">2</div>
+                            <div>
+                                <p class="font-medium">Cancellation Confirmation</p>
+                                <p class="text-sm text-gray-500">You'll receive an email once your cancellation is confirmed.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <div class="w-8 h-8 bg-secondary/20 rounded-full flex items-center justify-center text-secondary font-bold">3</div>
+                            <div>
+                                <p class="font-medium">Refund Processing</p>
+                                <p class="text-sm text-gray-500">Refund will be processed within 5-7 business days to your original payment method.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Refund Summary -->
+                <div class="bg-success/5 border border-success/20 rounded-lg p-4 mb-6">
+                    <h3 class="font-bold mb-2 flex items-center gap-2">
+                        <i class="fas fa-undo-alt text-success"></i>
+                        Refund Summary
+                    </h3>
+                    <div class="space-y-2">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Order Total:</span>
+                            <span class="font-medium">$507.00</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Refund Method:</span>
+                            <span class="font-medium">Visa ending in 4242</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Estimated Refund Date:</span>
+                            <span class="font-medium">March 22, 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="refund-status.html" class="flex-1 btn-primary bg-secondary text-white px-6 py-3 rounded-lg hover:bg-secondary/90 text-center">
+                        Track Refund Status
+                    </a>
+                    <a href="cancel-history.html" class="flex-1 border border-gray-300 px-6 py-3 rounded-lg hover:bg-gray-100 text-center">
+                        View Cancellation History
+                    </a>
+                </div>
+
+                <!-- Email Confirmation -->
+                <p class="text-center text-sm text-gray-500 mt-6">
+                    <i class="fas fa-envelope mr-1"></i>
+                    A confirmation email has been sent to john.doe@email.com
+                </p>
+            </div>
+        </div>
+
+        <!-- Continue Shopping -->
+        <div class="text-center mt-6">
+            <a href="../../../index.html" class="text-gray-500 hover:text-secondary">
+                <i class="fas fa-arrow-left mr-1"></i> Continue Shopping
+            </a>
+        </div>
+    </div>
+</body>
+</html>
