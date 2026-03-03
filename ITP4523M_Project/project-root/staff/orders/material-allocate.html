@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Living · Material Allocation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: '#2D3748',
+                    secondary: '#8B5A2B',
+                    success: '#38A169',
+                    warning: '#ECC94B',
+                    danger: '#E53E3E',
+                },
+            }
+        }
+    }
+  </script>
+  <style>
+    .menu-item {
+        @apply flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 transition-all;
+    }
+    .allocation-card {
+        @apply bg-white rounded-lg shadow-lg p-6;
+    }
+    .btn-primary {
+        @apply bg-secondary text-white px-4 py-2 rounded-lg hover:bg-secondary/90 transition-all;
+    }
+    .btn-success {
+        @apply bg-success text-white px-4 py-2 rounded-lg hover:bg-success/90 transition-all;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+<!-- Top Navigation -->
+<nav class="bg-primary text-white shadow-md sticky top-0 z-50">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-couch text-2xl text-secondary"></i>
+        <span class="font-bold text-xl">Staff Portal · Orders</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold">
+            JD
+          </div>
+          <span class="hidden md:inline">John Doe</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mx-auto px-4 py-8">
+  <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+    <!-- Sidebar Menu -->
+    <div class="lg:col-span-1">
+      <div class="bg-white rounded-lg shadow-lg p-4 sticky top-20">
+        <nav class="space-y-1">
+          <a href="order-management.html" class="menu-item">
+            <i class="fas fa-clipboard-list w-5"></i> Order Management
+          </a>
+          <a href="order-edit.html" class="menu-item">
+            <i class="fas fa-edit w-5"></i> Edit Order
+          </a>
+          <a href="order-status.html" class="menu-item">
+            <i class="fas fa-sync-alt w-5"></i> Update Status
+          </a>
+          <a href="order-assign.html" class="menu-item">
+            <i class="fas fa-users w-5"></i> Assign Orders
+          </a>
+          <a href="material-allocate.html" class="menu-item active">
+            <i class="fas fa-cubes w-5"></i> Material Allocation
+          </a>
+          <a href="material-usage.html" class="menu-item">
+            <i class="fas fa-chart-pie w-5"></i> Material Usage
+          </a>
+          <a href="production-schedule.html" class="menu-item">
+            <i class="fas fa-calendar-alt w-5"></i> Production Schedule
+          </a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Material Allocation Content -->
+    <div class="lg:col-span-4 space-y-6">
+      <!-- Order Selection -->
+      <div class="allocation-card">
+        <h2 class="text-xl font-bold mb-4">Select Order for Material Allocation</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium mb-1">Order Number</label>
+            <select class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+              <option>#ORD-2026-001245 - ABC Retail Ltd.</option>
+              <option>#ORD-2026-001246 - Lisa Wong</option>
+              <option>#ORD-2026-001247 - Home & Co.</option>
+              <option>#ORD-2026-001248 - James Wilson</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Production Team</label>
+            <select class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+              <option>Team Alpha</option>
+              <option>Team Beta</option>
+              <option>Team Gamma</option>
+              <option>Team Delta</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Materials Required -->
+      <div class="allocation-card">
+        <h2 class="text-xl font-bold mb-4">Materials Required for Order #ORD-2026-001245</h2>
+
+        <div class="overflow-x-auto mb-4">
+          <table class="w-full">
+            <thead class="bg-gray-50">
+            <tr class="text-left text-sm text-gray-500">
+              <th class="p-3">Material</th>
+              <th class="p-3">Required Qty</th>
+              <th class="p-3">Available Stock</th>
+              <th class="p-3">Unit</th>
+              <th class="p-3">Allocate</th>
+              <th class="p-3">Status</th>
+            </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+            <tr>
+              <td class="p-3 font-medium">Oak Wood Plank</td>
+              <td class="p-3">25</td>
+              <td class="p-3">1,450</td>
+              <td class="p-3">pcs</td>
+              <td class="p-3">
+                <input type="number" class="w-20 px-2 py-1 border border-gray-300 rounded-lg" value="25" min="0" max="1450">
+              </td>
+              <td class="p-3"><span class="text-success"><i class="fas fa-check-circle"></i> Available</span></td>
+            </tr>
+            <tr>
+              <td class="p-3 font-medium">Leather - Black</td>
+              <td class="p-3">10</td>
+              <td class="p-3">320</td>
+              <td class="p-3">rolls</td>
+              <td class="p-3">
+                <input type="number" class="w-20 px-2 py-1 border border-gray-300 rounded-lg" value="10" min="0" max="320">
+              </td>
+              <td class="p-3"><span class="text-success"><i class="fas fa-check-circle"></i> Available</span></td>
+            </tr>
+            <tr>
+              <td class="p-3 font-medium">Foam Cushion</td>
+              <td class="p-3">15</td>
+              <td class="p-3">78</td>
+              <td class="p-3">pcs</td>
+              <td class="p-3">
+                <input type="number" class="w-20 px-2 py-1 border border-gray-300 rounded-lg" value="15" min="0" max="78">
+              </td>
+              <td class="p-3"><span class="text-warning"><i class="fas fa-exclamation-triangle"></i> Low Stock</span></td>
+            </tr>
+            <tr>
+              <td class="p-3 font-medium">Screw Kit - Large</td>
+              <td class="p-3">8</td>
+              <td class="p-3">0</td>
+              <td class="p-3">boxes</td>
+              <td class="p-3">
+                <input type="number" class="w-20 px-2 py-1 border border-gray-300 rounded-lg" value="0" disabled>
+              </td>
+              <td class="p-3"><span class="text-danger"><i class="fas fa-times-circle"></i> Out of Stock</span></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Stock Alert -->
+        <div class="bg-danger/10 border border-danger/20 rounded-lg p-4 mb-4">
+          <div class="flex items-start gap-3">
+            <i class="fas fa-exclamation-triangle text-danger mt-1"></i>
+            <div>
+              <p class="font-medium text-danger">Stock Alert: Screw Kit - Large is out of stock</p>
+              <p class="text-sm text-gray-600">Please reorder before proceeding with allocation.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Allocation Summary -->
+        <div class="bg-gray-50 rounded-lg p-4">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+              <p class="text-sm text-gray-500">Total Items to Allocate</p>
+              <p class="text-xl font-bold">58</p>
+            </div>
+            <div>
+              <p class="text-sm text-gray-500">Materials Available</p>
+              <p class="text-xl font-bold text-success">50</p>
+            </div>
+            <div>
+              <p class="text-sm text-gray-500">Materials Short</p>
+              <p class="text-xl font-bold text-danger">8</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex gap-3">
+        <button class="btn-success">Allocate Available Materials</button>
+        <button class="btn-primary">Create Purchase Order for Short Items</button>
+        <button class="border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100">Save Draft</button>
+      </div>
+
+      <!-- Allocation History -->
+      <div class="allocation-card">
+        <h2 class="text-xl font-bold mb-4">Recent Allocations</h2>
+        <div class="space-y-3">
+          <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+            <div>
+              <p class="font-medium">Order #ORD-2026-001244</p>
+              <p class="text-sm text-gray-500">Allocated by John Doe • Today 09:30</p>
+            </div>
+            <span class="bg-success/20 text-success px-2 py-1 rounded text-xs">Completed</span>
+          </div>
+          <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+            <div>
+              <p class="font-medium">Order #ORD-2026-001243</p>
+              <p class="text-sm text-gray-500">Allocated by Sarah Smith • Yesterday 14:15</p>
+            </div>
+            <span class="bg-success/20 text-success px-2 py-1 rounded text-xs">Completed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

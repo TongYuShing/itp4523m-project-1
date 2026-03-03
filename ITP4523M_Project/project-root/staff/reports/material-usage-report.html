@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Living · Material Usage Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D3748',
+                        secondary: '#8B5A2B',
+                        success: '#38A169',
+                        warning: '#ECC94B',
+                        danger: '#E53E3E',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .menu-item {
+            @apply flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 transition-all;
+        }
+        .report-card {
+            @apply bg-white rounded-lg shadow-lg p-6;
+        }
+        .btn-primary {
+            @apply bg-secondary text-white px-4 py-2 rounded-lg hover:bg-secondary/90 transition-all;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+<!-- Top Navigation -->
+<nav class="bg-primary text-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-couch text-2xl text-secondary"></i>
+                <span class="font-bold text-xl">Staff Portal · Reports</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold">
+                        JD
+                    </div>
+                    <span class="hidden md:inline">John Doe</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+        <!-- Sidebar Menu -->
+        <div class="lg:col-span-1">
+            <div class="bg-white rounded-lg shadow-lg p-4 sticky top-20">
+                <nav class="space-y-1">
+                    <a href="reports-dashboard.html" class="menu-item">
+                        <i class="fas fa-tachometer-alt w-5"></i> Reports Dashboard
+                    </a>
+                    <a href="sales-report.html" class="menu-item">
+                        <i class="fas fa-chart-line w-5"></i> Sales Report
+                    </a>
+                    <a href="inventory-report.html" class="menu-item">
+                        <i class="fas fa-warehouse w-5"></i> Inventory Report
+                    </a>
+                    <a href="material-usage-report.html" class="menu-item active">
+                        <i class="fas fa-cubes w-5"></i> Material Usage
+                    </a>
+                    <a href="customer-report.html" class="menu-item">
+                        <i class="fas fa-users w-5"></i> Customer Report
+                    </a>
+                    <a href="production-report.html" class="menu-item">
+                        <i class="fas fa-industry w-5"></i> Production Report
+                    </a>
+                    <a href="financial-report.html" class="menu-item">
+                        <i class="fas fa-dollar-sign w-5"></i> Financial Report
+                    </a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Material Usage Content -->
+        <div class="lg:col-span-4 space-y-6">
+            <!-- Header -->
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold">Material Usage Report</h1>
+                <div class="flex gap-2">
+                    <button class="btn-primary">
+                        <i class="fas fa-calendar-alt mr-2"></i>March 2026
+                    </button>
+                    <button class="border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100">
+                        <i class="fas fa-download mr-2"></i>Export
+                    </button>
+                </div>
+            </div>
+
+            <!-- Summary Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="report-card">
+                    <p class="text-sm text-gray-500">Total Materials Used</p>
+                    <p class="text-2xl font-bold">12,450</p>
+                    <p class="text-xs text-success">↑ 8% from last month</p>
+                </div>
+                <div class="report-card">
+                    <p class="text-sm text-gray-500">Material Cost</p>
+                    <p class="text-2xl font-bold">$45,200</p>
+                    <p class="text-xs text-success">↑ 5% from last month</p>
+                </div>
+                <div class="report-card">
+                    <p class="text-sm text-gray-500">Waste Percentage</p>
+                    <p class="text-2xl font-bold">2.3%</p>
+                    <p class="text-xs text-success">↓ 0.5% from target</p>
+                </div>
+                <div class="report-card">
+                    <p class="text-sm text-gray-500">Orders Produced</p>
+                    <p class="text-2xl font-bold">156</p>
+                    <p class="text-xs text-success">↑ 12 from last month</p>
+                </div>
+            </div>
+
+            <!-- Usage by Material -->
+            <div class="report-card">
+                <h2 class="text-xl font-bold mb-4">Material Consumption</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-50">
+                        <tr class="text-left text-sm text-gray-500">
+                            <th class="p-3">Material</th>
+                            <th class="p-3">Quantity Used</th>
+                            <th class="p-3">Unit</th>
+                            <th class="p-3">Cost</th>
+                            <th class="p-3">Waste</th>
+                            <th class="p-3">Efficiency</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="p-3 font-medium">Oak Wood Plank</td>
+                            <td class="p-3">2,450</td>
+                            <td class="p-3">pcs</td>
+                            <td class="p-3">$110,250</td>
+                            <td class="p-3">1.8%</td>
+                            <td class="p-3 text-success">98.2%</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-medium">Leather - Black</td>
+                            <td class="p-3">890</td>
+                            <td class="p-3">rolls</td>
+                            <td class="p-3">$168,210</td>
+                            <td class="p-3">2.1%</td>
+                            <td class="p-3 text-success">97.9%</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-medium">Foam Cushion</td>
+                            <td class="p-3">3,200</td>
+                            <td class="p-3">pcs</td>
+                            <td class="p-3">$40,000</td>
+                            <td class="p-3">2.5%</td>
+                            <td class="p-3 text-success">97.5%</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-medium">Screw Kit</td>
+                            <td class="p-3">1,800</td>
+                            <td class="p-3">boxes</td>
+                            <td class="p-3">$15,750</td>
+                            <td class="p-3">0.5%</td>
+                            <td class="p-3 text-success">99.5%</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Usage by Product -->
+            <div class="report-card">
+                <h2 class="text-xl font-bold mb-4">Material Usage by Product</h2>
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="font-medium mb-2">Harmony 3-Seater Sofa</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-2 text-sm">
+                            <div class="bg-gray-50 p-2 rounded">Oak Wood: 5 pcs</div>
+                            <div class="bg-gray-50 p-2 rounded">Leather: 2 rolls</div>
+                            <div class="bg-gray-50 p-2 rounded">Foam: 3 pcs</div>
+                            <div class="bg-gray-50 p-2 rounded">Screw Kit: 1 box</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-medium mb-2">Modern Coffee Table</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-2 text-sm">
+                            <div class="bg-gray-50 p-2 rounded">Oak Wood: 2 pcs</div>
+                            <div class="bg-gray-50 p-2 rounded">Screw Kit: 0.5 box</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Waste Analysis -->
+            <div class="report-card">
+                <h2 class="text-xl font-bold mb-4">Waste Analysis</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="font-medium mb-3">Waste by Material</h3>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-sm">
+                                <span>Foam Cushion</span>
+                                <span class="text-danger">2.5% (80 units)</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span>Leather</span>
+                                <span class="text-warning">2.1% (19 rolls)</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span>Oak Wood</span>
+                                <span class="text-success">1.8% (44 pcs)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-medium mb-3">Waste Reasons</h3>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-sm">
+                                <span>Cutting Errors</span>
+                                <span>45%</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span>Quality Rejection</span>
+                                <span>30%</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span>Damage</span>
+                                <span>25%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Usage Trend -->
+            <div class="report-card">
+                <h2 class="text-xl font-bold mb-4">Monthly Usage Trend</h2>
+                <div class="bg-gray-100 h-64 rounded-lg flex items-center justify-center">
+                    <div class="text-center">
+                        <i class="fas fa-chart-bar text-4xl text-gray-400 mb-2"></i>
+                        <p class="text-gray-500">Material usage trend chart would display here</p>
+                        <p class="text-sm text-gray-400">Last 6 months consumption</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

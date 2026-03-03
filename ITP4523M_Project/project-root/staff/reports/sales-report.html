@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Living · Sales Report</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: '#2D3748',
+                    secondary: '#8B5A2B',
+                    success: '#38A169',
+                    warning: '#ECC94B',
+                    danger: '#E53E3E',
+                },
+            }
+        }
+    }
+  </script>
+  <style>
+    .menu-item {
+        @apply flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 transition-all;
+    }
+    .report-card {
+        @apply bg-white rounded-lg shadow-lg p-6;
+    }
+    .btn-primary {
+        @apply bg-secondary text-white px-4 py-2 rounded-lg hover:bg-secondary/90 transition-all;
+    }
+    .kpi-card {
+        @apply bg-gray-50 rounded-lg p-4;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+<!-- Top Navigation -->
+<nav class="bg-primary text-white shadow-md sticky top-0 z-50">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-couch text-2xl text-secondary"></i>
+        <span class="font-bold text-xl">Staff Portal · Reports</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold">
+            JD
+          </div>
+          <span class="hidden md:inline">John Doe</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mx-auto px-4 py-8">
+  <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+    <!-- Sidebar Menu -->
+    <div class="lg:col-span-1">
+      <div class="bg-white rounded-lg shadow-lg p-4 sticky top-20">
+        <nav class="space-y-1">
+          <a href="reports-dashboard.html" class="menu-item">
+            <i class="fas fa-tachometer-alt w-5"></i> Reports Dashboard
+          </a>
+          <a href="sales-report.html" class="menu-item active">
+            <i class="fas fa-chart-line w-5"></i> Sales Report
+          </a>
+          <a href="inventory-report.html" class="menu-item">
+            <i class="fas fa-warehouse w-5"></i> Inventory Report
+          </a>
+          <a href="material-usage-report.html" class="menu-item">
+            <i class="fas fa-cubes w-5"></i> Material Usage
+          </a>
+          <a href="customer-report.html" class="menu-item">
+            <i class="fas fa-users w-5"></i> Customer Report
+          </a>
+          <a href="production-report.html" class="menu-item">
+            <i class="fas fa-industry w-5"></i> Production Report
+          </a>
+          <a href="financial-report.html" class="menu-item">
+            <i class="fas fa-dollar-sign w-5"></i> Financial Report
+          </a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Sales Report Content -->
+    <div class="lg:col-span-4 space-y-6">
+      <!-- Header -->
+      <div class="flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Sales Report</h1>
+        <div class="flex gap-2">
+          <button class="btn-primary">
+            <i class="fas fa-calendar-alt mr-2"></i>Mar 1 - Mar 15, 2026
+          </button>
+          <button class="border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100">
+            <i class="fas fa-download mr-2"></i>Export
+          </button>
+        </div>
+      </div>
+
+      <!-- KPI Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div class="kpi-card">
+          <p class="text-sm text-gray-500">Total Revenue</p>
+          <p class="text-2xl font-bold">$124,500</p>
+          <p class="text-xs text-success">↑ 12% vs last period</p>
+        </div>
+        <div class="kpi-card">
+          <p class="text-sm text-gray-500">Total Orders</p>
+          <p class="text-2xl font-bold">156</p>
+          <p class="text-xs text-success">↑ 8% vs last period</p>
+        </div>
+        <div class="kpi-card">
+          <p class="text-sm text-gray-500">Avg Order Value</p>
+          <p class="text-2xl font-bold">$798</p>
+          <p class="text-xs text-success">↑ 3% vs last period</p>
+        </div>
+        <div class="kpi-card">
+          <p class="text-sm text-gray-500">Conversion Rate</p>
+          <p class="text-2xl font-bold">3.2%</p>
+          <p class="text-xs text-success">↑ 0.5% vs last period</p>
+        </div>
+      </div>
+
+      <!-- Sales Chart -->
+      <div class="report-card">
+        <h2 class="text-xl font-bold mb-4">Daily Sales Trend</h2>
+        <div class="bg-gray-100 h-80 rounded-lg flex items-center justify-center">
+          <div class="text-center">
+            <i class="fas fa-chart-line text-4xl text-gray-400 mb-2"></i>
+            <p class="text-gray-500">Sales trend chart would display here</p>
+            <p class="text-sm text-gray-400">Last 30 days daily revenue</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sales by Category -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="report-card">
+          <h2 class="text-xl font-bold mb-4">Sales by Category</h2>
+          <div class="space-y-3">
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span>Living Room</span>
+                <span class="font-medium">$52,290 (42%)</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2">
+                <div class="bg-secondary rounded-full h-2" style="width: 42%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span>Bedroom</span>
+                <span class="font-medium">$31,125 (25%)</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2">
+                <div class="bg-secondary rounded-full h-2" style="width: 25%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span>Dining Room</span>
+                <span class="font-medium">$24,900 (20%)</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2">
+                <div class="bg-secondary rounded-full h-2" style="width: 20%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span>Office</span>
+                <span class="font-medium">$11,205 (9%)</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2">
+                <div class="bg-secondary rounded-full h-2" style="width: 9%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span>Lighting</span>
+                <span class="font-medium">$4,980 (4%)</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-2">
+                <div class="bg-secondary rounded-full h-2" style="width: 4%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Top Products -->
+        <div class="report-card">
+          <h2 class="text-xl font-bold mb-4">Top Selling Products</h2>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="font-medium">Harmony 3-Seater Sofa</p>
+                <p class="text-xs text-gray-500">SKU-001234</p>
+              </div>
+              <div class="text-right">
+                <p class="font-medium">$44,950</p>
+                <p class="text-xs text-gray-500">50 units</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="font-medium">Modern Coffee Table</p>
+                <p class="text-xs text-gray-500">SKU-001235</p>
+              </div>
+              <div class="text-right">
+                <p class="font-medium">$12,450</p>
+                <p class="text-xs text-gray-500">50 units</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="font-medium">Comfort Armchair</p>
+                <p class="text-xs text-gray-500">SKU-001237</p>
+              </div>
+              <div class="text-right">
+                <p class="font-medium">$11,970</p>
+                <p class="text-xs text-gray-500">30 units</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sales by Channel -->
+      <div class="report-card">
+        <h2 class="text-xl font-bold mb-4">Sales by Channel</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="text-center p-4 bg-gray-50 rounded-lg">
+            <p class="text-2xl font-bold text-secondary">$87,150</p>
+            <p class="text-sm text-gray-500">B2B (70%)</p>
+            <p class="text-xs text-gray-400">78 orders</p>
+          </div>
+          <div class="text-center p-4 bg-gray-50 rounded-lg">
+            <p class="text-2xl font-bold text-secondary">$37,350</p>
+            <p class="text-sm text-gray-500">B2C (30%)</p>
+            <p class="text-xs text-gray-400">78 orders</p>
+          </div>
+          <div class="text-center p-4 bg-gray-50 rounded-lg">
+            <p class="text-2xl font-bold text-secondary">$12,450</p>
+            <p class="text-sm text-gray-500">Custom Orders (10%)</p>
+            <p class="text-xs text-gray-400">12 orders</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Daily Sales Table -->
+      <div class="report-card">
+        <h2 class="text-xl font-bold mb-4">Daily Sales Breakdown</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead class="bg-gray-50">
+            <tr class="text-left text-sm text-gray-500">
+              <th class="p-3">Date</th>
+              <th class="p-3">Orders</th>
+              <th class="p-3">Revenue</th>
+              <th class="p-3">Avg Order Value</th>
+              <th class="p-3">B2B/B2C</th>
+            </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+            <tr>
+              <td class="p-3">Mar 15, 2026</td>
+              <td class="p-3">12</td>
+              <td class="p-3">$9,450</td>
+              <td class="p-3">$788</td>
+              <td class="p-3">8/4</td>
+            </tr>
+            <tr>
+              <td class="p-3">Mar 14, 2026</td>
+              <td class="p-3">10</td>
+              <td class="p-3">$8,200</td>
+              <td class="p-3">$820</td>
+              <td class="p-3">6/4</td>
+            </tr>
+            <tr>
+              <td class="p-3">Mar 13, 2026</td>
+              <td class="p-3">15</td>
+              <td class="p-3">$11,250</td>
+              <td class="p-3">$750</td>
+              <td class="p-3">10/5</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

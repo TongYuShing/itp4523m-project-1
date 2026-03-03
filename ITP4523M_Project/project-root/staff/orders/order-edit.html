@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Living · Edit Order</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: '#2D3748',
+                    secondary: '#8B5A2B',
+                    success: '#38A169',
+                    warning: '#ECC94B',
+                    danger: '#E53E3E',
+                },
+            }
+        }
+    }
+  </script>
+  <style>
+    .menu-item {
+        @apply flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 transition-all;
+    }
+    .menu-item.active {
+        @apply bg-secondary/10 text-secondary font-medium;
+    }
+    .form-input {
+        @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary/50 focus:border-secondary;
+    }
+    .btn-primary {
+        @apply bg-secondary text-white px-4 py-2 rounded-lg hover:bg-secondary/90 transition-all;
+    }
+    .btn-secondary {
+        @apply border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100 transition-all;
+    }
+    .btn-danger {
+        @apply bg-danger text-white px-4 py-2 rounded-lg hover:bg-danger/90 transition-all;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+<!-- Top Navigation -->
+<nav class="bg-primary text-white shadow-md sticky top-0 z-50">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-couch text-2xl text-secondary"></i>
+        <span class="font-bold text-xl">Staff Portal · Orders</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold">
+            JD
+          </div>
+          <span class="hidden md:inline">John Doe</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mx-auto px-4 py-8">
+  <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+    <!-- Sidebar Menu -->
+    <div class="lg:col-span-1">
+      <div class="bg-white rounded-lg shadow-lg p-4 sticky top-20">
+        <nav class="space-y-1">
+          <a href="order-management.html" class="menu-item">
+            <i class="fas fa-clipboard-list w-5"></i> Order Management
+          </a>
+          <a href="order-edit.html" class="menu-item active">
+            <i class="fas fa-edit w-5"></i> Edit Order
+          </a>
+          <a href="order-status.html" class="menu-item">
+            <i class="fas fa-sync-alt w-5"></i> Update Status
+          </a>
+          <a href="order-assign.html" class="menu-item">
+            <i class="fas fa-users w-5"></i> Assign Orders
+          </a>
+          <a href="material-allocate.html" class="menu-item">
+            <i class="fas fa-cubes w-5"></i> Material Allocation
+          </a>
+          <a href="material-usage.html" class="menu-item">
+            <i class="fas fa-chart-pie w-5"></i> Material Usage
+          </a>
+          <a href="production-schedule.html" class="menu-item">
+            <i class="fas fa-calendar-alt w-5"></i> Production Schedule
+          </a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Edit Order Form -->
+    <div class="lg:col-span-4">
+      <div class="bg-white rounded-lg shadow-lg p-8">
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-6">
+          <h1 class="text-2xl font-bold">Edit Order #ORD-2026-001245</h1>
+          <span class="bg-danger/20 text-danger px-3 py-1 rounded-full text-sm">High Priority</span>
+        </div>
+
+        <form class="space-y-6">
+          <!-- Customer Information -->
+          <div>
+            <h2 class="text-lg font-bold mb-4 pb-2 border-b border-gray-200">Customer Information</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium mb-1">Customer Name *</label>
+                <input type="text" class="form-input" value="ABC Retail Ltd.">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Customer Type</label>
+                <select class="form-input">
+                  <option selected>B2B</option>
+                  <option>B2C</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Contact Email</label>
+                <input type="email" class="form-input" value="contact@abcretail.com">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Contact Phone</label>
+                <input type="tel" class="form-input" value="+1 (234) 567-8900">
+              </div>
+            </div>
+          </div>
+
+          <!-- Order Details -->
+          <div>
+            <h2 class="text-lg font-bold mb-4 pb-2 border-b border-gray-200">Order Details</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div>
+                <label class="block text-sm font-medium mb-1">Order Date</label>
+                <input type="date" class="form-input" value="2026-03-15">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Delivery Date</label>
+                <input type="date" class="form-input" value="2026-03-25">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Priority</label>
+                <select class="form-input">
+                  <option>High</option>
+                  <option selected>Medium</option>
+                  <option>Low</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Order Items -->
+          <div>
+            <h2 class="text-lg font-bold mb-4 pb-2 border-b border-gray-200">Order Items</h2>
+
+            <!-- Items List -->
+            <div class="space-y-3 mb-4">
+              <div class="grid grid-cols-12 gap-4 items-center p-3 bg-gray-50 rounded-lg">
+                <div class="col-span-5">
+                  <select class="form-input text-sm">
+                    <option>Harmony 3-Seater Sofa</option>
+                    <option>Modern Coffee Table</option>
+                    <option>Arc Floor Lamp</option>
+                  </select>
+                </div>
+                <div class="col-span-2">
+                  <input type="number" class="form-input text-sm" value="5" min="1">
+                </div>
+                <div class="col-span-2">
+                  <input type="text" class="form-input text-sm" value="$899.00" readonly>
+                </div>
+                <div class="col-span-2">
+                  <input type="text" class="form-input text-sm" value="$4,495.00" readonly>
+                </div>
+                <div class="col-span-1 text-center">
+                  <button class="text-danger hover:text-danger/80">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-12 gap-4 items-center p-3 bg-gray-50 rounded-lg">
+                <div class="col-span-5">
+                  <select class="form-input text-sm">
+                    <option>Modern Coffee Table</option>
+                    <option>Harmony 3-Seater Sofa</option>
+                    <option>Arc Floor Lamp</option>
+                  </select>
+                </div>
+                <div class="col-span-2">
+                  <input type="number" class="form-input text-sm" value="3" min="1">
+                </div>
+                <div class="col-span-2">
+                  <input type="text" class="form-input text-sm" value="$249.00" readonly>
+                </div>
+                <div class="col-span-2">
+                  <input type="text" class="form-input text-sm" value="$747.00" readonly>
+                </div>
+                <div class="col-span-1 text-center">
+                  <button class="text-danger hover:text-danger/80">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add Item Button -->
+            <button type="button" class="btn-secondary text-sm">
+              <i class="fas fa-plus mr-2"></i>Add Item
+            </button>
+          </div>
+
+          <!-- Shipping Address -->
+          <div>
+            <h2 class="text-lg font-bold mb-4 pb-2 border-b border-gray-200">Shipping Address</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="md:col-span-2">
+                <label class="block text-sm font-medium mb-1">Address Line 1</label>
+                <input type="text" class="form-input" value="123 Business Avenue">
+              </div>
+              <div class="md:col-span-2">
+                <label class="block text-sm font-medium mb-1">Address Line 2</label>
+                <input type="text" class="form-input" value="Suite 200">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">City</label>
+                <input type="text" class="form-input" value="New York">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">State</label>
+                <input type="text" class="form-input" value="NY">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">ZIP Code</label>
+                <input type="text" class="form-input" value="10001">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Country</label>
+                <input type="text" class="form-input" value="United States">
+              </div>
+            </div>
+          </div>
+
+          <!-- Order Summary -->
+          <div>
+            <h2 class="text-lg font-bold mb-4 pb-2 border-b border-gray-200">Order Summary</h2>
+            <div class="bg-gray-50 p-4 rounded-lg max-w-md">
+              <div class="flex justify-between py-2">
+                <span class="text-gray-600">Subtotal:</span>
+                <span class="font-medium">$5,242.00</span>
+              </div>
+              <div class="flex justify-between py-2">
+                <span class="text-gray-600">Tax (10%):</span>
+                <span class="font-medium">$524.20</span>
+              </div>
+              <div class="flex justify-between py-2">
+                <span class="text-gray-600">Shipping:</span>
+                <span class="text-success">Free</span>
+              </div>
+              <div class="flex justify-between py-2 font-bold text-lg border-t border-gray-300 mt-2 pt-2">
+                <span>Total:</span>
+                <span class="text-secondary">$5,766.20</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notes -->
+          <div>
+            <label class="block text-sm font-medium mb-1">Order Notes</label>
+            <textarea rows="3" class="form-input" placeholder="Internal notes about this order...">Customer requested white glove delivery. Please ensure premium packaging.</textarea>
+          </div>
+
+          <!-- Form Actions -->
+          <div class="flex gap-3 pt-4">
+            <button type="submit" class="btn-primary">Save Changes</button>
+            <button type="button" class="btn-secondary">Cancel</button>
+            <button type="button" class="btn-danger ml-auto">Delete Order</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

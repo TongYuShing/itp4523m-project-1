@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Living · Assign Orders</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D3748',
+                        secondary: '#8B5A2B',
+                        success: '#38A169',
+                        warning: '#ECC94B',
+                        danger: '#E53E3E',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .menu-item {
+            @apply flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 transition-all;
+        }
+        .team-card {
+            @apply bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition-all cursor-pointer border-2 border-transparent;
+        }
+        .team-card.selected {
+            @apply border-secondary bg-secondary/5;
+        }
+        .btn-primary {
+            @apply bg-secondary text-white px-4 py-2 rounded-lg hover:bg-secondary/90 transition-all;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+<!-- Top Navigation -->
+<nav class="bg-primary text-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-couch text-2xl text-secondary"></i>
+                <span class="font-bold text-xl">Staff Portal · Orders</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold">
+                        JD
+                    </div>
+                    <span class="hidden md:inline">John Doe</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+        <!-- Sidebar Menu -->
+        <div class="lg:col-span-1">
+            <div class="bg-white rounded-lg shadow-lg p-4 sticky top-20">
+                <nav class="space-y-1">
+                    <a href="order-management.html" class="menu-item">
+                        <i class="fas fa-clipboard-list w-5"></i> Order Management
+                    </a>
+                    <a href="order-edit.html" class="menu-item">
+                        <i class="fas fa-edit w-5"></i> Edit Order
+                    </a>
+                    <a href="order-status.html" class="menu-item">
+                        <i class="fas fa-sync-alt w-5"></i> Update Status
+                    </a>
+                    <a href="order-assign.html" class="menu-item active">
+                        <i class="fas fa-users w-5"></i> Assign Orders
+                    </a>
+                    <a href="material-allocate.html" class="menu-item">
+                        <i class="fas fa-cubes w-5"></i> Material Allocation
+                    </a>
+                    <a href="material-usage.html" class="menu-item">
+                        <i class="fas fa-chart-pie w-5"></i> Material Usage
+                    </a>
+                    <a href="production-schedule.html" class="menu-item">
+                        <i class="fas fa-calendar-alt w-5"></i> Production Schedule
+                    </a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Assign Orders Content -->
+        <div class="lg:col-span-4 space-y-6">
+            <!-- Pending Orders Summary -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-bold mb-4">Pending Orders Awaiting Assignment</h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="text-center p-3 bg-gray-50 rounded-lg">
+                        <p class="text-2xl font-bold text-warning">12</p>
+                        <p class="text-sm text-gray-500">Orders to Assign</p>
+                    </div>
+                    <div class="text-center p-3 bg-gray-50 rounded-lg">
+                        <p class="text-2xl font-bold">5</p>
+                        <p class="text-sm text-gray-500">High Priority</p>
+                    </div>
+                    <div class="text-center p-3 bg-gray-50 rounded-lg">
+                        <p class="text-2xl font-bold">4</p>
+                        <p class="text-sm text-gray-500">Production Teams</p>
+                    </div>
+                    <div class="text-center p-3 bg-gray-50 rounded-lg">
+                        <p class="text-2xl font-bold">85%</p>
+                        <p class="text-sm text-gray-500">Team Capacity</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Selection -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-bold mb-4">Select Orders to Assign</h2>
+                <div class="space-y-3">
+                    <label class="flex items-center justify-between p-3 border border-gray-200 rounded-lg hover:bg-gray-50">
+                        <div class="flex items-center gap-3">
+                            <input type="checkbox" class="rounded text-secondary">
+                            <div>
+                                <p class="font-medium">#ORD-2026-001245 - ABC Retail Ltd.</p>
+                                <p class="text-sm text-gray-500">12 items • Due: 2026-03-25</p>
+                            </div>
+                        </div>
+                        <span class="bg-danger/20 text-danger px-2 py-1 rounded text-xs">High Priority</span>
+                    </label>
+
+                    <label class="flex items-center justify-between p-3 border border-gray-200 rounded-lg hover:bg-gray-50">
+                        <div class="flex items-center gap-3">
+                            <input type="checkbox" class="rounded text-secondary">
+                            <div>
+                                <p class="font-medium">#ORD-2026-001248 - Home & Co.</p>
+                                <p class="text-sm text-gray-500">8 items • Due: 2026-03-28</p>
+                            </div>
+                        </div>
+                        <span class="bg-warning/20 text-warning px-2 py-1 rounded text-xs">Medium Priority</span>
+                    </label>
+
+                    <label class="flex items-center justify-between p-3 border border-gray-200 rounded-lg hover:bg-gray-50">
+                        <div class="flex items-center gap-3">
+                            <input type="checkbox" class="rounded text-secondary">
+                            <div>
+                                <p class="font-medium">#ORD-2026-001249 - James Wilson</p>
+                                <p class="text-sm text-gray-500">3 items • Due: 2026-04-01</p>
+                            </div>
+                        </div>
+                        <span class="bg-success/20 text-success px-2 py-1 rounded text-xs">Low Priority</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Team Selection -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-bold mb-4">Select Production Team</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Team A -->
+                    <div class="team-card selected" onclick="selectTeam(this)">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg">Team Alpha</h3>
+                            <span class="bg-success/20 text-success px-2 py-1 rounded text-xs">Available</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-2">Lead: John Smith • 5 members</p>
+                        <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
+                            <div class="bg-secondary rounded-full h-2" style="width: 75%"></div>
+                        </div>
+                        <p class="text-xs text-gray-500">Current workload: 75% (6 active orders)</p>
+                        <p class="text-xs text-gray-500 mt-1">Specialization: Sofas & Sectionals</p>
+                    </div>
+
+                    <!-- Team B -->
+                    <div class="team-card" onclick="selectTeam(this)">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg">Team Beta</h3>
+                            <span class="bg-success/20 text-success px-2 py-1 rounded text-xs">Available</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-2">Lead: Sarah Johnson • 4 members</p>
+                        <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
+                            <div class="bg-secondary rounded-full h-2" style="width: 50%"></div>
+                        </div>
+                        <p class="text-xs text-gray-500">Current workload: 50% (4 active orders)</p>
+                        <p class="text-xs text-gray-500 mt-1">Specialization: Tables & Chairs</p>
+                    </div>
+
+                    <!-- Team C -->
+                    <div class="team-card" onclick="selectTeam(this)">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg">Team Gamma</h3>
+                            <span class="bg-warning/20 text-warning px-2 py-1 rounded text-xs">Near Capacity</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-2">Lead: Mike Chen • 6 members</p>
+                        <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
+                            <div class="bg-warning rounded-full h-2" style="width: 90%"></div>
+                        </div>
+                        <p class="text-xs text-gray-500">Current workload: 90% (8 active orders)</p>
+                        <p class="text-xs text-gray-500 mt-1">Specialization: Custom Furniture</p>
+                    </div>
+
+                    <!-- Team D -->
+                    <div class="team-card" onclick="selectTeam(this)">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg">Team Delta</h3>
+                            <span class="bg-success/20 text-success px-2 py-1 rounded text-xs">Available</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-2">Lead: Lisa Brown • 3 members</p>
+                        <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
+                            <div class="bg-secondary rounded-full h-2" style="width: 25%"></div>
+                        </div>
+                        <p class="text-xs text-gray-500">Current workload: 25% (2 active orders)</p>
+                        <p class="text-xs text-gray-500 mt-1">Specialization: Finishing & Assembly</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Assignment Summary -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-bold mb-4">Assignment Summary</h2>
+                <div class="bg-gray-50 rounded-lg p-4 mb-4">
+                    <p class="font-medium mb-2">Selected Orders: <span class="text-secondary">3 orders</span></p>
+                    <p class="text-sm text-gray-600">Total items: 23 • Estimated production time: 5 days</p>
+                    <p class="text-sm text-gray-600">Selected team: Team Alpha (75% → 85% after assignment)</p>
+                </div>
+                <div class="flex gap-3">
+                    <button class="btn-primary">Confirm Assignment</button>
+                    <button class="border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function selectTeam(element) {
+        // Remove selected class from all team cards
+        document.querySelectorAll('.team-card').forEach(card => {
+            card.classList.remove('selected');
+        });
+        // Add selected class to clicked card
+        element.classList.add('selected');
+    }
+</script>
+</body>
+</html>

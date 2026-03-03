@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Living · Reports Dashboard</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: '#2D3748',
+                    secondary: '#8B5A2B',
+                    success: '#38A169',
+                    warning: '#ECC94B',
+                    danger: '#E53E3E',
+                },
+            }
+        }
+    }
+  </script>
+  <style>
+    .menu-item {
+        @apply flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 transition-all;
+    }
+    .menu-item.active {
+        @apply bg-secondary/10 text-secondary font-medium;
+    }
+    .stat-card {
+        @apply bg-white rounded-lg shadow-lg p-6 border-l-4 hover:shadow-xl transition-all;
+    }
+    .report-card {
+        @apply bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all cursor-pointer border-2 border-transparent hover:border-secondary;
+    }
+    .btn-primary {
+        @apply bg-secondary text-white px-4 py-2 rounded-lg hover:bg-secondary/90 transition-all;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+<!-- Top Navigation -->
+<nav class="bg-primary text-white shadow-md sticky top-0 z-50">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-couch text-2xl text-secondary"></i>
+        <span class="font-bold text-xl">Staff Portal · Reports</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="relative">
+          <i class="fas fa-bell text-xl cursor-pointer hover:text-secondary"></i>
+          <span class="absolute -top-1 -right-1 w-4 h-4 bg-danger text-white text-xs rounded-full flex items-center justify-center">5</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold">
+            JD
+          </div>
+          <div class="hidden md:block">
+            <p class="text-sm font-medium">John Doe</p>
+            <p class="text-xs text-gray-300">Reports Manager</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mx-auto px-4 py-8">
+  <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+    <!-- Sidebar Menu -->
+    <div class="lg:col-span-1">
+      <div class="bg-white rounded-lg shadow-lg p-4 sticky top-20">
+        <nav class="space-y-1">
+          <a href="reports-dashboard.html" class="menu-item active">
+            <i class="fas fa-tachometer-alt w-5"></i> Reports Dashboard
+          </a>
+          <a href="sales-report.html" class="menu-item">
+            <i class="fas fa-chart-line w-5"></i> Sales Report
+          </a>
+          <a href="inventory-report.html" class="menu-item">
+            <i class="fas fa-warehouse w-5"></i> Inventory Report
+          </a>
+          <a href="material-usage-report.html" class="menu-item">
+            <i class="fas fa-cubes w-5"></i> Material Usage
+          </a>
+          <a href="customer-report.html" class="menu-item">
+            <i class="fas fa-users w-5"></i> Customer Report
+          </a>
+          <a href="production-report.html" class="menu-item">
+            <i class="fas fa-industry w-5"></i> Production Report
+          </a>
+          <a href="financial-report.html" class="menu-item">
+            <i class="fas fa-dollar-sign w-5"></i> Financial Report
+          </a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Main Dashboard Area -->
+    <div class="lg:col-span-4 space-y-6">
+      <!-- Welcome Banner -->
+      <div class="bg-gradient-to-r from-secondary to-primary text-white rounded-lg p-6">
+        <h1 class="text-2xl font-bold mb-2">Reports Dashboard</h1>
+        <p class="opacity-90">Comprehensive analytics and insights for your business</p>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div class="stat-card border-l-success">
+          <p class="text-sm text-gray-500">Total Revenue (MTD)</p>
+          <p class="text-2xl font-bold">$124,500</p>
+          <p class="text-xs text-success mt-1">↑ 12% from last month</p>
+        </div>
+        <div class="stat-card border-l-primary">
+          <p class="text-sm text-gray-500">Orders (MTD)</p>
+          <p class="text-2xl font-bold">156</p>
+          <p class="text-xs text-primary mt-1">↑ 8% from last month</p>
+        </div>
+        <div class="stat-card border-l-warning">
+          <p class="text-sm text-gray-500">Avg Order Value</p>
+          <p class="text-2xl font-bold">$798</p>
+          <p class="text-xs text-warning mt-1">↑ 3% from last month</p>
+        </div>
+        <div class="stat-card border-l-danger">
+          <p class="text-sm text-gray-500">Customer Satisfaction</p>
+          <p class="text-2xl font-bold">4.8/5</p>
+          <p class="text-xs text-success mt-1">Based on 128 reviews</p>
+        </div>
+      </div>
+
+      <!-- Report Categories -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Sales Report Card -->
+        <div class="report-card" onclick="window.location.href='sales-report.html'">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-12 h-12 bg-success/20 rounded-lg flex items-center justify-center">
+              <i class="fas fa-chart-line text-2xl text-success"></i>
+            </div>
+            <span class="text-xs bg-success/10 text-success px-2 py-1 rounded-full">Updated today</span>
+          </div>
+          <h3 class="font-bold text-lg mb-1">Sales Report</h3>
+          <p class="text-sm text-gray-500 mb-3">Revenue, orders, trends, and forecasts</p>
+          <div class="flex justify-between items-center">
+            <span class="text-xs text-gray-400">Last updated: 10:30 AM</span>
+            <i class="fas fa-arrow-right text-secondary"></i>
+          </div>
+        </div>
+
+        <!-- Inventory Report Card -->
+        <div class="report-card" onclick="window.location.href='inventory-report.html'">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+              <i class="fas fa-warehouse text-2xl text-primary"></i>
+            </div>
+            <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded-full">Low stock alert</span>
+          </div>
+          <h3 class="font-bold text-lg mb-1">Inventory Report</h3>
+          <p class="text-sm text-gray-500 mb-3">Stock levels, value, and reorder status</p>
+          <div class="flex justify-between items-center">
+            <span class="text-xs text-gray-400">23 items low stock</span>
+            <i class="fas fa-arrow-right text-secondary"></i>
+          </div>
+        </div>
+
+        <!-- Material Usage Card -->
+        <div class="report-card" onclick="window.location.href='material-usage-report.html'">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-12 h-12 bg-warning/20 rounded-lg flex items-center justify-center">
+              <i class="fas fa-cubes text-2xl text-warning"></i>
+            </div>
+            <span class="text-xs bg-success/10 text-success px-2 py-1 rounded-full">Updated today</span>
+          </div>
+          <h3 class="font-bold text-lg mb-1">Material Usage</h3>
+          <p class="text-sm text-gray-500 mb-3">Consumption, waste, and efficiency</p>
+          <div class="flex justify-between items-center">
+            <span class="text-xs text-gray-400">2.3% waste rate</span>
+            <i class="fas fa-arrow-right text-secondary"></i>
+          </div>
+        </div>
+
+        <!-- Customer Report Card -->
+        <div class="report-card" onclick="window.location.href='customer-report.html'">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-12 h-12 bg-danger/20 rounded-lg flex items-center justify-center">
+              <i class="fas fa-users text-2xl text-danger"></i>
+            </div>
+            <span class="text-xs bg-success/10 text-success px-2 py-1 rounded-full">Updated today</span>
+          </div>
+          <h3 class="font-bold text-lg mb-1">Customer Report</h3>
+          <p class="text-sm text-gray-500 mb-3">Demographics, retention, and satisfaction</p>
+          <div class="flex justify-between items-center">
+            <span class="text-xs text-gray-400">1,245 active customers</span>
+            <i class="fas fa-arrow-right text-secondary"></i>
+          </div>
+        </div>
+
+        <!-- Production Report Card -->
+        <div class="report-card" onclick="window.location.href='production-report.html'">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center">
+              <i class="fas fa-industry text-2xl text-secondary"></i>
+            </div>
+            <span class="text-xs bg-warning/10 text-warning px-2 py-1 rounded-full">Updated today</span>
+          </div>
+          <h3 class="font-bold text-lg mb-1">Production Report</h3>
+          <p class="text-sm text-gray-500 mb-3">Efficiency, output, and team performance</p>
+          <div class="flex justify-between items-center">
+            <span class="text-xs text-gray-400">85% efficiency</span>
+            <i class="fas fa-arrow-right text-secondary"></i>
+          </div>
+        </div>
+
+        <!-- Financial Report Card -->
+        <div class="report-card" onclick="window.location.href='financial-report.html'">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-12 h-12 bg-success/20 rounded-lg flex items-center justify-center">
+              <i class="fas fa-dollar-sign text-2xl text-success"></i>
+            </div>
+            <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">Monthly</span>
+          </div>
+          <h3 class="font-bold text-lg mb-1">Financial Report</h3>
+          <p class="text-sm text-gray-500 mb-3">Revenue, costs, and profitability</p>
+          <div class="flex justify-between items-center">
+            <span class="text-xs text-gray-400">Net profit: $45,200</span>
+            <i class="fas fa-arrow-right text-secondary"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Reports -->
+      <div class="bg-white rounded-lg shadow-lg p-6">
+        <h2 class="text-xl font-bold mb-4">Recently Generated Reports</h2>
+        <div class="space-y-3">
+          <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+            <div class="flex items-center gap-3">
+              <i class="fas fa-file-pdf text-danger"></i>
+              <div>
+                <p class="font-medium">Monthly Sales Report - February 2026</p>
+                <p class="text-xs text-gray-500">Generated by John Doe • Today 09:30</p>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <button class="text-secondary hover:text-secondary/80"><i class="fas fa-download"></i></button>
+              <button class="text-secondary hover:text-secondary/80"><i class="fas fa-eye"></i></button>
+            </div>
+          </div>
+          <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+            <div class="flex items-center gap-3">
+              <i class="fas fa-file-excel text-success"></i>
+              <div>
+                <p class="font-medium">Inventory Status - Week 10, 2026</p>
+                <p class="text-xs text-gray-500">Generated by Jane Smith • Yesterday 14:15</p>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <button class="text-secondary hover:text-secondary/80"><i class="fas fa-download"></i></button>
+              <button class="text-secondary hover:text-secondary/80"><i class="fas fa-eye"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Schedule Reports -->
+      <div class="bg-white rounded-lg shadow-lg p-6">
+        <h2 class="text-xl font-bold mb-4">Scheduled Reports</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="border border-gray-200 rounded-lg p-4">
+            <i class="fas fa-clock text-secondary mb-2"></i>
+            <p class="font-medium">Weekly Sales Summary</p>
+            <p class="text-sm text-gray-500">Every Monday at 09:00</p>
+            <p class="text-xs text-gray-400 mt-2">Next: Mar 17, 2026</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <i class="fas fa-clock text-secondary mb-2"></i>
+            <p class="font-medium">Monthly Inventory Report</p>
+            <p class="text-sm text-gray-500">1st of every month</p>
+            <p class="text-xs text-gray-400 mt-2">Next: Apr 1, 2026</p>
+          </div>
+          <div class="border border-gray-200 rounded-lg p-4">
+            <i class="fas fa-clock text-secondary mb-2"></i>
+            <p class="font-medium">Daily Production Summary</p>
+            <p class="text-sm text-gray-500">Every day at 17:00</p>
+            <p class="text-xs text-gray-400 mt-2">Next: Today 17:00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

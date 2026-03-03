@@ -1,0 +1,34 @@
+assets/
+├── images/
+│   ├── products/
+│   │   ├── sofas/
+│   │   ├── tables/
+│   │   ├── chairs/
+│   │   ├── lighting/
+│   │   └── bedroom/
+│   ├── categories/
+│   ├── icons/
+│   ├── logo/
+│   ├── banners/
+│   ├── team/
+│   ├── placeholder-files.txt
+│   └── README.md
+├── fonts/
+│   ├── inter/
+│   ├── README.md
+│   └── font-face.css
+├── icons/
+│   ├── ui/
+│   ├── social/
+│   ├── payment/
+│   ├── README.md
+│   └── sprite.svg
+├── videos/
+│   ├── product/
+│   ├── promotional/
+│   ├── tutorials/
+│   ├── backgrounds/
+│   ├── thumbnails/
+│   ├── captions/
+│   └── README.md
+└── placeholder-images.html

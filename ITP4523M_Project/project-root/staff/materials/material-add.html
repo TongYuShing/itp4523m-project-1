@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Living · Add Material</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: '#2D3748',
+                    secondary: '#8B5A2B',
+                    success: '#38A169',
+                    danger: '#E53E3E',
+                },
+            }
+        }
+    }
+  </script>
+  <style>
+    .menu-item {
+        @apply flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 transition-all;
+    }
+    .menu-item.active {
+        @apply bg-secondary/10 text-secondary font-medium;
+    }
+    .form-input {
+        @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary/50 focus:border-secondary;
+    }
+    .btn-primary {
+        @apply bg-secondary text-white px-6 py-2 rounded-lg hover:bg-secondary/90 transition-all;
+    }
+    .btn-secondary {
+        @apply border border-gray-300 px-6 py-2 rounded-lg hover:bg-gray-100 transition-all;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+<!-- Top Navigation -->
+<nav class="bg-primary text-white shadow-md sticky top-0 z-50">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-couch text-2xl text-secondary"></i>
+        <span class="font-bold text-xl">Staff Portal · Materials</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold">
+            JD
+          </div>
+          <span class="hidden md:inline">John Doe</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mx-auto px-4 py-8">
+  <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+    <!-- Sidebar Menu -->
+    <div class="lg:col-span-1">
+      <div class="bg-white rounded-lg shadow-lg p-4 sticky top-20">
+        <nav class="space-y-1">
+          <a href="materials-inventory.html" class="menu-item">
+            <i class="fas fa-warehouse w-5"></i> Materials Inventory
+          </a>
+          <a href="material-add.html" class="menu-item active">
+            <i class="fas fa-plus-circle w-5"></i> Add Material
+          </a>
+          <a href="material-categories.html" class="menu-item">
+            <i class="fas fa-tags w-5"></i> Categories
+          </a>
+          <a href="material-suppliers.html" class="menu-item">
+            <i class="fas fa-truck w-5"></i> Suppliers
+          </a>
+          <a href="material-stock.html" class="menu-item">
+            <i class="fas fa-chart-line w-5"></i> Stock Management
+          </a>
+          <a href="material-reorder.html" class="menu-item">
+            <i class="fas fa-shopping-cart w-5"></i> Reorder Levels
+          </a>
+          <a href="material-cost.html" class="menu-item">
+            <i class="fas fa-dollar-sign w-5"></i> Cost Tracking
+          </a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Add Material Form -->
+    <div class="lg:col-span-4">
+      <div class="bg-white rounded-lg shadow-lg p-8">
+        <h1 class="text-2xl font-bold mb-6">Add New Material</h1>
+
+        <form class="space-y-6">
+          <!-- Basic Information -->
+          <div>
+            <h2 class="text-lg font-bold mb-4 pb-2 border-b border-gray-200">Basic Information</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium mb-1">Material Name *</label>
+                <input type="text" class="form-input" placeholder="e.g., Oak Wood Plank">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">SKU *</label>
+                <input type="text" class="form-input" placeholder="e.g., MAT-WD-001">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Category *</label>
+                <select class="form-input">
+                  <option>Select Category</option>
+                  <option>Wood</option>
+                  <option>Metal</option>
+                  <option>Fabric</option>
+                  <option>Leather</option>
+                  <option>Foam</option>
+                  <option>Hardware</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Subcategory</label>
+                <input type="text" class="form-input" placeholder="e.g., Hardwood">
+              </div>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div>
+            <label class="block text-sm font-medium mb-1">Description</label>
+            <textarea rows="3" class="form-input" placeholder="Material description, specifications, etc."></textarea>
+          </div>
+
+          <!-- Stock Information -->
+          <div>
+            <h2 class="text-lg font-bold mb-4 pb-2 border-b border-gray-200">Stock Information</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div>
+                <label class="block text-sm font-medium mb-1">Initial Stock *</label>
+                <input type="number" class="form-input" placeholder="0">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Unit of Measure *</label>
+                <select class="form-input">
+                  <option>pcs</option>
+                  <option>kg</option>
+                  <option>meters</option>
+                  <option>sqm</option>
+                  <option>rolls</option>
+                  <option>boxes</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Location</label>
+                <input type="text" class="form-input" placeholder="e.g., Warehouse A, Rack 12">
+              </div>
+            </div>
+          </div>
+
+          <!-- Pricing -->
+          <div>
+            <h2 class="text-lg font-bold mb-4 pb-2 border-b border-gray-200">Pricing</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div>
+                <label class="block text-sm font-medium mb-1">Unit Cost *</label>
+                <div class="relative">
+                  <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">$</span>
+                  <input type="number" class="form-input pl-8" placeholder="0.00">
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Selling Price (if applicable)</label>
+                <div class="relative">
+                  <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">$</span>
+                  <input type="number" class="form-input pl-8" placeholder="0.00">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Supplier Information -->
+          <div>
+            <h2 class="text-lg font-bold mb-4 pb-2 border-b border-gray-200">Supplier Information</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium mb-1">Preferred Supplier</label>
+                <select class="form-input">
+                  <option>Select Supplier</option>
+                  <option>Timber Supply Co.</option>
+                  <option>Metal Masters Inc.</option>
+                  <option>Fabric World</option>
+                  <option>Leather Experts</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Supplier SKU</label>
+                <input type="text" class="form-input" placeholder="Supplier's reference">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Minimum Order Quantity</label>
+                <input type="number" class="form-input" placeholder="0">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Lead Time (days)</label>
+                <input type="number" class="form-input" placeholder="0">
+              </div>
+            </div>
+          </div>
+
+          <!-- Reorder Settings -->
+          <div>
+            <h2 class="text-lg font-bold mb-4 pb-2 border-b border-gray-200">Reorder Settings</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div>
+                <label class="block text-sm font-medium mb-1">Reorder Level</label>
+                <input type="number" class="form-input" placeholder="0">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Reorder Quantity</label>
+                <input type="number" class="form-input" placeholder="0">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Maximum Stock Level</label>
+                <input type="number" class="form-input" placeholder="0">
+              </div>
+            </div>
+          </div>
+
+          <!-- Specifications -->
+          <div>
+            <h2 class="text-lg font-bold mb-4 pb-2 border-b border-gray-200">Specifications</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div>
+                <label class="block text-sm font-medium mb-1">Length</label>
+                <input type="text" class="form-input" placeholder="e.g., 2.4m">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Width</label>
+                <input type="text" class="form-input" placeholder="e.g., 0.5m">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Thickness</label>
+                <input type="text" class="form-input" placeholder="e.g., 2cm">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Grade</label>
+                <input type="text" class="form-input" placeholder="e.g., Premium">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Color</label>
+                <input type="text" class="form-input" placeholder="e.g., Natural Oak">
+              </div>
+            </div>
+          </div>
+
+          <!-- Notes -->
+          <div>
+            <label class="block text-sm font-medium mb-1">Additional Notes</label>
+            <textarea rows="2" class="form-input" placeholder="Any special handling instructions or notes..."></textarea>
+          </div>
+
+          <!-- Status -->
+          <div>
+            <label class="flex items-center gap-2">
+              <input type="checkbox" class="rounded text-secondary" checked>
+              <span>Active</span>
+            </label>
+          </div>
+
+          <!-- Form Actions -->
+          <div class="flex gap-3 pt-4">
+            <button type="submit" class="btn-primary">Create Material</button>
+            <button type="reset" class="btn-secondary">Reset</button>
+            <a href="materials-inventory.html" class="btn-secondary">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Living · Product Catalog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D3748',
+                        secondary: '#8B5A2B',
+                        success: '#38A169',
+                        warning: '#ECC94B',
+                        danger: '#E53E3E',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .menu-item {
+            @apply flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 transition-all;
+        }
+        .menu-item.active {
+            @apply bg-secondary/10 text-secondary font-medium;
+        }
+        .btn-primary {
+            @apply bg-secondary text-white px-4 py-2 rounded-lg hover:bg-secondary/90 transition-all;
+        }
+        .product-status {
+            @apply px-2 py-1 rounded-full text-xs font-medium;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+<!-- Top Navigation -->
+<nav class="bg-primary text-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-couch text-2xl text-secondary"></i>
+                <span class="font-bold text-xl">Staff Portal</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold">
+                        JD
+                    </div>
+                    <span class="hidden md:inline">John Doe</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+        <!-- Sidebar Menu -->
+        <div class="lg:col-span-1">
+            <div class="bg-white rounded-lg shadow-lg p-4 sticky top-20">
+                <nav class="space-y-1">
+                    <a href="staff-dashboard.html" class="menu-item">
+                        <i class="fas fa-tachometer-alt w-5"></i> Dashboard
+                    </a>
+                    <a href="product-catalog.html" class="menu-item active">
+                        <i class="fas fa-box w-5"></i> Product Catalog
+                    </a>
+                    <a href="product-add.html" class="menu-item">
+                        <i class="fas fa-plus-circle w-5"></i> Add Product
+                    </a>
+                    <a href="product-category.html" class="menu-item">
+                        <i class="fas fa-tags w-5"></i> Categories
+                    </a>
+                    <a href="product-pricing.html" class="menu-item">
+                        <i class="fas fa-dollar-sign w-5"></i> Pricing
+                    </a>
+                    <a href="product-images.html" class="menu-item">
+                        <i class="fas fa-images w-5"></i> Product Images
+                    </a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Catalog Content -->
+        <div class="lg:col-span-4">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <!-- Header -->
+                <div class="flex flex-wrap justify-between items-center mb-6">
+                    <h1 class="text-2xl font-bold">Product Catalog</h1>
+                    <div class="flex gap-2">
+                        <a href="product-add.html" class="btn-primary">
+                            <i class="fas fa-plus mr-2"></i>Add Product
+                        </a>
+                        <button class="border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100">
+                            <i class="fas fa-download mr-2"></i>Export
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Search and Filters -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                    <div class="md:col-span-2">
+                        <div class="relative">
+                            <input type="text" placeholder="Search products by name, SKU, or category..."
+                                   class="w-full px-4 py-2 pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary/50">
+                            <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <select class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                            <option>All Categories</option>
+                            <option>Living Room</option>
+                            <option>Bedroom</option>
+                            <option>Dining Room</option>
+                            <option>Office</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                            <option>All Status</option>
+                            <option>Active</option>
+                            <option>Inactive</option>
+                            <option>Out of Stock</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Products Table -->
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-50">
+                        <tr class="text-left text-sm text-gray-500">
+                            <th class="p-3">Product</th>
+                            <th class="p-3">SKU</th>
+                            <th class="p-3">Category</th>
+                            <th class="p-3">Price</th>
+                            <th class="p-3">Stock</th>
+                            <th class="p-3">Status</th>
+                            <th class="p-3">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="p-3">
+                                <div class="flex items-center gap-3">
+                                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=60&q=80"
+                                         class="w-12 h-12 object-cover rounded">
+                                    <div>
+                                        <p class="font-medium">Harmony 3-Seater Sofa</p>
+                                        <p class="text-xs text-gray-500">ID: PROD-001</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="p-3">SKU-001234</td>
+                            <td class="p-3">Living Room</td>
+                            <td class="p-3">$899.00</td>
+                            <td class="p-3">45</td>
+                            <td class="p-3"><span class="product-status bg-success/20 text-success">Active</span></td>
+                            <td class="p-3">
+                                <button class="text-secondary hover:text-secondary/80 mr-2" title="Edit"><i class="fas fa-edit"></i></button>
+                                <button class="text-blue-600 hover:text-blue-800 mr-2" title="View"><i class="fas fa-eye"></i></button>
+                                <button class="text-danger hover:text-danger/80" title="Delete"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-3">
+                                <div class="flex items-center gap-3">
+                                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=60&q=80"
+                                         class="w-12 h-12 object-cover rounded">
+                                    <div>
+                                        <p class="font-medium">Modern Coffee Table</p>
+                                        <p class="text-xs text-gray-500">ID: PROD-002</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="p-3">SKU-001235</td>
+                            <td class="p-3">Living Room</td>
+                            <td class="p-3">$249.00</td>
+                            <td class="p-3">120</td>
+                            <td class="p-3"><span class="product-status bg-success/20 text-success">Active</span></td>
+                            <td class="p-3">
+                                <button class="text-secondary hover:text-secondary/80 mr-2"><i class="fas fa-edit"></i></button>
+                                <button class="text-blue-600 hover:text-blue-800 mr-2"><i class="fas fa-eye"></i></button>
+                                <button class="text-danger hover:text-danger/80"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-3">
+                                <div class="flex items-center gap-3">
+                                    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f7f92d?ixlib=rb-4.0.3&auto=format&fit=crop&w=60&q=80"
+                                         class="w-12 h-12 object-cover rounded">
+                                    <div>
+                                        <p class="font-medium">Arc Floor Lamp</p>
+                                        <p class="text-xs text-gray-500">ID: PROD-003</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="p-3">SKU-001236</td>
+                            <td class="p-3">Lighting</td>
+                            <td class="p-3">$129.00</td>
+                            <td class="p-3">8</td>
+                            <td class="p-3"><span class="product-status bg-warning/20 text-warning">Low Stock</span></td>
+                            <td class="p-3">
+                                <button class="text-secondary hover:text-secondary/80 mr-2"><i class="fas fa-edit"></i></button>
+                                <button class="text-blue-600 hover:text-blue-800 mr-2"><i class="fas fa-eye"></i></button>
+                                <button class="text-danger hover:text-danger/80"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-3">
+                                <div class="flex items-center gap-3">
+                                    <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=60&q=80"
+                                         class="w-12 h-12 object-cover rounded">
+                                    <div>
+                                        <p class="font-medium">Comfort Armchair</p>
+                                        <p class="text-xs text-gray-500">ID: PROD-004</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="p-3">SKU-001237</td>
+                            <td class="p-3">Living Room</td>
+                            <td class="p-3">$399.00</td>
+                            <td class="p-3">0</td>
+                            <td class="p-3"><span class="product-status bg-danger/20 text-danger">Out of Stock</span></td>
+                            <td class="p-3">
+                                <button class="text-secondary hover:text-secondary/80 mr-2"><i class="fas fa-edit"></i></button>
+                                <button class="text-blue-600 hover:text-blue-800 mr-2"><i class="fas fa-eye"></i></button>
+                                <button class="text-danger hover:text-danger/80"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="flex justify-between items-center mt-6">
+                    <p class="text-sm text-gray-500">Showing 1-10 of 248 products</p>
+                    <div class="flex gap-2">
+                        <button class="w-10 h-10 border border-gray-300 rounded-lg hover:bg-secondary hover:text-white">1</button>
+                        <button class="w-10 h-10 border border-gray-300 rounded-lg hover:bg-secondary hover:text-white">2</button>
+                        <button class="w-10 h-10 border border-gray-300 rounded-lg hover:bg-secondary hover:text-white">3</button>
+                        <span class="w-10 h-10 flex items-center justify-center">...</span>
+                        <button class="w-10 h-10 border border-gray-300 rounded-lg hover:bg-secondary hover:text-white">25</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

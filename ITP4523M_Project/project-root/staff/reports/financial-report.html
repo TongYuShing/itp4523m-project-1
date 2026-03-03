@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Living · Financial Report</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: '#2D3748',
+                    secondary: '#8B5A2B',
+                    success: '#38A169',
+                    warning: '#ECC94B',
+                    danger: '#E53E3E',
+                },
+            }
+        }
+    }
+  </script>
+  <style>
+    .menu-item {
+        @apply flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 transition-all;
+    }
+    .report-card {
+        @apply bg-white rounded-lg shadow-lg p-6;
+    }
+    .btn-primary {
+        @apply bg-secondary text-white px-4 py-2 rounded-lg hover:bg-secondary/90 transition-all;
+    }
+    .financial-table {
+        @apply w-full text-sm;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+<!-- Top Navigation -->
+<nav class="bg-primary text-white shadow-md sticky top-0 z-50">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-couch text-2xl text-secondary"></i>
+        <span class="font-bold text-xl">Staff Portal · Reports</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold">
+            JD
+          </div>
+          <span class="hidden md:inline">John Doe</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mx-auto px-4 py-8">
+  <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+    <!-- Sidebar Menu -->
+    <div class="lg:col-span-1">
+      <div class="bg-white rounded-lg shadow-lg p-4 sticky top-20">
+        <nav class="space-y-1">
+          <a href="reports-dashboard.html" class="menu-item">
+            <i class="fas fa-tachometer-alt w-5"></i> Reports Dashboard
+          </a>
+          <a href="sales-report.html" class="menu-item">
+            <i class="fas fa-chart-line w-5"></i> Sales Report
+          </a>
+          <a href="inventory-report.html" class="menu-item">
+            <i class="fas fa-warehouse w-5"></i> Inventory Report
+          </a>
+          <a href="material-usage-report.html" class="menu-item">
+            <i class="fas fa-cubes w-5"></i> Material Usage
+          </a>
+          <a href="customer-report.html" class="menu-item">
+            <i class="fas fa-users w-5"></i> Customer Report
+          </a>
+          <a href="production-report.html" class="menu-item">
+            <i class="fas fa-industry w-5"></i> Production Report
+          </a>
+          <a href="financial-report.html" class="menu-item active">
+            <i class="fas fa-dollar-sign w-5"></i> Financial Report
+          </a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Financial Report Content -->
+    <div class="lg:col-span-4 space-y-6">
+      <!-- Header -->
+      <div class="flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Financial Report</h1>
+        <div class="flex gap-2">
+          <button class="btn-primary">
+            <i class="fas fa-calendar-alt mr-2"></i>Q1 2026
+          </button>
+          <button class="border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100">
+            <i class="fas fa-download mr-2"></i>Export
+          </button>
+        </div>
+      </div>
+
+      <!-- Key Financial Metrics -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div class="report-card">
+          <p class="text-sm text-gray-500">Total Revenue</p>
+          <p class="text-2xl font-bold">$124,500</p>
+          <p class="text-xs text-success">↑ 12% vs last quarter</p>
+        </div>
+        <div class="report-card">
+          <p class="text-sm text-gray-500">Gross Profit</p>
+          <p class="text-2xl font-bold">$45,200</p>
+          <p class="text-xs text-success">↑ 8% vs last quarter</p>
+        </div>
+        <div class="report-card">
+          <p class="text-sm text-gray-500">Net Profit</p>
+          <p class="text-2xl font-bold">$28,450</p>
+          <p class="text-xs text-success">↑ 5% vs last quarter</p>
+        </div>
+        <div class="report-card">
+          <p class="text-sm text-gray-500">Profit Margin</p>
+          <p class="text-2xl font-bold">22.8%</p>
+          <p class="text-xs text-success">↑ 1.2% vs last quarter</p>
+        </div>
+      </div>
+
+      <!-- Revenue vs Expenses Chart -->
+      <div class="report-card">
+        <h2 class="text-xl font-bold mb-4">Revenue vs Expenses</h2>
+        <div class="bg-gray-100 h-80 rounded-lg flex items-center justify-center">
+          <div class="text-center">
+            <i class="fas fa-chart-pie text-4xl text-gray-400 mb-2"></i>
+            <p class="text-gray-500">Financial chart would display here</p>
+            <p class="text-sm text-gray-400">Monthly revenue and expense breakdown</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Income Statement -->
+      <div class="report-card">
+        <h2 class="text-xl font-bold mb-4">Income Statement</h2>
+        <div class="space-y-3">
+          <div class="flex justify-between py-2 border-b border-gray-200">
+            <span class="font-medium">Revenue</span>
+            <span class="font-bold">$124,500</span>
+          </div>
+          <div class="pl-4 space-y-2">
+            <div class="flex justify-between text-sm">
+              <span>Product Sales</span>
+              <span>$112,050</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span>Custom Orders</span>
+              <span>$12,450</span>
+            </div>
+          </div>
+
+          <div class="flex justify-between py-2 border-b border-gray-200 mt-4">
+            <span class="font-medium">Cost of Goods Sold</span>
+            <span class="font-bold">$79,300</span>
+          </div>
+          <div class="pl-4 space-y-2">
+            <div class="flex justify-between text-sm">
+              <span>Materials</span>
+              <span>$45,200</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span>Labor</span>
+              <span>$28,500</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span>Manufacturing Overhead</span>
+              <span>$5,600</span>
+            </div>
+          </div>
+
+          <div class="flex justify-between py-2 border-b border-gray-200 mt-4">
+            <span class="font-medium">Gross Profit</span>
+            <span class="font-bold text-success">$45,200</span>
+          </div>
+
+          <div class="flex justify-between py-2 border-b border-gray-200 mt-4">
+            <span class="font-medium">Operating Expenses</span>
+            <span class="font-bold">$16,750</span>
+          </div>
+          <div class="pl-4 space-y-2">
+            <div class="flex justify-between text-sm">
+              <span>Marketing & Sales</span>
+              <span>$5,200</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span>Administrative</span>
+              <span>$8,300</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span>Rent & Utilities</span>
+              <span>$3,250</span>
+            </div>
+          </div>
+
+          <div class="flex justify-between py-2 mt-4 text-lg font-bold">
+            <span>Net Profit</span>
+            <span class="text-success">$28,450</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Monthly Breakdown -->
+      <div class="report-card">
+        <h2 class="text-xl font-bold mb-4">Monthly Financial Breakdown</h2>
+        <div class="overflow-x-auto">
+          <table class="financial-table">
+            <thead class="bg-gray-50">
+            <tr class="text-left text-gray-500">
+              <th class="p-3">Month</th>
+              <th class="p-3">Revenue</th>
+              <th class="p-3">Expenses</th>
+              <th class="p-3">Profit</th>
+              <th class="p-3">Margin</th>
+            </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+            <tr>
+              <td class="p-3">January</td>
+              <td class="p-3">$38,200</td>
+              <td class="p-3">$29,800</td>
+              <td class="p-3 text-success">$8,400</td>
+              <td class="p-3">22.0%</td>
+            </tr>
+            <tr>
+              <td class="p-3">February</td>
+              <td class="p-3">$41,500</td>
+              <td class="p-3">$32,100</td>
+              <td class="p-3 text-success">$9,400</td>
+              <td class="p-3">22.7%</td>
+            </tr>
+            <tr>
+              <td class="p-3">March</td>
+              <td class="p-3">$44,800</td>
+              <td class="p-3">$34,150</td>
+              <td class="p-3 text-success">$10,650</td>
+              <td class="p-3">23.8%</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Cash Flow -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="report-card">
+          <h2 class="text-xl font-bold mb-4">Cash Flow</h2>
+          <div class="space-y-3">
+            <div class="flex justify-between">
+              <span>Operating Cash Flow</span>
+              <span class="text-success">+$32,400</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Investing Cash Flow</span>
+              <span class="text-danger">-$8,200</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Financing Cash Flow</span>
+              <span class="text-danger">-$5,000</span>
+            </div>
+            <div class="flex justify-between font-bold border-t border-gray-200 pt-2">
+              <span>Net Cash Flow</span>
+              <span class="text-success">+$19,200</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="report-card">
+          <h2 class="text-xl font-bold mb-4">Key Ratios</h2>
+          <div class="space-y-3">
+            <div class="flex justify-between">
+              <span>Current Ratio</span>
+              <span class="font-medium">2.4</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Quick Ratio</span>
+              <span class="font-medium">1.8</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Debt to Equity</span>
+              <span class="font-medium">0.6</span>
+            </div>
+            <div class="flex justify-between">
+              <span>ROI</span>
+              <span class="font-medium text-success">15.2%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Financial Notes -->
+      <div class="report-card bg-warning/5">
+        <h2 class="text-xl font-bold mb-2">Financial Notes</h2>
+        <p class="text-sm text-gray-600">• Revenue growth driven by increased B2B orders in Q1</p>
+        <p class="text-sm text-gray-600">• Material costs increased by 5% due to supplier price adjustments</p>
+        <p class="text-sm text-gray-600">• New production equipment investment of $8,200 in February</p>
+        <p class="text-sm text-gray-600">• Projected Q2 revenue: $135,000 - $145,000</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

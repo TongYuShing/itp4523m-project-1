@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Living · Order Management</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D3748',
+                        secondary: '#8B5A2B',
+                        success: '#38A169',
+                        warning: '#ECC94B',
+                        danger: '#E53E3E',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .menu-item {
+            @apply flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 transition-all;
+        }
+        .menu-item.active {
+            @apply bg-secondary/10 text-secondary font-medium;
+        }
+        .stat-card {
+            @apply bg-white rounded-lg shadow-lg p-6 border-l-4;
+        }
+        .btn-primary {
+            @apply bg-secondary text-white px-4 py-2 rounded-lg hover:bg-secondary/90 transition-all;
+        }
+        .status-badge {
+            @apply px-2 py-1 rounded-full text-xs font-medium;
+        }
+        .order-card {
+            @apply bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+<!-- Top Navigation -->
+<nav class="bg-primary text-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-couch text-2xl text-secondary"></i>
+                <span class="font-bold text-xl">Staff Portal · Orders</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="relative">
+                    <i class="fas fa-bell text-xl cursor-pointer hover:text-secondary"></i>
+                    <span class="absolute -top-1 -right-1 w-4 h-4 bg-danger text-white text-xs rounded-full flex items-center justify-center">8</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold">
+                        JD
+                    </div>
+                    <div class="hidden md:block">
+                        <p class="text-sm font-medium">John Doe</p>
+                        <p class="text-xs text-gray-300">Order Manager</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+        <!-- Sidebar Menu -->
+        <div class="lg:col-span-1">
+            <div class="bg-white rounded-lg shadow-lg p-4 sticky top-20">
+                <nav class="space-y-1">
+                    <a href="order-management.html" class="menu-item active">
+                        <i class="fas fa-clipboard-list w-5"></i> Order Management
+                    </a>
+                    <a href="order-edit.html" class="menu-item">
+                        <i class="fas fa-edit w-5"></i> Edit Order
+                    </a>
+                    <a href="order-status.html" class="menu-item">
+                        <i class="fas fa-sync-alt w-5"></i> Update Status
+                    </a>
+                    <a href="order-assign.html" class="menu-item">
+                        <i class="fas fa-users w-5"></i> Assign Orders
+                    </a>
+                    <a href="material-allocate.html" class="menu-item">
+                        <i class="fas fa-cubes w-5"></i> Material Allocation
+                    </a>
+                    <a href="material-usage.html" class="menu-item">
+                        <i class="fas fa-chart-pie w-5"></i> Material Usage
+                    </a>
+                    <a href="production-schedule.html" class="menu-item">
+                        <i class="fas fa-calendar-alt w-5"></i> Production Schedule
+                    </a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="lg:col-span-4 space-y-6">
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="stat-card border-l-warning">
+                    <p class="text-sm text-gray-500">Pending Orders</p>
+                    <p class="text-2xl font-bold">24</p>
+                    <p class="text-xs text-warning mt-1">Awaiting processing</p>
+                </div>
+                <div class="stat-card border-l-primary">
+                    <p class="text-sm text-gray-500">In Production</p>
+                    <p class="text-2xl font-bold">18</p>
+                    <p class="text-xs text-primary mt-1">Currently being manufactured</p>
+                </div>
+                <div class="stat-card border-l-success">
+                    <p class="text-sm text-gray-500">Ready to Ship</p>
+                    <p class="text-2xl font-bold">12</p>
+                    <p class="text-xs text-success mt-1">Awaiting dispatch</p>
+                </div>
+                <div class="stat-card border-l-danger">
+                    <p class="text-sm text-gray-500">Delayed Orders</p>
+                    <p class="text-2xl font-bold">5</p>
+                    <p class="text-xs text-danger mt-1">Past due date</p>
+                </div>
+            </div>
+
+            <!-- Search and Filters -->
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                    <div class="md:col-span-2">
+                        <div class="relative">
+                            <input type="text" placeholder="Search orders by ID, customer, or product..."
+                                   class="w-full px-4 py-2 pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary/50">
+                            <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <select class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                            <option>All Status</option>
+                            <option>Pending</option>
+                            <option>In Production</option>
+                            <option>Ready to Ship</option>
+                            <option>Shipped</option>
+                            <option>Delivered</option>
+                            <option>Cancelled</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                            <option>All Priorities</option>
+                            <option>High</option>
+                            <option>Medium</option>
+                            <option>Low</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                            <option>Last 7 days</option>
+                            <option>Last 30 days</option>
+                            <option>Last 90 days</option>
+                            <option>Custom range</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orders List -->
+            <div class="space-y-4">
+                <!-- Order Card 1 - High Priority -->
+                <div class="order-card border-l-4 border-danger">
+                    <div class="flex flex-wrap justify-between items-start mb-4">
+                        <div>
+                            <div class="flex items-center gap-3 mb-2">
+                                <h3 class="font-bold text-lg">#ORD-2026-001245</h3>
+                                <span class="status-badge bg-danger/20 text-danger">High Priority</span>
+                                <span class="status-badge bg-warning/20 text-warning">Pending</span>
+                            </div>
+                            <p class="text-sm text-gray-500">Customer: ABC Retail Ltd. • B2B</p>
+                            <p class="text-sm text-gray-500">Order Date: 2026-03-15 • Due: 2026-03-25</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-lg font-bold text-secondary">$12,450</p>
+                            <p class="text-sm text-gray-500">12 items</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                        <div class="text-sm">
+                            <span class="text-gray-500">Products:</span>
+                            <p class="font-medium">5x Harmony Sofa, 3x Coffee Table, 4x Armchair</p>
+                        </div>
+                        <div class="text-sm">
+                            <span class="text-gray-500">Production Status:</span>
+                            <p class="font-medium">Material allocation in progress</p>
+                        </div>
+                        <div class="text-sm">
+                            <span class="text-gray-500">Assigned to:</span>
+                            <p class="font-medium">Production Team A</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-3 pt-3 border-t border-gray-200">
+                        <a href="order-edit.html" class="text-secondary hover:text-secondary/80 text-sm"><i class="fas fa-edit mr-1"></i>Edit</a>
+                        <a href="order-status.html" class="text-secondary hover:text-secondary/80 text-sm"><i class="fas fa-sync-alt mr-1"></i>Update Status</a>
+                        <a href="material-allocate.html" class="text-secondary hover:text-secondary/80 text-sm"><i class="fas fa-cubes mr-1"></i>Allocate Materials</a>
+                        <a href="#" class="text-secondary hover:text-secondary/80 text-sm"><i class="fas fa-eye mr-1"></i>View Details</a>
+                    </div>
+                </div>
+
+                <!-- Order Card 2 - Medium Priority -->
+                <div class="order-card border-l-4 border-warning">
+                    <div class="flex flex-wrap justify-between items-start mb-4">
+                        <div>
+                            <div class="flex items-center gap-3 mb-2">
+                                <h3 class="font-bold text-lg">#ORD-2026-001246</h3>
+                                <span class="status-badge bg-warning/20 text-warning">Medium Priority</span>
+                                <span class="status-badge bg-primary/20 text-primary">In Production</span>
+                            </div>
+                            <p class="text-sm text-gray-500">Customer: Lisa Wong • B2C</p>
+                            <p class="text-sm text-gray-500">Order Date: 2026-03-14 • Due: 2026-03-28</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-lg font-bold text-secondary">$2,899</p>
+                            <p class="text-sm text-gray-500">3 items</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                        <div class="text-sm">
+                            <span class="text-gray-500">Products:</span>
+                            <p class="font-medium">1x Harmony Sofa, 2x Floor Lamp</p>
+                        </div>
+                        <div class="text-sm">
+                            <span class="text-gray-500">Production Status:</span>
+                            <p class="font-medium">60% complete • Est. completion: 2026-03-22</p>
+                        </div>
+                        <div class="text-sm">
+                            <span class="text-gray-500">Assigned to:</span>
+                            <p class="font-medium">Production Team B</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-3 pt-3 border-t border-gray-200">
+                        <a href="order-edit.html" class="text-secondary hover:text-secondary/80 text-sm"><i class="fas fa-edit mr-1"></i>Edit</a>
+                        <a href="order-status.html" class="text-secondary hover:text-secondary/80 text-sm"><i class="fas fa-sync-alt mr-1"></i>Update Status</a>
+                        <a href="material-allocate.html" class="text-secondary hover:text-secondary/80 text-sm"><i class="fas fa-cubes mr-1"></i>Allocate Materials</a>
+                        <a href="#" class="text-secondary hover:text-secondary/80 text-sm"><i class="fas fa-eye mr-1"></i>View Details</a>
+                    </div>
+                </div>
+
+                <!-- Order Card 3 - Ready to Ship -->
+                <div class="order-card border-l-4 border-success">
+                    <div class="flex flex-wrap justify-between items-start mb-4">
+                        <div>
+                            <div class="flex items-center gap-3 mb-2">
+                                <h3 class="font-bold text-lg">#ORD-2026-001247</h3>
+                                <span class="status-badge bg-success/20 text-success">Ready to Ship</span>
+                            </div>
+                            <p class="text-sm text-gray-500">Customer: Home & Co. • B2B</p>
+                            <p class="text-sm text-gray-500">Order Date: 2026-03-10 • Due: 2026-03-20</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-lg font-bold text-secondary">$8,750</p>
+                            <p class="text-sm text-gray-500">8 items</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                        <div class="text-sm">
+                            <span class="text-gray-500">Products:</span>
+                            <p class="font-medium">3x Dining Table, 5x Dining Chair</p>
+                        </div>
+                        <div class="text-sm">
+                            <span class="text-gray-500">Quality Check:</span>
+                            <p class="font-medium">Passed • Ready for dispatch</p>
+                        </div>
+                        <div class="text-sm">
+                            <span class="text-gray-500">Packaging:</span>
+                            <p class="font-medium">Completed</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-3 pt-3 border-t border-gray-200">
+                        <a href="#" class="text-secondary hover:text-secondary/80 text-sm"><i class="fas fa-truck mr-1"></i>Create Shipping Label</a>
+                        <a href="#" class="text-secondary hover:text-secondary/80 text-sm"><i class="fas fa-file-pdf mr-1"></i>Print Packing Slip</a>
+                        <a href="#" class="text-secondary hover:text-secondary/80 text-sm"><i class="fas fa-eye mr-1"></i>View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-between items-center pt-4">
+                <p class="text-sm text-gray-500">Showing 1-3 of 48 orders</p>
+                <div class="flex gap-2">
+                    <button class="w-8 h-8 border border-gray-300 rounded-lg hover:bg-secondary hover:text-white">1</button>
+                    <button class="w-8 h-8 border border-gray-300 rounded-lg hover:bg-secondary hover:text-white">2</button>
+                    <button class="w-8 h-8 border border-gray-300 rounded-lg hover:bg-secondary hover:text-white">3</button>
+                    <span class="w-8 h-8 flex items-center justify-center">...</span>
+                    <button class="w-8 h-8 border border-gray-300 rounded-lg hover:bg-secondary hover:text-white">16</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

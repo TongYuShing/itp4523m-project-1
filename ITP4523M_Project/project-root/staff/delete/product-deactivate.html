@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Living · Deactivate Product</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D3748',
+                        secondary: '#8B5A2B',
+                        success: '#38A169',
+                        warning: '#ECC94B',
+                        danger: '#E53E3E',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .menu-item {
+            @apply flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 transition-all;
+        }
+        .menu-item.active {
+            @apply bg-danger/10 text-danger font-medium;
+        }
+        .btn-danger {
+            @apply bg-danger text-white px-4 py-2 rounded-lg hover:bg-danger/90 transition-all;
+        }
+        .btn-secondary {
+            @apply border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100 transition-all;
+        }
+        .product-card {
+            @apply bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all cursor-pointer border-2;
+        }
+        .product-card.selected {
+            @apply border-danger bg-danger/5;
+        }
+        .product-card:not(.selected) {
+            @apply border-transparent;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+<!-- Top Navigation -->
+<nav class="bg-primary text-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-couch text-2xl text-secondary"></i>
+                <span class="font-bold text-xl">Staff Portal · Delete</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="relative">
+                    <i class="fas fa-bell text-xl cursor-pointer hover:text-secondary"></i>
+                    <span class="absolute -top-1 -right-1 w-4 h-4 bg-danger text-white text-xs rounded-full flex items-center justify-center">3</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold">
+                        JD
+                    </div>
+                    <div class="hidden md:block">
+                        <p class="text-sm font-medium">John Doe</p>
+                        <p class="text-xs text-gray-300">Inventory Manager</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+        <!-- Sidebar Menu -->
+        <div class="lg:col-span-1">
+            <div class="bg-white rounded-lg shadow-lg p-4 sticky top-20">
+                <nav class="space-y-1">
+                    <a href="product-deactivate.html" class="menu-item active">
+                        <i class="fas fa-power-off w-5"></i> Deactivate Product
+                    </a>
+                    <a href="product-archive.html" class="menu-item">
+                        <i class="fas fa-archive w-5"></i> Archive Products
+                    </a>
+                    <a href="delete-confirmation.html" class="menu-item">
+                        <i class="fas fa-check-circle w-5"></i> Confirm Deletion
+                    </a>
+                    <a href="bulk-delete.html" class="menu-item">
+                        <i class="fas fa-layer-group w-5"></i> Bulk Delete
+                    </a>
+                    <a href="product-replace.html" class="menu-item">
+                        <i class="fas fa-exchange-alt w-5"></i> Replace Product
+                    </a>
+                    <a href="inventory-cleanup.html" class="menu-item">
+                        <i class="fas fa-broom w-5"></i> Inventory Cleanup
+                    </a>
+                    <a href="deletion-history.html" class="menu-item">
+                        <i class="fas fa-history w-5"></i> Deletion History
+                    </a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Deactivate Product Content -->
+        <div class="lg:col-span-4 space-y-6">
+            <!-- Header -->
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold">Deactivate Product</h1>
+                <div class="flex gap-2">
+                    <input type="text" placeholder="Search products..."
+                           class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-danger/50">
+                    <button class="border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Warning Banner -->
+            <div class="bg-warning/10 border border-warning/20 rounded-lg p-4">
+                <div class="flex items-start gap-3">
+                    <i class="fas fa-exclamation-triangle text-warning mt-1"></i>
+                    <div>
+                        <p class="font-medium text-warning">Deactivating Products</p>
+                        <p class="text-sm text-gray-600">Deactivated products will be hidden from the store but retained in the system. Use this for seasonal or temporarily unavailable items.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Selection -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-bold mb-4">Select Products to Deactivate</h2>
+
+                <div class="space-y-3">
+                    <!-- Product 1 -->
+                    <div class="product-card selected" onclick="toggleSelect(this)">
+                        <div class="flex items-start justify-between">
+                            <div class="flex items-start gap-4">
+                                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                                     alt="Product" class="w-16 h-16 object-cover rounded-lg">
+                                <div>
+                                    <h3 class="font-bold text-lg">Harmony 3-Seater Sofa</h3>
+                                    <p class="text-sm text-gray-500">SKU: SKU-001234 • Category: Living Room</p>
+                                    <div class="flex items-center gap-4 mt-2">
+                                        <span class="text-sm">Stock: 45 units</span>
+                                        <span class="text-sm">Price: $899.00</span>
+                                        <span class="bg-success/20 text-success px-2 py-1 rounded-full text-xs">Active</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <input type="checkbox" class="w-5 h-5 text-danger rounded" checked>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card" onclick="toggleSelect(this)">
+                        <div class="flex items-start justify-between">
+                            <div class="flex items-start gap-4">
+                                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                                     alt="Product" class="w-16 h-16 object-cover rounded-lg">
+                                <div>
+                                    <h3 class="font-bold text-lg">Modern Coffee Table</h3>
+                                    <p class="text-sm text-gray-500">SKU: SKU-001235 • Category: Living Room</p>
+                                    <div class="flex items-center gap-4 mt-2">
+                                        <span class="text-sm">Stock: 120 units</span>
+                                        <span class="text-sm">Price: $249.00</span>
+                                        <span class="bg-success/20 text-success px-2 py-1 rounded-full text-xs">Active</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <input type="checkbox" class="w-5 h-5 text-danger rounded">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card" onclick="toggleSelect(this)">
+                        <div class="flex items-start justify-between">
+                            <div class="flex items-start gap-4">
+                                <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f7f92d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                                     alt="Product" class="w-16 h-16 object-cover rounded-lg">
+                                <div>
+                                    <h3 class="font-bold text-lg">Arc Floor Lamp</h3>
+                                    <p class="text-sm text-gray-500">SKU: SKU-001236 • Category: Lighting</p>
+                                    <div class="flex items-center gap-4 mt-2">
+                                        <span class="text-sm">Stock: 8 units</span>
+                                        <span class="text-sm">Price: $129.00</span>
+                                        <span class="bg-warning/20 text-warning px-2 py-1 rounded-full text-xs">Low Stock</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <input type="checkbox" class="w-5 h-5 text-danger rounded">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Deactivation Reason -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-bold mb-4">Deactivation Details</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Reason for Deactivation *</label>
+                        <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-danger/50">
+                            <option value="">Select a reason</option>
+                            <option>Seasonal product - to be reactivated later</option>
+                            <option>Discontinued by manufacturer</option>
+                            <option>Quality issues identified</option>
+                            <option>Replaced by newer model</option>
+                            <option>Low demand / poor sales</option>
+                            <option>Inventory clearance</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Additional Notes</label>
+                        <textarea rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg"
+                                  placeholder="Provide more details about why this product is being deactivated..."></textarea>
+                    </div>
+                    <div>
+                        <label class="flex items-center gap-2">
+                            <input type="checkbox" class="rounded text-danger">
+                            <span>Notify customers who have this product in their wishlist</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label class="flex items-center gap-2">
+                            <input type="checkbox" class="rounded text-danger">
+                            <span>Remove from all active promotions and bundles</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex gap-3">
+                <button class="btn-danger px-6">Deactivate Selected Products</button>
+                <button class="btn-secondary px-6">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleSelect(element) {
+        element.classList.toggle('selected');
+        const checkbox = element.querySelector('input[type="checkbox"]');
+        checkbox.checked = !checkbox.checked;
+    }
+</script>
+</body>
+</html>

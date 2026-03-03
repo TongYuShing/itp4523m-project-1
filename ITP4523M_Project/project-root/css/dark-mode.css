@@ -1,0 +1,280 @@
+/* ========================================
+   Premium Living Furniture - Dark Mode Stylesheet
+   Author: Premium Living Team
+   Version: 1.0
+   ======================================== */
+
+/* ----------------------------------------
+   Dark Mode Variables
+   ---------------------------------------- */
+.dark-mode {
+    /* Brand Colors - Adjusted for Dark Mode */
+    --color-primary: #E2E8F0;
+    --color-secondary: #B48C5C;
+    --color-accent: #2D3748;
+    --color-success: #48BB78;
+    --color-warning: #F6E05E;
+    --color-danger: #FC8181;
+
+    /* Neutral Colors - Inverted for Dark Mode */
+    --color-white: #1A202C;
+    --color-gray-50: #2D3748;
+    --color-gray-100: #4A5568;
+    --color-gray-200: #718096;
+    --color-gray-300: #A0AEC0;
+    --color-gray-400: #CBD5E0;
+    --color-gray-500: #E2E8F0;
+    --color-gray-600: #EDF2F7;
+    --color-gray-700: #F7FAFC;
+    --color-gray-800: #FFFFFF;
+    --color-gray-900: #FFFFFF;
+
+    /* Shadows - Adjusted for Dark Mode */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* ----------------------------------------
+   Dark Mode Body Styles
+   ---------------------------------------- */
+.dark-mode body {
+    background-color: #1A202C;
+    color: #E2E8F0;
+}
+
+/* ----------------------------------------
+   Dark Mode Component Overrides
+   ---------------------------------------- */
+
+/* Cards */
+.dark-mode .card,
+.dark-mode .bg-white {
+    background-color: #2D3748;
+}
+
+/* Tables */
+.dark-mode .table,
+.dark-mode .table-container {
+    background-color: #2D3748;
+    border-color: #4A5568;
+}
+
+.dark-mode .table th {
+    background-color: #4A5568;
+    color: #E2E8F0;
+    border-bottom-color: #718096;
+}
+
+.dark-mode .table td {
+    border-bottom-color: #4A5568;
+}
+
+.dark-mode .table tbody tr:hover {
+    background-color: #4A5568;
+}
+
+.dark-mode .table-striped tbody tr:nth-child(even) {
+    background-color: #4A5568;
+}
+
+/* Forms */
+.dark-mode .form-input,
+.dark-mode .form-select,
+.dark-mode .form-textarea {
+    background-color: #4A5568;
+    border-color: #718096;
+    color: #E2E8F0;
+}
+
+.dark-mode .form-input:focus,
+.dark-mode .form-select:focus,
+.dark-mode .form-textarea:focus {
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 3px rgba(180, 140, 92, 0.2);
+}
+
+.dark-mode .form-label {
+    color: #E2E8F0;
+}
+
+/* Buttons */
+.dark-mode .btn-primary {
+    background-color: #B48C5C;
+}
+
+.dark-mode .btn-secondary {
+    background-color: #4A5568;
+    border-color: #718096;
+    color: #E2E8F0;
+}
+
+.dark-mode .btn-secondary:hover {
+    background-color: #718096;
+}
+
+/* Dropdowns */
+.dark-mode .dropdown-menu,
+.dark-mode .bg-gray-50 {
+    background-color: #4A5568;
+}
+
+.dark-mode .dropdown-item:hover {
+    background-color: #718096;
+}
+
+/* Alerts */
+.dark-mode .alert {
+    background-color: #4A5568;
+}
+
+/* Modals */
+.dark-mode .modal {
+    background-color: #2D3748;
+}
+
+.dark-mode .modal-header,
+.dark-mode .modal-footer {
+    border-color: #4A5568;
+}
+
+/* Progress Bars */
+.dark-mode .progress {
+    background-color: #4A5568;
+}
+
+/* Borders */
+.dark-mode .border,
+.dark-mode .border-t,
+.dark-mode .border-b,
+.dark-mode .border-l,
+.dark-mode .border-r,
+.dark-mode hr {
+    border-color: #4A5568;
+}
+
+/* Badges */
+.dark-mode .badge {
+    background-color: rgba(180, 140, 92, 0.1);
+}
+
+/* Input placeholders */
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+    color: #A0AEC0;
+}
+
+/* Links */
+.dark-mode a:not(.btn):not(.menu-item) {
+    color: #B48C5C;
+}
+
+.dark-mode a:hover:not(.btn):not(.menu-item) {
+    color: #D4B48C;
+}
+
+/* Text colors */
+.dark-mode .text-primary {
+    color: #E2E8F0;
+}
+
+.dark-mode .text-secondary {
+    color: #B48C5C;
+}
+
+.dark-mode .text-gray-500,
+.dark-mode .text-gray-600,
+.dark-mode .text-gray-700 {
+    color: #E2E8F0;
+}
+
+/* Sidebar */
+.dark-mode .bg-primary {
+    background-color: #1A202C;
+}
+
+.dark-mode .menu-item.active {
+    background-color: rgba(180, 140, 92, 0.1);
+}
+
+.dark-mode .menu-item:hover:not(.active) {
+    background-color: #4A5568;
+}
+
+/* Header/Nav */
+.dark-mode nav.bg-primary {
+    background-color: #1A202C;
+}
+
+/* Stats Cards */
+.dark-mode .stat-card,
+.dark-mode .report-card,
+.dark-mode .dashboard-card {
+    background-color: #2D3748;
+}
+
+/* Timeline */
+.dark-mode .timeline-item,
+.dark-mode .deletion-entry,
+.dark-mode .order-card {
+    background-color: #2D3748;
+}
+
+/* Scrollbar (optional) */
+.dark-mode ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.dark-mode ::-webkit-scrollbar-track {
+    background: #2D3748;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+    background: #4A5568;
+    border-radius: 5px;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb:hover {
+    background: #718096;
+}
+
+/* ----------------------------------------
+   Dark Mode Toggle Button
+   ---------------------------------------- */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--color-secondary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-base);
+    border: none;
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-xl);
+}
+
+.dark-mode-toggle i {
+    font-size: 1.5rem;
+}
+
+/* Dark mode toggle in dark mode */
+.dark-mode .dark-mode-toggle {
+    background-color: #B48C5C;
+}

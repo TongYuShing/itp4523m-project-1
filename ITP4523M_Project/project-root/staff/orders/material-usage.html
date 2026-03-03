@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Living · Material Usage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D3748',
+                        secondary: '#8B5A2B',
+                        success: '#38A169',
+                        warning: '#ECC94B',
+                        danger: '#E53E3E',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .menu-item {
+            @apply flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 transition-all;
+        }
+        .usage-card {
+            @apply bg-white rounded-lg shadow-lg p-6;
+        }
+        .btn-primary {
+            @apply bg-secondary text-white px-4 py-2 rounded-lg hover:bg-secondary/90 transition-all;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+<!-- Top Navigation -->
+<nav class="bg-primary text-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-couch text-2xl text-secondary"></i>
+                <span class="font-bold text-xl">Staff Portal · Orders</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold">
+                        JD
+                    </div>
+                    <span class="hidden md:inline">John Doe</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+        <!-- Sidebar Menu -->
+        <div class="lg:col-span-1">
+            <div class="bg-white rounded-lg shadow-lg p-4 sticky top-20">
+                <nav class="space-y-1">
+                    <a href="order-management.html" class="menu-item">
+                        <i class="fas fa-clipboard-list w-5"></i> Order Management
+                    </a>
+                    <a href="order-edit.html" class="menu-item">
+                        <i class="fas fa-edit w-5"></i> Edit Order
+                    </a>
+                    <a href="order-status.html" class="menu-item">
+                        <i class="fas fa-sync-alt w-5"></i> Update Status
+                    </a>
+                    <a href="order-assign.html" class="menu-item">
+                        <i class="fas fa-users w-5"></i> Assign Orders
+                    </a>
+                    <a href="material-allocate.html" class="menu-item">
+                        <i class="fas fa-cubes w-5"></i> Material Allocation
+                    </a>
+                    <a href="material-usage.html" class="menu-item active">
+                        <i class="fas fa-chart-pie w-5"></i> Material Usage
+                    </a>
+                    <a href="production-schedule.html" class="menu-item">
+                        <i class="fas fa-calendar-alt w-5"></i> Production Schedule
+                    </a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Material Usage Content -->
+        <div class="lg:col-span-4 space-y-6">
+            <!-- Summary Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="usage-card">
+                    <p class="text-sm text-gray-500">Total Materials Used</p>
+                    <p class="text-2xl font-bold">12,450</p>
+                    <p class="text-xs text-gray-500">Units this month</p>
+                </div>
+                <div class="usage-card">
+                    <p class="text-sm text-gray-500">Usage Value</p>
+                    <p class="text-2xl font-bold">$23,450</p>
+                    <p class="text-xs text-success mt-1">↑ 8% from last month</p>
+                </div>
+                <div class="usage-card">
+                    <p class="text-sm text-gray-500">Orders in Production</p>
+                    <p class="text-2xl font-bold">18</p>
+                    <p class="text-xs text-gray-500">Currently active</p>
+                </div>
+                <div class="usage-card">
+                    <p class="text-sm text-gray-500">Waste Percentage</p>
+                    <p class="text-2xl font-bold">2.3%</p>
+                    <p class="text-xs text-success">↓ 0.5% from target</p>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="usage-card">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Date Range</label>
+                        <select class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                            <option>This Month</option>
+                            <option>Last Month</option>
+                            <option>Last 3 Months</option>
+                            <option>This Year</option>
+                            <option>Custom Range</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Material Category</label>
+                        <select class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                            <option>All Categories</option>
+                            <option>Wood</option>
+                            <option>Metal</option>
+                            <option>Fabric</option>
+                            <option>Leather</option>
+                            <option>Foam</option>
+                            <option>Hardware</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Order Type</label>
+                        <select class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                            <option>All Orders</option>
+                            <option>B2B</option>
+                            <option>B2C</option>
+                            <option>Custom</option>
+                        </select>
+                    </div>
+                    <div class="flex items-end">
+                        <button class="btn-primary w-full">Apply Filters</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Usage Chart (Placeholder) -->
+            <div class="usage-card">
+                <h2 class="text-xl font-bold mb-4">Material Usage Trends</h2>
+                <div class="bg-gray-100 h-64 rounded-lg flex items-center justify-center">
+                    <div class="text-center">
+                        <i class="fas fa-chart-bar text-4xl text-gray-400 mb-2"></i>
+                        <p class="text-gray-500">Material usage chart would display here</p>
+                        <p class="text-sm text-gray-400">Daily consumption for last 30 days</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Usage by Material -->
+            <div class="usage-card">
+                <h2 class="text-xl font-bold mb-4">Material Usage by Product</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-50">
+                        <tr class="text-left text-sm text-gray-500">
+                            <th class="p-3">Material</th>
+                            <th class="p-3">Total Used</th>
+                            <th class="p-3">Unit</th>
+                            <th class="p-3">Top Product</th>
+                            <th class="p-3">Waste %</th>
+                            <th class="p-3">Trend</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="p-3 font-medium">Oak Wood Plank</td>
+                            <td class="p-3">2,450</td>
+                            <td class="p-3">pcs</td>
+                            <td class="p-3">Harmony Sofa</td>
+                            <td class="p-3">1.8%</td>
+                            <td class="p-3 text-success"><i class="fas fa-arrow-down mr-1"></i>-5%</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-medium">Leather - Black</td>
+                            <td class="p-3">890</td>
+                            <td class="p-3">rolls</td>
+                            <td class="p-3">Armchair</td>
+                            <td class="p-3">2.1%</td>
+                            <td class="p-3 text-danger"><i class="fas fa-arrow-up mr-1"></i>+3%</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-medium">Foam Cushion</td>
+                            <td class="p-3">3,200</td>
+                            <td class="p-3">pcs</td>
+                            <td class="p-3">Sofa Collection</td>
+                            <td class="p-3">2.5%</td>
+                            <td class="p-3 text-success"><i class="fas fa-arrow-down mr-1"></i>-2%</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-medium">Screw Kit</td>
+                            <td class="p-3">1,800</td>
+                            <td class="p-3">boxes</td>
+                            <td class="p-3">Assembly</td>
+                            <td class="p-3">0.5%</td>
+                            <td class="p-3 text-success">Stable</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Usage by Order -->
+            <div class="usage-card">
+                <h2 class="text-xl font-bold mb-4">Material Usage by Order</h2>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                        <div>
+                            <p class="font-medium">Order #ORD-2026-001245</p>
+                            <p class="text-sm text-gray-500">ABC Retail Ltd. • 12 items</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-medium">45 units</p>
+                            <p class="text-sm text-gray-500">$2,345 value</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                        <div>
+                            <p class="font-medium">Order #ORD-2026-001246</p>
+                            <p class="text-sm text-gray-500">Lisa Wong • 3 items</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-medium">18 units</p>
+                            <p class="text-sm text-gray-500">$890 value</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Export Options -->
+            <div class="usage-card">
+                <h2 class="text-xl font-bold mb-4">Export Reports</h2>
+                <div class="flex gap-3">
+                    <button class="btn-primary">
+                        <i class="fas fa-file-pdf mr-2"></i>Export as PDF
+                    </button>
+                    <button class="btn-primary">
+                        <i class="fas fa-file-excel mr-2"></i>Export as Excel
+                    </button>
+                    <button class="border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100">
+                        <i class="fas fa-print mr-2"></i>Print
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

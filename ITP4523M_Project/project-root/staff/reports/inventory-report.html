@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Living · Inventory Report</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D3748',
+                        secondary: '#8B5A2B',
+                        success: '#38A169',
+                        warning: '#ECC94B',
+                        danger: '#E53E3E',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .menu-item {
+            @apply flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 transition-all;
+        }
+        .report-card {
+            @apply bg-white rounded-lg shadow-lg p-6;
+        }
+        .btn-primary {
+            @apply bg-secondary text-white px-4 py-2 rounded-lg hover:bg-secondary/90 transition-all;
+        }
+        .status-badge {
+            @apply px-2 py-1 rounded-full text-xs font-medium;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+<!-- Top Navigation -->
+<nav class="bg-primary text-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-couch text-2xl text-secondary"></i>
+                <span class="font-bold text-xl">Staff Portal · Reports</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold">
+                        JD
+                    </div>
+                    <span class="hidden md:inline">John Doe</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+        <!-- Sidebar Menu -->
+        <div class="lg:col-span-1">
+            <div class="bg-white rounded-lg shadow-lg p-4 sticky top-20">
+                <nav class="space-y-1">
+                    <a href="reports-dashboard.html" class="menu-item">
+                        <i class="fas fa-tachometer-alt w-5"></i> Reports Dashboard
+                    </a>
+                    <a href="sales-report.html" class="menu-item">
+                        <i class="fas fa-chart-line w-5"></i> Sales Report
+                    </a>
+                    <a href="inventory-report.html" class="menu-item active">
+                        <i class="fas fa-warehouse w-5"></i> Inventory Report
+                    </a>
+                    <a href="material-usage-report.html" class="menu-item">
+                        <i class="fas fa-cubes w-5"></i> Material Usage
+                    </a>
+                    <a href="customer-report.html" class="menu-item">
+                        <i class="fas fa-users w-5"></i> Customer Report
+                    </a>
+                    <a href="production-report.html" class="menu-item">
+                        <i class="fas fa-industry w-5"></i> Production Report
+                    </a>
+                    <a href="financial-report.html" class="menu-item">
+                        <i class="fas fa-dollar-sign w-5"></i> Financial Report
+                    </a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Inventory Report Content -->
+        <div class="lg:col-span-4 space-y-6">
+            <!-- Header -->
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold">Inventory Report</h1>
+                <div class="flex gap-2">
+                    <button class="btn-primary">
+                        <i class="fas fa-calendar-alt mr-2"></i>As of Mar 15, 2026
+                    </button>
+                    <button class="border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-100">
+                        <i class="fas fa-download mr-2"></i>Export
+                    </button>
+                </div>
+            </div>
+
+            <!-- Inventory Summary -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="report-card">
+                    <p class="text-sm text-gray-500">Total Items</p>
+                    <p class="text-2xl font-bold">2,450</p>
+                    <p class="text-xs text-gray-500">Across all categories</p>
+                </div>
+                <div class="report-card">
+                    <p class="text-sm text-gray-500">Inventory Value</p>
+                    <p class="text-2xl font-bold">$124,500</p>
+                    <p class="text-xs text-success">↑ 5% from last month</p>
+                </div>
+                <div class="report-card">
+                    <p class="text-sm text-gray-500">Low Stock Items</p>
+                    <p class="text-2xl font-bold text-warning">23</p>
+                    <p class="text-xs text-warning">Need reorder</p>
+                </div>
+                <div class="report-card">
+                    <p class="text-sm text-gray-500">Out of Stock</p>
+                    <p class="text-2xl font-bold text-danger">8</p>
+                    <p class="text-xs text-danger">Critical</p>
+                </div>
+            </div>
+
+            <!-- Inventory by Category -->
+            <div class="report-card">
+                <h2 class="text-xl font-bold mb-4">Inventory by Category</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <div class="space-y-3">
+                            <div>
+                                <div class="flex justify-between text-sm mb-1">
+                                    <span>Finished Products</span>
+                                    <span class="font-medium">850 units • $89,250</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-secondary rounded-full h-2" style="width: 35%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm mb-1">
+                                    <span>Raw Materials</span>
+                                    <span class="font-medium">1,200 units • $24,000</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-secondary rounded-full h-2" style="width: 49%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm mb-1">
+                                    <span>Hardware</span>
+                                    <span class="font-medium">400 units • $11,250</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-secondary rounded-full h-2" style="width: 16%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-l border-gray-200 pl-6">
+                        <h3 class="font-medium mb-3">Category Breakdown</h3>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-sm">
+                                <span>Living Room</span>
+                                <span>320 units</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span>Bedroom</span>
+                                <span>245 units</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span>Dining Room</span>
+                                <span>185 units</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Low Stock Alert -->
+            <div class="report-card border-l-4 border-warning">
+                <h2 class="text-xl font-bold mb-4">Low Stock Alert</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-50">
+                        <tr class="text-left text-sm text-gray-500">
+                            <th class="p-3">Product/Material</th>
+                            <th class="p-3">Category</th>
+                            <th class="p-3">Current Stock</th>
+                            <th class="p-3">Reorder Level</th>
+                            <th class="p-3">Status</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="p-3 font-medium">Foam Cushion</td>
+                            <td class="p-3">Raw Material</td>
+                            <td class="p-3">78</td>
+                            <td class="p-3">100</td>
+                            <td class="p-3"><span class="status-badge bg-warning/20 text-warning">Low Stock</span></td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-medium">Screw Kit - Large</td>
+                            <td class="p-3">Hardware</td>
+                            <td class="p-3">0</td>
+                            <td class="p-3">20</td>
+                            <td class="p-3"><span class="status-badge bg-danger/20 text-danger">Out of Stock</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Inventory Turnover -->
+            <div class="report-card">
+                <h2 class="text-xl font-bold mb-4">Inventory Turnover Rate</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="text-center p-4 bg-gray-50 rounded-lg">
+                        <p class="text-3xl font-bold text-secondary">4.2</p>
+                        <p class="text-sm text-gray-500">Overall Turnover</p>
+                        <p class="text-xs text-gray-400">Last 12 months</p>
+                    </div>
+                    <div class="text-center p-4 bg-gray-50 rounded-lg">
+                        <p class="text-3xl font-bold text-secondary">5.8</p>
+                        <p class="text-sm text-gray-500">Finished Goods</p>
+                        <p class="text-xs text-gray-400">Higher demand</p>
+                    </div>
+                    <div class="text-center p-4 bg-gray-50 rounded-lg">
+                        <p class="text-3xl font-bold text-secondary">3.1</p>
+                        <p class="text-sm text-gray-500">Raw Materials</p>
+                        <p class="text-xs text-gray-400">Stable consumption</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stock Aging -->
+            <div class="report-card">
+                <h2 class="text-xl font-bold mb-4">Stock Aging</h2>
+                <div class="space-y-3">
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>0-30 days</span>
+                            <span class="font-medium">1,450 units (59%)</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-success rounded-full h-2" style="width: 59%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>31-60 days</span>
+                            <span class="font-medium">650 units (27%)</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-warning rounded-full h-2" style="width: 27%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>61-90 days</span>
+                            <span class="font-medium">250 units (10%)</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-warning rounded-full h-2" style="width: 10%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>90+ days</span>
+                            <span class="font-medium">100 units (4%)</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-danger rounded-full h-2" style="width: 4%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

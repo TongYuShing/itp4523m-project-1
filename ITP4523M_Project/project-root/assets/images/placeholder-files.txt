@@ -1,0 +1,174 @@
+========================================
+Premium Living Furniture - Image Assets
+========================================
+
+This directory contains all image assets for the furniture management system.
+
+DIRECTORY STRUCTURE:
+
+/images
+├── /products
+│   ├── /sofas
+│   │   ├── harmony-sofa-main.jpg
+│   │   ├── harmony-sofa-1.jpg
+│   │   ├── harmony-sofa-2.jpg
+│   │   ├── harmony-sofa-3.jpg
+│   │   ├── modern-sofa-main.jpg
+│   │   ├── modern-sofa-1.jpg
+│   │   ├── sectional-sofa-main.jpg
+│   │   └── loveseat-main.jpg
+│   │
+│   ├── /tables
+│   │   ├── coffee-table-oak-main.jpg
+│   │   ├── coffee-table-oak-1.jpg
+│   │   ├── dining-table-6seat-main.jpg
+│   │   ├── dining-table-8seat-main.jpg
+│   │   ├── side-table-main.jpg
+│   │   └── console-table-main.jpg
+│   │
+│   ├── /chairs
+│   │   ├── armchair-velvet-main.jpg
+│   │   ├── armchair-velvet-1.jpg
+│   │   ├── dining-chair-main.jpg
+│   │   ├── office-chair-main.jpg
+│   │   ├── rocking-chair-main.jpg
+│   │   └── bar-stool-main.jpg
+│   │
+│   ├── /lighting
+│   │   ├── floor-lamp-arc-main.jpg
+│   │   ├── floor-lamp-arc-1.jpg
+│   │   ├── table-lamp-modern-main.jpg
+│   │   ├── pendant-light-main.jpg
+│   │   ├── chandelier-main.jpg
+│   │   └── wall-sconce-main.jpg
+│   │
+│   └── /bedroom
+│       ├── bed-frame-queen-main.jpg
+│       ├── bed-frame-king-main.jpg
+│       ├── nightstand-main.jpg
+│       ├── dresser-main.jpg
+│       ├── wardrobe-main.jpg
+│       └── mirror-main.jpg
+│
+├── /categories
+│   ├── living-room-category.jpg
+│   ├── bedroom-category.jpg
+│   ├── dining-room-category.jpg
+│   ├── office-category.jpg
+│   ├── lighting-category.jpg
+│   └── outdoor-category.jpg
+│
+├── /icons
+│   ├── favicon.ico
+│   ├── favicon-16x16.png
+│   ├── favicon-32x32.png
+│   ├── apple-touch-icon.png
+│   ├── android-chrome-192x192.png
+│   ├── android-chrome-512x512.png
+│   ├── delivery-truck.svg
+│   ├── quality-badge.svg
+│   ├── warranty.svg
+│   ├── support.svg
+│   ├── secure-payment.svg
+│   ├── free-shipping.svg
+│   └── easy-returns.svg
+│
+├── /logo
+│   ├── logo-dark.png
+│   ├── logo-light.png
+│   ├── logo-dark@2x.png
+│   ├── logo-light@2x.png
+│   ├── logo-icon.svg
+│   └── logo-text.svg
+│
+├── /banners
+│   ├── hero-banner-1.jpg
+│   ├── hero-banner-2.jpg
+│   ├── hero-banner-3.jpg
+│   ├── seasonal-sale-banner.jpg
+│   ├── new-arrivals-banner.jpg
+│   └── clearance-banner.jpg
+│
+└── /team
+    ├── team-member-1.jpg
+    ├── team-member-2.jpg
+    ├── team-member-3.jpg
+    ├── team-member-4.jpg
+    └── team-member-5.jpg
+
+========================================
+IMAGE SPECIFICATIONS
+========================================
+
+Product Images:
+- Main product images: 1200x1200px, JPG, 80% quality
+- Gallery images: 600x600px, JPG, 80% quality
+- Thumbnails: 150x150px, JPG, 70% quality
+
+Category Images:
+- Category banners: 1920x400px, JPG, 80% quality
+- Category cards: 600x400px, JPG, 80% quality
+
+Icons:
+- Favicon: 32x32px, PNG/ICO
+- UI Icons: 24x24px, SVG preferred
+- Social icons: 32x32px, SVG preferred
+
+Logo:
+- Standard: 200x50px, PNG with transparency
+- Retina: 400x100px, PNG with transparency
+- Icon: 80x80px, SVG
+
+Banners:
+- Hero banners: 1920x600px, JPG, 80% quality
+- Promotional banners: 1200x300px, JPG, 80% quality
+
+Team Photos:
+- Profile photos: 400x400px, JPG, 80% quality
+
+========================================
+IMAGE PLACEHOLDER URLs (for development)
+========================================
+
+The following Unsplash image URLs can be used for development:
+
+Product Images:
+- Sofas: https://images.unsplash.com/photo-1555041469-a586c61ea9bc
+- Coffee Tables: https://images.unsplash.com/photo-1586023492125-27b2c045efd7
+- Floor Lamps: https://images.unsplash.com/photo-1583847268964-b28dc8f7f92d
+- Armchairs: https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e
+- Bookshelves: https://images.unsplash.com/photo-1617103996702-96ff29b1c467
+- Dining Tables: https://images.unsplash.com/photo-1611486212557-88be5ff6f941
+- Nightstands: https://images.unsplash.com/photo-1551298370-9d3d53740c70
+- Desks: https://images.unsplash.com/photo-1598300042247-d088f8ab3a91
+
+Category Images:
+- Living Room: https://images.unsplash.com/photo-1586023492125-27b2c045efd7
+- Bedroom: https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af
+- Dining Room: https://images.unsplash.com/photo-1617098900591-3f90928e8c54
+- Office: https://images.unsplash.com/photo-1524758631624-e2822e304c36
+- Lighting: https://images.unsplash.com/photo-1507473885765-e6ed057f782c
+
+Banners:
+- Hero: https://images.unsplash.com/photo-1556228453-efd6c1ff04f6
+- Sale: https://images.unsplash.com/photo-1556228578-0d85b1a4d571
+
+========================================
+IMAGE NAMING CONVENTION
+========================================
+
+Product Images:
+[product-name]-[variant]-[type].[extension]
+Example: harmony-sofa-charcoal-main.jpg
+
+Category Images:
+[category-name]-category.jpg
+Example: living-room-category.jpg
+
+Icons:
+[icon-name].[extension]
+Example: delivery-truck.svg
+
+Banners:
+[banner-type]-[description].[extension]
+Example: hero-banner-spring-sale.jpg

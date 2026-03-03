@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Living · Product Pricing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D3748',
+                        secondary: '#8B5A2B',
+                        success: '#38A169',
+                        warning: '#ECC94B',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .menu-item {
+            @apply flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 transition-all;
+        }
+        .pricing-card {
+            @apply bg-white rounded-lg shadow-lg p-6;
+        }
+        .btn-primary {
+            @apply bg-secondary text-white px-4 py-2 rounded-lg hover:bg-secondary/90 transition-all;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+<!-- Top Navigation -->
+<nav class="bg-primary text-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-couch text-2xl text-secondary"></i>
+                <span class="font-bold text-xl">Staff Portal</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold">
+                        JD
+                    </div>
+                    <span class="hidden md:inline">John Doe</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+        <!-- Sidebar Menu -->
+        <div class="lg:col-span-1">
+            <div class="bg-white rounded-lg shadow-lg p-4 sticky top-20">
+                <nav class="space-y-1">
+                    <a href="staff-dashboard.html" class="menu-item">
+                        <i class="fas fa-tachometer-alt w-5"></i> Dashboard
+                    </a>
+                    <a href="product-catalog.html" class="menu-item">
+                        <i class="fas fa-box w-5"></i> Product Catalog
+                    </a>
+                    <a href="product-add.html" class="menu-item">
+                        <i class="fas fa-plus-circle w-5"></i> Add Product
+                    </a>
+                    <a href="product-category.html" class="menu-item">
+                        <i class="fas fa-tags w-5"></i> Categories
+                    </a>
+                    <a href="product-pricing.html" class="menu-item active">
+                        <i class="fas fa-dollar-sign w-5"></i> Pricing
+                    </a>
+                    <a href="product-images.html" class="menu-item">
+                        <i class="fas fa-images w-5"></i> Product Images
+                    </a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Pricing Content -->
+        <div class="lg:col-span-4 space-y-6">
+            <!-- Bulk Price Update -->
+            <div class="pricing-card">
+                <h2 class="text-xl font-bold mb-4">Bulk Price Update</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Select Category</label>
+                        <select class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                            <option>All Categories</option>
+                            <option>Living Room</option>
+                            <option>Bedroom</option>
+                            <option>Dining Room</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Price Adjustment</label>
+                        <select class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                            <option>Fixed Amount</option>
+                            <option>Percentage Increase</option>
+                            <option>Percentage Decrease</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Value</label>
+                        <div class="flex gap-2">
+                            <input type="number" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg" placeholder="0.00">
+                            <button class="btn-primary whitespace-nowrap">Apply</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Price List -->
+            <div class="pricing-card">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-bold">Price List</h2>
+                    <div class="flex gap-2">
+                        <input type="text" placeholder="Search products..." class="px-4 py-2 border border-gray-300 rounded-lg">
+                        <button class="btn-primary">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-50">
+                        <tr class="text-left text-sm text-gray-500">
+                            <th class="p-3">Product</th>
+                            <th class="p-3">SKU</th>
+                            <th class="p-3">Base Price</th>
+                            <th class="p-3">Sale Price</th>
+                            <th class="p-3">Cost</th>
+                            <th class="p-3">Margin</th>
+                            <th class="p-3">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="p-3">
+                                <div class="flex items-center gap-2">
+                                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&q=80" class="w-8 h-8 object-cover rounded">
+                                    <span>Harmony Sofa</span>
+                                </div>
+                            </td>
+                            <td class="p-3">SKU-001234</td>
+                            <td class="p-3">$899.00</td>
+                            <td class="p-3 text-success">$799.00</td>
+                            <td class="p-3">$450.00</td>
+                            <td class="p-3 text-success">43.7%</td>
+                            <td class="p-3">
+                                <button class="text-secondary hover:text-secondary/80"><i class="fas fa-edit"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-3">
+                                <div class="flex items-center gap-2">
+                                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&q=80" class="w-8 h-8 object-cover rounded">
+                                    <span>Coffee Table</span>
+                                </div>
+                            </td>
+                            <td class="p-3">SKU-001235</td>
+                            <td class="p-3">$249.00</td>
+                            <td class="p-3">$249.00</td>
+                            <td class="p-3">$120.00</td>
+                            <td class="p-3 text-success">51.8%</td>
+                            <td class="p-3">
+                                <button class="text-secondary hover:text-secondary/80"><i class="fas fa-edit"></i></button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Special Pricing Rules -->
+            <div class="pricing-card">
+                <h2 class="text-xl font-bold mb-4">Special Pricing Rules</h2>
+
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                        <div>
+                            <p class="font-medium">Bulk Discount - 10% off orders over $1000</p>
+                            <p class="text-sm text-gray-500">Active until Dec 31, 2026</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="text-secondary hover:text-secondary/80"><i class="fas fa-edit"></i></button>
+                            <button class="text-danger hover:text-danger/80"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                        <div>
+                            <p class="font-medium">Seasonal Sale - 15% off Living Room</p>
+                            <p class="text-sm text-gray-500">Active until Mar 31, 2026</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="text-secondary hover:text-secondary/80"><i class="fas fa-edit"></i></button>
+                            <button class="text-danger hover:text-danger/80"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="mt-4 btn-primary">
+                    <i class="fas fa-plus mr-2"></i>Add Pricing Rule
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

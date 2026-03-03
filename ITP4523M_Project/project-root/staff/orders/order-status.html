@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Living · Update Order Status</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D3748',
+                        secondary: '#8B5A2B',
+                        success: '#38A169',
+                        warning: '#ECC94B',
+                        danger: '#E53E3E',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .menu-item {
+            @apply flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 transition-all;
+        }
+        .status-timeline {
+            @apply relative pl-8 pb-8 border-l-2 border-gray-200 last:border-0 last:pb-0;
+        }
+        .status-dot {
+            @apply absolute -left-2 w-4 h-4 rounded-full;
+        }
+        .btn-primary {
+            @apply bg-secondary text-white px-4 py-2 rounded-lg hover:bg-secondary/90 transition-all;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+<!-- Top Navigation -->
+<nav class="bg-primary text-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-couch text-2xl text-secondary"></i>
+                <span class="font-bold text-xl">Staff Portal · Orders</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold">
+                        JD
+                    </div>
+                    <span class="hidden md:inline">John Doe</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+        <!-- Sidebar Menu -->
+        <div class="lg:col-span-1">
+            <div class="bg-white rounded-lg shadow-lg p-4 sticky top-20">
+                <nav class="space-y-1">
+                    <a href="order-management.html" class="menu-item">
+                        <i class="fas fa-clipboard-list w-5"></i> Order Management
+                    </a>
+                    <a href="order-edit.html" class="menu-item">
+                        <i class="fas fa-edit w-5"></i> Edit Order
+                    </a>
+                    <a href="order-status.html" class="menu-item active">
+                        <i class="fas fa-sync-alt w-5"></i> Update Status
+                    </a>
+                    <a href="order-assign.html" class="menu-item">
+                        <i class="fas fa-users w-5"></i> Assign Orders
+                    </a>
+                    <a href="material-allocate.html" class="menu-item">
+                        <i class="fas fa-cubes w-5"></i> Material Allocation
+                    </a>
+                    <a href="material-usage.html" class="menu-item">
+                        <i class="fas fa-chart-pie w-5"></i> Material Usage
+                    </a>
+                    <a href="production-schedule.html" class="menu-item">
+                        <i class="fas fa-calendar-alt w-5"></i> Production Schedule
+                    </a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Update Status Content -->
+        <div class="lg:col-span-4">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <!-- Header -->
+                <div class="mb-6">
+                    <h1 class="text-2xl font-bold mb-2">Update Order Status</h1>
+                    <p class="text-gray-600">Order #ORD-2026-001246 • Customer: Lisa Wong</p>
+                </div>
+
+                <!-- Current Status -->
+                <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                    <div class="flex items-center gap-3">
+                        <span class="text-sm text-gray-500">Current Status:</span>
+                        <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-medium">In Production</span>
+                        <span class="text-sm text-gray-500">Last updated: 2026-03-15 14:30</span>
+                    </div>
+                </div>
+
+                <!-- Status Update Form -->
+                <div class="mb-8">
+                    <h2 class="text-lg font-bold mb-4">Update to New Status</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-1">New Status *</label>
+                            <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary/50">
+                                <option>Select status</option>
+                                <option>Pending</option>
+                                <option>In Production</option>
+                                <option>Quality Check</option>
+                                <option>Ready to Ship</option>
+                                <option>Shipped</option>
+                                <option>Delivered</option>
+                                <option>Cancelled</option>
+                                <option>On Hold</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Completion Percentage</label>
+                            <input type="range" min="0" max="100" value="60" class="w-full">
+                            <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                <span>0%</span>
+                                <span>60%</span>
+                                <span>100%</span>
+                            </div>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-medium mb-1">Status Notes</label>
+                            <textarea rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg"
+                                      placeholder="Add notes about this status update...">Production 60% complete. All materials available. Expected completion: 2026-03-22</textarea>
+                        </div>
+                    </div>
+                    <button class="btn-primary mt-4">Update Status</button>
+                </div>
+
+                <!-- Status Timeline -->
+                <div>
+                    <h2 class="text-lg font-bold mb-4">Status History</h2>
+                    <div class="relative">
+                        <!-- Timeline Item 1 -->
+                        <div class="status-timeline">
+                            <div class="status-dot bg-success border-2 border-white"></div>
+                            <div class="mb-1">
+                                <span class="font-medium">In Production</span>
+                                <span class="text-sm text-gray-500 ml-3">2026-03-15 14:30</span>
+                            </div>
+                            <p class="text-sm text-gray-600">Production started. Materials allocated.</p>
+                            <p class="text-xs text-gray-400">Updated by: John Doe</p>
+                        </div>
+
+                        <!-- Timeline Item 2 -->
+                        <div class="status-timeline">
+                            <div class="status-dot bg-success border-2 border-white"></div>
+                            <div class="mb-1">
+                                <span class="font-medium">Pending</span>
+                                <span class="text-sm text-gray-500 ml-3">2026-03-14 09:15</span>
+                            </div>
+                            <p class="text-sm text-gray-600">Order confirmed and pending production assignment.</p>
+                            <p class="text-xs text-gray-400">Updated by: System</p>
+                        </div>
+
+                        <!-- Timeline Item 3 -->
+                        <div class="status-timeline">
+                            <div class="status-dot bg-success border-2 border-white"></div>
+                            <div class="mb-1">
+                                <span class="font-medium">Order Placed</span>
+                                <span class="text-sm text-gray-500 ml-3">2026-03-14 08:30</span>
+                            </div>
+                            <p class="text-sm text-gray-600">Order received from customer.</p>
+                            <p class="text-xs text-gray-400">Updated by: System</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

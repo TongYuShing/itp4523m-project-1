@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Living · Deletion History</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D3748',
+                        secondary: '#8B5A2B',
+                        success: '#38A169',
+                        warning: '#ECC94B',
+                        danger: '#E53E3E',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .menu-item {
+            @apply flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 transition-all;
+        }
+        .menu-item.active {
+            @apply bg-danger/10 text-danger font-medium;
+        }
+        .btn-primary {
+            @apply bg-secondary text-white px-4 py-2 rounded-lg hover:bg-secondary/90 transition-all;
+        }
+        .history-card {
+            @apply bg-white rounded-lg shadow-lg p-6;
+        }
+        .deletion-entry {
+            @apply border-l-4 p-4 hover:bg-gray-50 transition-all;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+<!-- Top Navigation -->
+<nav class="bg-primary text-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-couch text-2xl text-secondary"></i>
+                <span class="font-bold text-xl">Staff Portal · Delete</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold">
+                        JD
+                    </div>
+                    <span class="hidden md:inline">John Doe</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+        <!-- Sidebar Menu -->
+        <div class="lg:col-span-1">
+            <div class="bg-white rounded-lg shadow-lg p-4 sticky top-20">
+                <nav class="space-y-1">
+                    <a href="product-deactivate.html" class="menu-item">
+                        <i class="fas fa-power-off w-5"></i> Deactivate Product
+                    </a>
+                    <a href="product-archive.html" class="menu-item">
+                        <i class="fas fa-archive w-5"></i> Archive Products
+                    </a>
+                    <a href="delete-confirmation.html" class="menu-item">
+                        <i class="fas fa-check-circle w-5"></i> Confirm Deletion
+                    </a>
+                    <a href="bulk-delete.html" class="menu-item">
+                        <i class="fas fa-layer-group w-5"></i> Bulk Delete
+                    </a>
+                    <a href="product-replace.html" class="menu-item">
+                        <i class="fas fa-exchange-alt w-5"></i> Replace Product
+                    </a>
+                    <a href="inventory-cleanup.html" class="menu-item">
+                        <i class="fas fa-broom w-5"></i> Inventory Cleanup
+                    </a>
+                    <a href="deletion-history.html" class="menu-item active">
+                        <i class="fas fa-history w-5"></i> Deletion History
+                    </a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Deletion History Content -->
+        <div class="lg:col-span-4 space-y-6">
+            <!-- Header -->
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold">Deletion History</h1>
+                <div class="flex gap-2">
+                    <button class="btn-primary">
+                        <i class="fas fa-download mr-2"></i>Export Log
+                    </button>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="history-card">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div>
+                        <label class="block text-sm mb-1">Date Range</label>
+                        <select class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                            <option>Last 7 days</option>
+                            <option>Last 30 days</option>
+                            <option>Last 90 days</option>
+                            <option>Custom</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm mb-1">Action Type</label>
+                        <select class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                            <option>All Actions</option>
+                            <option>Deleted</option>
+                            <option>Archived</option>
+                            <option>Deactivated</option>
+                            <option>Replaced</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm mb-1">Staff Member</label>
+                        <select class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                            <option>All Staff</option>
+                            <option>John Doe</option>
+                            <option>Jane Smith</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm mb-1">Search</label>
+                        <input type="text" placeholder="Product name/SKU..."
+                               class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- History Timeline -->
+            <div class="history-card">
+                <h2 class="text-lg font-bold mb-4">Recent Deletions</h2>
+
+                <div class="space-y-3">
+                    <!-- Entry 1 -->
+                    <div class="deletion-entry border-l-danger">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="font-medium">Harmony Sofa (Old Model) - Permanently Deleted</p>
+                                <p class="text-sm text-gray-500">SKU: SKU-001230 • Category: Living Room</p>
+                                <div class="flex items-center gap-4 mt-2 text-xs">
+                                    <span class="text-gray-500">Deleted by: John Doe</span>
+                                    <span class="text-gray-500">Date: 2026-03-15 14:30</span>
+                                    <span class="bg-danger/20 text-danger px-2 py-1 rounded">Deleted</span>
+                                </div>
+                                <p class="text-xs text-gray-400 mt-1">Reason: Discontinued - replaced by v2</p>
+                            </div>
+                            <button class="text-secondary hover:text-secondary/80 text-sm">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Entry 2 -->
+                    <div class="deletion-entry border-l-warning">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="font-medium">Vintage Coffee Table - Archived</p>
+                                <p class="text-sm text-gray-500">SKU: SKU-001231 • Category: Living Room</p>
+                                <div class="flex items-center gap-4 mt-2 text-xs">
+                                    <span class="text-gray-500">Archived by: Jane Smith</span>
+                                    <span class="text-gray-500">Date: 2026-03-14 09:15</span>
+                                    <span class="bg-warning/20 text-warning px-2 py-1 rounded">Archived</span>
+                                </div>
+                                <p class="text-xs text-gray-400 mt-1">Reason: No sales for 6 months</p>
+                            </div>
+                            <button class="text-secondary hover:text-secondary/80 text-sm">Restore</button>
+                        </div>
+                    </div>
+
+                    <!-- Entry 3 -->
+                    <div class="deletion-entry border-l-primary">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="font-medium">Arc Floor Lamp (Old) - Replaced</p>
+                                <p class="text-sm text-gray-500">SKU: SKU-001232 → Replaced by SKU-001238</p>
+                                <div class="flex items-center gap-4 mt-2 text-xs">
+                                    <span class="text-gray-500">Replaced by: John Doe</span>
+                                    <span class="text-gray-500">Date: 2026-03-10 11:20</span>
+                                    <span class="bg-primary/20 text-primary px-2 py-1 rounded">Replaced</span>
+                                </div>
+                            </div>
+                            <button class="text-secondary hover:text-secondary/80 text-sm">View Replacement</button>
+                        </div>
+                    </div>
+
+                    <!-- Entry 4 - Bulk Delete -->
+                    <div class="deletion-entry border-l-danger">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <p class="font-medium">Bulk Delete - 5 Products</p>
+                                <p class="text-sm text-gray-500">Products: SKU-001240, SKU-001241, SKU-001242, ...</p>
+                                <div class="flex items-center gap-4 mt-2 text-xs">
+                                    <span class="text-gray-500">Deleted by: John Doe</span>
+                                    <span class="text-gray-500">Date: 2026-03-09 16:45</span>
+                                    <span class="bg-danger/20 text-danger px-2 py-1 rounded">Bulk Delete</span>
+                                </div>
+                                <p class="text-xs text-gray-400 mt-1">Reason: End of product line clearance</p>
+                            </div>
+                            <button class="text-secondary hover:text-secondary/80 text-sm">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="history-card text-center">
+                    <p class="text-3xl font-bold text-danger">24</p>
+                    <p class="text-sm text-gray-500">Deleted this month</p>
+                </div>
+                <div class="history-card text-center">
+                    <p class="text-3xl font-bold text-warning">18</p>
+                    <p class="text-sm text-gray-500">Archived this month</p>
+                </div>
+                <div class="history-card text-center">
+                    <p class="text-3xl font-bold text-primary">12</p>
+                    <p class="text-sm text-gray-500">Replaced this month</p>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center gap-2">
+                <button class="w-8 h-8 border border-gray-300 rounded-lg hover:bg-secondary hover:text-white">1</button>
+                <button class="w-8 h-8 border border-gray-300 rounded-lg hover:bg-secondary hover:text-white">2</button>
+                <button class="w-8 h-8 border border-gray-300 rounded-lg hover:bg-secondary hover:text-white">3</button>
+                <span class="w-8 h-8 flex items-center justify-center">...</span>
+                <button class="w-8 h-8 border border-gray-300 rounded-lg hover:bg-secondary hover:text-white">8</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Living · Product Categories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D3748',
+                        secondary: '#8B5A2B',
+                        success: '#38A169',
+                        danger: '#E53E3E',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .menu-item {
+            @apply flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 transition-all;
+        }
+        .category-card {
+            @apply bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition-all;
+        }
+        .btn-primary {
+            @apply bg-secondary text-white px-4 py-2 rounded-lg hover:bg-secondary/90 transition-all;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-primary">
+<!-- Top Navigation -->
+<nav class="bg-primary text-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-couch text-2xl text-secondary"></i>
+                <span class="font-bold text-xl">Staff Portal</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold">
+                        JD
+                    </div>
+                    <span class="hidden md:inline">John Doe</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+        <!-- Sidebar Menu -->
+        <div class="lg:col-span-1">
+            <div class="bg-white rounded-lg shadow-lg p-4 sticky top-20">
+                <nav class="space-y-1">
+                    <a href="staff-dashboard.html" class="menu-item">
+                        <i class="fas fa-tachometer-alt w-5"></i> Dashboard
+                    </a>
+                    <a href="product-catalog.html" class="menu-item">
+                        <i class="fas fa-box w-5"></i> Product Catalog
+                    </a>
+                    <a href="product-add.html" class="menu-item">
+                        <i class="fas fa-plus-circle w-5"></i> Add Product
+                    </a>
+                    <a href="product-category.html" class="menu-item active">
+                        <i class="fas fa-tags w-5"></i> Categories
+                    </a>
+                    <a href="product-pricing.html" class="menu-item">
+                        <i class="fas fa-dollar-sign w-5"></i> Pricing
+                    </a>
+                    <a href="product-images.html" class="menu-item">
+                        <i class="fas fa-images w-5"></i> Product Images
+                    </a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Categories Content -->
+        <div class="lg:col-span-4">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <!-- Header -->
+                <div class="flex justify-between items-center mb-6">
+                    <h1 class="text-2xl font-bold">Product Categories</h1>
+                    <button class="btn-primary" onclick="document.getElementById('addCategoryModal').classList.remove('hidden')">
+                        <i class="fas fa-plus mr-2"></i>Add Category
+                    </button>
+                </div>
+
+                <!-- Categories Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                    <div class="category-card border-l-4 border-secondary">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-bold text-lg">Living Room</h3>
+                                <p class="text-sm text-gray-500">45 products</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="text-secondary hover:text-secondary/80"><i class="fas fa-edit"></i></button>
+                                <button class="text-danger hover:text-danger/80"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-bold text-lg">Bedroom</h3>
+                                <p class="text-sm text-gray-500">32 products</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="text-secondary hover:text-secondary/80"><i class="fas fa-edit"></i></button>
+                                <button class="text-danger hover:text-danger/80"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-bold text-lg">Dining Room</h3>
+                                <p class="text-sm text-gray-500">28 products</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="text-secondary hover:text-secondary/80"><i class="fas fa-edit"></i></button>
+                                <button class="text-danger hover:text-danger/80"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-bold text-lg">Office</h3>
+                                <p class="text-sm text-gray-500">19 products</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="text-secondary hover:text-secondary/80"><i class="fas fa-edit"></i></button>
+                                <button class="text-danger hover:text-danger/80"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-bold text-lg">Lighting</h3>
+                                <p class="text-sm text-gray-500">24 products</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="text-secondary hover:text-secondary/80"><i class="fas fa-edit"></i></button>
+                                <button class="text-danger hover:text-danger/80"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-bold text-lg">Outdoor</h3>
+                                <p class="text-sm text-gray-500">15 products</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <button class="text-secondary hover:text-secondary/80"><i class="fas fa-edit"></i></button>
+                                <button class="text-danger hover:text-danger/80"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Subcategories -->
+                <h2 class="text-xl font-bold mb-4">Subcategories</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-50">
+                        <tr class="text-left text-sm text-gray-500">
+                            <th class="p-3">Subcategory</th>
+                            <th class="p-3">Parent Category</th>
+                            <th class="p-3">Products</th>
+                            <th class="p-3">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="p-3 font-medium">Sofas</td>
+                            <td class="p-3">Living Room</td>
+                            <td class="p-3">12</td>
+                            <td class="p-3">
+                                <button class="text-secondary hover:text-secondary/80 mr-2"><i class="fas fa-edit"></i></button>
+                                <button class="text-danger hover:text-danger/80"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-medium">Coffee Tables</td>
+                            <td class="p-3">Living Room</td>
+                            <td class="p-3">8</td>
+                            <td class="p-3">
+                                <button class="text-secondary hover:text-secondary/80 mr-2"><i class="fas fa-edit"></i></button>
+                                <button class="text-danger hover:text-danger/80"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-medium">Beds</td>
+                            <td class="p-3">Bedroom</td>
+                            <td class="p-3">10</td>
+                            <td class="p-3">
+                                <button class="text-secondary hover:text-secondary/80 mr-2"><i class="fas fa-edit"></i></button>
+                                <button class="text-danger hover:text-danger/80"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add Category Modal -->
+<div id="addCategoryModal" class="fixed inset-0 bg-black/50 flex items-center justify-center hidden z-50">
+    <div class="bg-white rounded-lg shadow-xl max-w-md w-full mx-4">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold">Add New Category</h3>
+                <button onclick="document.getElementById('addCategoryModal').classList.add('hidden')" class="text-gray-400 hover:text-gray-600">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium mb-1">Category Name *</label>
+                    <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg" placeholder="e.g., Living Room">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-1">Parent Category</label>
+                    <select class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                        <option>None (Top Level)</option>
+                        <option>Living Room</option>
+                        <option>Bedroom</option>
+                        <option>Dining Room</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium mb-1">Description</label>
+                    <textarea rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg" placeholder="Category description..."></textarea>
+                </div>
+
+                <div>
+                    <label class="flex items-center gap-2">
+                        <input type="checkbox" class="rounded text-secondary">
+                        <span>Active</span>
+                    </label>
+                </div>
+
+                <div class="flex gap-3 pt-4">
+                    <button type="submit" class="flex-1 bg-secondary text-white py-2 rounded-lg hover:bg-secondary/90">
+                        Create Category
+                    </button>
+                    <button type="button" onclick="document.getElementById('addCategoryModal').classList.add('hidden')"
+                            class="flex-1 border border-gray-300 py-2 rounded-lg hover:bg-gray-100">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.onclick = function(event) {
+        const modal = document.getElementById('addCategoryModal');
+        if (event.target == modal) {
+            modal.classList.add('hidden');
+        }
+    }
+</script>
+</body>
+</html>
